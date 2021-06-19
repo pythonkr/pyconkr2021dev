@@ -60,7 +60,6 @@ const HeaderContents = styled.div`
 const Category = styled.div`
     font-size: 1.25rem;
     letter-spacing: 2px;
-    color: #F5DF4D;
     font-weight: 700;
     margin: 3rem;
     text-align: center;
