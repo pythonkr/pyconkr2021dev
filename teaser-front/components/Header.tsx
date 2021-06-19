@@ -41,19 +41,19 @@ const Positionier = styled.div`
 const BlackBackground = styled.div`
     background: black;
     display: flex;
-    justify-content: center;
     height: auto;
+    
     align-items: center;
 `;
 
 const HeaderContents = styled.div`
     width: 1280px;
-    height: 88px;
     display: flex;
+    
     flex-direction: row;
     align-items: center;
 
-    padding-right: 1rem;
+    padding-right: 3rem;
     padding-left: 1rem;
 `;
 
