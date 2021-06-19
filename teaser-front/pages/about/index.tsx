@@ -4,10 +4,10 @@ import AboutContext from '../../components/about/AboutContext';
 
 export default function about() {
     return (
-        <div>
+        <>
             <Header />
             <PyconLogo />
             <AboutContext />
-        </div>
+        </>
     )
 }
