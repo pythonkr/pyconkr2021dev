@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
+import { ContentBackgroundBlock } from '../ContentBackground';
 
 const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
-    padding-left: 20%;
-    padding-right: 20%;
     
     h1 {
         font-size: 4rem;
@@ -22,7 +21,8 @@ const AboutBlock = styled.div`
 
 function AboutContext() {
     return (
-        <div>
+        <ContentBackgroundBlock>
+            <div>
             <AboutBlock>
                 <h1>행사 상세</h1> 
                 <p>파이콘 한국은 한국의 파이썬 개발자들이 지식을 공유하고 만남을 갖기 위한 장입니다. <br />
@@ -61,7 +61,9 @@ function AboutContext() {
                     후원사 sponsor@pycon.kr
                 </p>
             </AboutBlock>
-        </div>
+            </div>
+
+        </ContentBackgroundBlock>
     )
 }
 

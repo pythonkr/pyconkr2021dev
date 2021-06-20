@@ -43,9 +43,18 @@ const Positionier = styled.div`
 const HeaderContents = styled.div`
     width: 1280px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding-right: 5rem;
+
+    @media (min-width: 768px) and (max-width: 1280px) {
+        width: 768px;
+    }
+`;
+
+const RightCategoryBlock = styled.div`
+    display: flex;
+    flex-direction: row;
 `;
 
 const Category = styled.div`
@@ -54,11 +63,13 @@ const Category = styled.div`
     font-weight: 700;
     margin: 3rem;
     text-align: center;
+    @media (min-width: 768px) and (max-width: 1280px) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 `;
 
-const Spacer = styled.div`
-    flex-grow: 1;
-`;
+
 
 function Header () {
     return(
@@ -70,14 +81,16 @@ function Header () {
                             <a>PYCON KR 2021</a>
                         </Link>
                     </Category>
-                    <Spacer />
-                    {categories.map(category => (
-                        <Category key={category.name}>
-                            <Link href={`/${category.name}`}>
-                                <a>{category.text}</a>
-                                </Link>
-                        </Category>
-                    ))}
+                    
+                    <RightCategoryBlock>
+                        {categories.map(category => (
+                            <Category key={category.name}>
+                                <Link href={`/${category.name}`}>
+                                    <a>{category.text}</a>
+                                    </Link>
+                            </Category>
+                        ))}
+                    </RightCategoryBlock>
                 </HeaderContents>
             </div>
         </Positionier>

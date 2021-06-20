@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { ContentBackgroundBlock } from '../ContentBackground';
 
 const PartBlock = styled.div`
     margin: 5rem 2rem;
-
     & > h2 {
         text-decoration : underline;
     }
@@ -406,7 +406,7 @@ const ContributePart = () => {
 
 export default function CocContext() {
     return (
-        <div>
+        <ContentBackgroundBlock>
             <IntentPart />
             <CommunityPart />
             <CommunicationPart />
@@ -416,6 +416,6 @@ export default function CocContext() {
             <ReportPart />
             <UrgePart />
             <ContributePart />
-        </div>
+        </ContentBackgroundBlock>
     )
 }
