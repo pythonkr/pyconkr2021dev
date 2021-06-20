@@ -10,6 +10,7 @@ const GotoSectionBlock = styled.div`
 
     h1 {
         font-size: 4rem;
+        color: #F5DF4D;
     }
 
     p {

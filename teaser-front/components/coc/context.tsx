@@ -5,10 +5,17 @@ const PartBlock = styled.div`
     margin: 5rem 2rem;
     & > h2 {
         text-decoration : underline;
+        color: #F5DF4D;
+        
     }
     & > div {
         margin-top: 4rem;
     }
+`;
+
+const TitleBlock = styled.div`
+    margin: 0 2rem;
+    color: #F5DF4D;
 `;
 
 const IntentPart = () => {
@@ -407,6 +414,9 @@ const ContributePart = () => {
 export default function CocContext() {
     return (
         <ContentBackgroundBlock>
+            <TitleBlock>
+                <h1>파이콘 한국 행동 강령</h1>
+            </TitleBlock>
             <IntentPart />
             <CommunityPart />
             <CommunicationPart />

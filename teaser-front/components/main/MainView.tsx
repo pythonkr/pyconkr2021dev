@@ -13,6 +13,7 @@ const MainViewBlock = styled.div`
 const SloganBlock = styled.h1`
     font-size: 8rem;
     text-align: center;
+    color: #F5DF4D;
 
     @media (max-width: 768px) {
         font-size: 5rem;
