@@ -2,7 +2,6 @@
 import styled from '@emotion/styled';
 import { css } from "@emotion/react";
 import Image from 'next/image';
-import Pyicon from '../public/img/profile_wht.png';
 
 const PyconLogoBlock = styled.div`
     display: flex;
@@ -57,7 +56,7 @@ function PyconLogo() {
                     border-radius: 50%;
                 `}
                 ><PyImageBlock>
-                    <Image src={Pyicon} alt="python logo" layout="responsive"/>
+                    <Image src="/img/profile_wht.png" width={100} height={100} alt="python logo" layout="responsive"/>
                 </PyImageBlock>
             </TextBlock>
             <TextBlock
