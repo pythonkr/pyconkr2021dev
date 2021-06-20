@@ -2,11 +2,10 @@ import styled from '@emotion/styled';
 import Header from '../../components/Header';
 import PyconLogo from '../../components/PyconLogo';
 import Footer from '../../components/Footer';
+import { ContentBackgroundBlock } from '../../components/ContentBackground';
 
 const SupportBlock = styled.div`
 
-    padding-left: 20%;
-    padding-right: 20%;
 
     h1 {
         font-size: 4rem;
@@ -29,11 +28,13 @@ export default function support() {
         <>
             <Header />
             <PyconLogo />
-            <SupportBlock>
-                <h1>후원 혜택 안내</h1>
-                <h3>2021 파이콘 한국과 함께 하는 파트너스</h3>
-                <AboutSupportBenefitsBlock></AboutSupportBenefitsBlock>
-            </SupportBlock>
+            <ContentBackgroundBlock>
+                <SupportBlock>
+                    <h1>후원 혜택 안내</h1>
+                    <h3>2021 파이콘 한국과 함께 하는 파트너스</h3>
+                    <AboutSupportBenefitsBlock></AboutSupportBenefitsBlock>
+                </SupportBlock>
+            </ContentBackgroundBlock>
             <Footer />
         </>
     )

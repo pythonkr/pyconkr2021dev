@@ -10,6 +10,10 @@ const PyconLogoBlock = styled.div`
     align-items: center;
     margin-top: 10rem;
     margin-bottom: 5rem;
+    margin-right: 2rem;
+    @media (max-width: 768px) {
+        width: 100vh;
+    }
 `;
 
 
@@ -25,6 +29,20 @@ const TextBlock = styled.div`
     vertical-align: middle;
     margin: 1rem;
 
+    @media  (max-width: 1199px) {
+        font-size: 2rem;
+    }
+`;
+
+const PyImageBlock = styled.div`
+    width: 10rem;
+    height: 10rem;
+
+
+    @media (max-width: 1199px) {
+        width: 6rem;
+        height: 6rem;
+    }
 `;
 
 
@@ -37,11 +55,11 @@ function PyconLogo() {
                     color: #939597;
                     padding: 0;
                     border-radius: 50%;
-                    padding-top: 1rem;
-                    padding-right: 1rem;
-                    padding-left: 1rem;
                 `}
-                ><Image src={Pyicon} alt="python logo" width={175} height={175}/></TextBlock>
+                ><PyImageBlock>
+                    <Image src={Pyicon} alt="python logo" layout="responsive"/>
+                </PyImageBlock>
+            </TextBlock>
             <TextBlock
                 css={css`
                     padding-bottom: 2rem;
