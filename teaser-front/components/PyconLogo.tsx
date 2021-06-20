@@ -14,6 +14,9 @@ const PyconLogoBlock = styled.div`
     @media (max-width: 768px) {
         width: 100vh;
     }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        width: 100%;
+    }
 `;
 
 
@@ -29,6 +32,9 @@ const TextBlock = styled.div`
     vertical-align: middle;
     margin: 1rem;
 
+    @media (max-width: 768px) {
+        margin: 0.5rem;
+    }
     @media  (max-width: 1199px) {
         font-size: 2rem;
     }

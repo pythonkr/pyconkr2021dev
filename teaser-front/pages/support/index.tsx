@@ -18,13 +18,16 @@ const SupportBlock = styled.div`
 
 const AboutSupportBenefitsBlock = styled.div`
     height: 50rem;
-    width: 80rem;
+    width: 50rem;
     background-color: #f5df4d;
     border-radius: 1rem;
     
-    @media (min-width: 768px) and (max-width: 1280px) {
-        width: 45rem;
+    @media (max-width: 768px) {
+        width: 70vh;
     }
+    /* @media (min-width: 768px) and (max-width: 1280px) {
+        width: 70rem;
+    } */
 `;
 
 export default function support() {
