@@ -12,6 +12,15 @@ export const GuideContributeBlock = styled.div`
     h3 {
         font-size: 2rem;
     }
+
+    @media (max-width: 1199px) {
+        h1 {
+        font-size: 3.5rem;
+        }
+        h3 {
+            font-size: 1.75rem;
+        }
+    }
 `;
 
 function GotoContribute() {

@@ -50,6 +50,10 @@ const HeaderContents = styled.div`
     @media (min-width: 768px) and (max-width: 1280px) {
         width: 768px;
     }
+    @media (max-width: 768px) {
+        width: 100vh;
+        justify-content: center;
+    }
 `;
 
 const RightCategoryBlock = styled.div`
@@ -66,6 +70,11 @@ const Category = styled.div`
     @media (min-width: 768px) and (max-width: 1280px) {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 0.75rem;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
     }
 `;
 
