@@ -12,7 +12,7 @@ const PyconLogoBlock = styled.div`
     margin-right: 2rem;
     color: #F5DF4D;
     @media (max-width: 768px) {
-        width: 100%;
+        width: 100vh;
     }
 `;
 
