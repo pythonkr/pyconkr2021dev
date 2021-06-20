@@ -1,16 +1,17 @@
+import styled from '@emotion/styled';
 import Header from '../../components/Header';
 import PyconLogo from '../../components/PyconLogo';
-import AboutContext from '../../components/about/AboutContext';
 import Footer from '../../components/Footer';
+import CocContext from '../../components/coc/context';
 
-
-export default function about() {
+export default function coc() {
     return (
-        <div>
+        <>
             <Header />
             <PyconLogo />
-            <AboutContext />
+            <CocContext />
             <Footer />
-        </div>
+        </>
     )
 }
+

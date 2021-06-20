@@ -32,29 +32,20 @@ const categories:CategoriesType = [
 
 const Positionier = styled.div`
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     position: fixed;
+    z-index: 990;
     top: 0px;
     width: 100%;
-`;
-
-const BlackBackground = styled.div`
-    background: black;
-    display: flex;
-    height: auto;
-    
-    align-items: center;
+    background-color: black;
 `;
 
 const HeaderContents = styled.div`
     width: 1280px;
     display: flex;
-    
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-
-    padding-right: 3rem;
-    padding-left: 1rem;
+    padding-right: 5rem;
 `;
 
 const Category = styled.div`
@@ -72,7 +63,7 @@ const Spacer = styled.div`
 function Header () {
     return(
         <Positionier>
-            <BlackBackground>
+            <div>
                 <HeaderContents>
                     <Category>
                         <Link href="/">
@@ -88,7 +79,7 @@ function Header () {
                         </Category>
                     ))}
                 </HeaderContents>
-            </BlackBackground>
+            </div>
         </Positionier>
     );
 }

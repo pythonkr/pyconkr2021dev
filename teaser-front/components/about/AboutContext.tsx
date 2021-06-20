@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding-left: 20%;
+    padding-right: 20%;
     
     h1 {
         font-size: 4rem;
@@ -13,7 +15,7 @@ const AboutBlock = styled.div`
     }
 
     p {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 `;
 
