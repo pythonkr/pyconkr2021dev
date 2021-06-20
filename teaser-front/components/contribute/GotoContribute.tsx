@@ -8,6 +8,7 @@ export const GuideContributeBlock = styled.div`
 
     h1 {
         font-size: 4rem;
+        color: #F5DF4D;
     }
     h3 {
         font-size: 2rem;

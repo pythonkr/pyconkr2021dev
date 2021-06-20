@@ -7,10 +7,12 @@ const AboutBlock = styled.div`
     
     h1 {
         font-size: 4rem;
+        color: #F5DF4D;
     }
 
     h3 {
         font-size: 3rem;
+        color: #F5DF4D;
     }
 
     p {

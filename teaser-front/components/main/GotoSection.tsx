@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { ContentBackgroundBlock } from '../ContentBackground';
+
 
 const GotoSectionBlock = styled.div`
     margin-top: 3rem;
@@ -8,6 +10,7 @@ const GotoSectionBlock = styled.div`
 
     h1 {
         font-size: 4rem;
+        color: #F5DF4D;
     }
 
     p {
@@ -21,7 +24,7 @@ export function GotoSupport () {
         <ContentBackgroundBlock>
             <GotoSectionBlock>
                 <h1>후원하기</h1>
-                <p>파이콘 한국 2021 후원 안내 →</p>
+                <p><Link href={`/contribute`}>파이콘 한국 2021 후원 안내 →</Link></p>
             </GotoSectionBlock>
         </ContentBackgroundBlock>
     )
@@ -32,7 +35,7 @@ export function GotoCoc () {
         <ContentBackgroundBlock>
             <GotoSectionBlock>
                 <h1>행동강령</h1>
-                <p>파이콘 한국 2021 행동 강령 확인하기 →</p>
+                <p><Link href={`/coc`}>파이콘 한국 2021 행동 강령 확인하기 →</Link></p>
             </GotoSectionBlock>
         </ContentBackgroundBlock>
     )
