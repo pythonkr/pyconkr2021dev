@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
+import {useState, useCallback} from 'react';
+import { css } from '@emotion/react';
+import {useRouter} from 'next/router';
 
 
 type CategoriesType = CategoryType[]
@@ -61,12 +64,16 @@ const RightCategoryBlock = styled.div`
     flex-direction: row;
 `;
 
-const Category = styled.div`
+const Category = styled.div<{active: boolean}>`
     font-size: 1.25rem;
     letter-spacing: 2px;
     font-weight: 700;
     margin: 3rem;
     text-align: center;
+
+    ${(props) => props.active && css`color: #F5DF4D;`
+    }
+
     @media (min-width: 768px) and (max-width: 1280px) {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -81,11 +88,14 @@ const Category = styled.div`
 
 
 function Header () {
+
+    const router = useRouter();
+
     return(
         <Positionier>
             <div>
                 <HeaderContents>
-                    <Category>
+                    <Category active={router.pathname === '/'}>
                         <Link href="/">
                             <a>PYCON KR 2021</a>
                         </Link>
@@ -93,7 +103,7 @@ function Header () {
                     
                     <RightCategoryBlock>
                         {categories.map(category => (
-                            <Category key={category.name}>
+                            <Category key={category.name} active={router.pathname === `/${category.name}`} >
                                 <Link href={`/${category.name}`}>
                                     <a>{category.text}</a>
                                     </Link>
