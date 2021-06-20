@@ -4,6 +4,8 @@ const GotoSectionBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     padding-top: 3rem;
+    padding-left: 20%;
+    padding-right: 20%;
 
     h1 {
         font-size: 4rem;

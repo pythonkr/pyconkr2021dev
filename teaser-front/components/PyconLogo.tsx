@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { css } from "@emotion/react";
+import Image from 'next/image';
+import Pyicon from '../public/img/profile_wht.png';
 
 const PyconLogoBlock = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 16rem;
-    margin-bottom: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
 `;
 
 
@@ -22,6 +24,7 @@ const TextBlock = styled.div`
     text-align: center;
     vertical-align: middle;
     margin: 1rem;
+
 `;
 
 
@@ -32,8 +35,13 @@ function PyconLogo() {
                 css={css`
                     border-color: #939597;
                     color: #939597;
+                    padding: 0;
+                    border-radius: 50%;
+                    padding-top: 1rem;
+                    padding-right: 1rem;
+                    padding-left: 1rem;
                 `}
-                >ic</TextBlock>
+                ><Image src={Pyicon} alt="python logo" width={175} height={175}/></TextBlock>
             <TextBlock
                 css={css`
                     padding-bottom: 2rem;

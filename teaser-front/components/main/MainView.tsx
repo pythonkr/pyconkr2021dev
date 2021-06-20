@@ -4,7 +4,8 @@ import styled from '@emotion/styled';
 const MainViewBlock = styled.div`
     text-align: center;
     padding-top: 2rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
+    height: 100vh;
     margin-bottom: 8rem;
     
 `;
@@ -12,6 +13,7 @@ const MainViewBlock = styled.div`
 const SloganBlock = styled.h1`
     font-size: 9rem;
     font-weight: 700;
+    text-align: center;
 `;
 
 const ScheduleBlock = styled.div`
@@ -30,14 +32,21 @@ const RegisterButtonBlock = styled.button`
     padding: 1rem 20rem;
 `;
 
+export function Slogan() {
+
+    return (
+        <SloganBlock>
+            Stay Home, <br />
+            Stay Connected
+        </SloganBlock>
+    )  
+}
+
 
 function MainView () {
     return (
         <MainViewBlock>
-            <SloganBlock>
-                Stay Home, <br />
-                Stay Connected
-            </SloganBlock>
+            <Slogan />
             <ScheduleBlock>
                 온라인 컨퍼런스 10/2(토)~10/3(일)
             </ScheduleBlock>
