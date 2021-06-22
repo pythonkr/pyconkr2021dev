@@ -48,7 +48,6 @@ const HeaderContents = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: center;
 
     @media (min-width: 768px) and (max-width: 1280px) {
         width: 768px;
@@ -59,12 +58,19 @@ const HeaderContents = styled.div`
     }
 `;
 
+const SupportToggle = styled.div`
+    background-color: black;
+    z-index: 995;
+    color: white;
+    max-width: 100%;
+`;
+
 const RightCategoryBlock = styled.div`
     display: flex;
     flex-direction: row;
 `;
 
-const Category = styled.div<{active: boolean}>`
+const Category = styled.div<{active?: boolean}>`
     font-size: 1.25rem;
     letter-spacing: 2px;
     font-weight: 700;
@@ -77,6 +83,7 @@ const Category = styled.div<{active: boolean}>`
     @media (min-width: 768px) and (max-width: 1280px) {
         margin-left: 1rem;
         margin-right: 1rem;
+        font-size: 1rem;
     }
     @media (max-width: 768px) {
         font-size: 0.75rem;
@@ -85,11 +92,19 @@ const Category = styled.div<{active: boolean}>`
     }
 `;
 
+const SupportCategory = styled(Category)`
+    margin: 0;
+    margin-top: 3rem;
+`;
+
 
 
 function Header () {
 
     const router = useRouter();
+    const [navsupport, SetNavSupport] = useState<boolean>(false);
+
+    const onToggle = () => SetNavSupport(!navsupport)
 
     return(
         <Positionier>
@@ -100,15 +115,45 @@ function Header () {
                             <a>PYCON KR 2021</a>
                         </Link>
                     </Category>
+
+                    
                     
                     <RightCategoryBlock>
-                        {categories.map(category => (
-                            <Category key={category.name} active={router.pathname === `/${category.name}`} >
-                                <Link href={`/${category.name}`}>
-                                    <a>{category.text}</a>
-                                    </Link>
-                            </Category>
-                        ))}
+                        <Category active={router.pathname === `/about`}>
+                            <Link href="/about">
+                                <a>ABOUT</a>
+                            </Link>
+                        </Category>
+                        <Category active={router.pathname === `/contribute`}>
+                            <Link href="/contribute">
+                                <a>기여하기</a>
+                            </Link>
+                        </Category>
+
+                        <Category onClick={() => onToggle()} active={navsupport}>
+                            후원하기
+                            {navsupport && 
+                                <SupportToggle>
+                                    <SupportCategory active={router.pathname === `/support`}>
+                                        <Link href="/support">
+                                            <a>후원 혜택 안내</a>
+                                        </Link>
+                                    </SupportCategory>
+                                    {/* <SupportCategory active={router.pathname === `/support`}>
+                                        <Link href="/support">
+                                            <a>후원 혜택 안내</a>
+                                        </Link>
+                                    </SupportCategory> */}
+                                </SupportToggle>
+                            }
+                            
+                            
+                        </Category>
+                        <Category active={router.pathname === `/coc`}>
+                            <Link href="/coc">
+                                <a>행동강령</a>
+                            </Link>
+                        </Category>
                     </RightCategoryBlock>
                 </HeaderContents>
             </div>

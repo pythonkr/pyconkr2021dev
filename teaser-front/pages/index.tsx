@@ -21,7 +21,9 @@ export default function Home() {
         <GotoCoc />
         <ContentBackgroundBlock>
           <Image src="/img/dot1.png" width={700} height={100} alt="dot1" layout="intrinsic" />
+        </ContentBackgroundBlock>
           <PyconLogo />
+        <ContentBackgroundBlock>
           <Image src="/img/dot2.png" width={700} height={100} alt="dot1" layout="responsive" />
         </ContentBackgroundBlock>
       

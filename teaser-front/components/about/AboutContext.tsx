@@ -58,9 +58,9 @@ function AboutContext() {
                 <p>파이콘 한국 2020에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 
                 <p>
-                    이메일 pyconkr@pycon.kr<br />
-                    페이스북 https://www.facebook.com/pyconkorea/<br />
-                    후원사 sponsor@pycon.kr
+                    <strong>이메일</strong> pyconkr@pycon.kr<br />
+                    <strong>페이스북</strong> https://www.facebook.com/pyconkorea/<br />
+                    <strong>후원사</strong> sponsor@pycon.kr
                 </p>
             </AboutBlock>
             </div>
