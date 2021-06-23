@@ -130,8 +130,8 @@ function Header () {
                             </Link>
                         </Category>
 
-                        <Category onClick={() => onToggle()} active={navsupport}>
-                            후원하기
+                        <Category onClick={() => onToggle()}>
+                            {navsupport ? '후원하기▴' : '후원하기▾'}
                             {navsupport && 
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === `/support`}>
