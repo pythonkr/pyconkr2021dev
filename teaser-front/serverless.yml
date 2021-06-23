@@ -1,0 +1,4 @@
+2021pycon-teaser:
+    component: serverless-next.js
+    input:
+        domain: "2021.dev.pycon.kr"
