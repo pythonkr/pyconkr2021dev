@@ -58,9 +58,9 @@ function AboutContext() {
                 <p>파이콘 한국 2020에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 
                 <p>
-                    <strong>이메일</strong> pyconkr@pycon.kr<br />
-                    <strong>페이스북</strong> https://www.facebook.com/pyconkorea/<br />
-                    <strong>후원사</strong> sponsor@pycon.kr
+                    <strong>이메일</strong> <a href="mailto:pyconkr@pycon.kr" target="_blank" rel="noreferrer">pyconkr@pycon.kr</a><br />
+                    <strong>페이스북</strong> <a href="https://www.facebook.com/pyconkorea/" target="_blank" rel="noreferrer">https://www.facebook.com/pyconkorea/</a><br />
+                    <strong>후원사</strong> <a href="mailto:sponsor@pycon.kr" target="_blank" rel="noreferrer">sponsor@pycon.kr</a>
                 </p>
             </AboutBlock>
             </div>
