@@ -3,20 +3,39 @@ import { ContentBackgroundBlock } from '../ContentBackground';
 
 const PartBlock = styled.div`
     margin: 5rem 2rem;
+
+    line-height: 3rem;
+
+    h3 {
+        font-size: 2rem;
+    }
+
     & > h2 {
-        text-decoration : underline;
+        text-decoration : underline 10px;
         color: #F5DF4D;
-        
+        font-size: 2rem;
     }
     & > div {
         margin-top: 4rem;
+    }
+
+    p {
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+
+    li {
+        font-size: 1.75rem;
+        font-weight: 500;
     }
 `;
 
 const TitleBlock = styled.div`
     margin: 0 2rem;
     color: #F5DF4D;
+    font-size: 2rem;
 `;
+
 
 const IntentPart = () => {
     return (

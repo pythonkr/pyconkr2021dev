@@ -5,7 +5,6 @@ export const GuideContributeBlock = styled.div`
     font-weight: 700;
     padding-top: 2rem;
     padding-bottom: 3rem;
-    width: 50rem;
 
     h1 {
         font-size: 4rem;
