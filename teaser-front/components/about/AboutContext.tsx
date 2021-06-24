@@ -54,8 +54,8 @@ function AboutContext() {
                 </p>
             </AboutBlock>
             <AboutBlock>
-                <h1>문의 & 공식 계정</h1>
-                <p>파이콘 한국 2020에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
+                <h1>문의 공식 계정</h1>
+                <p>파이콘 한국 2021에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 
                 <p>
                     <strong>이메일</strong> <a href="mailto:pyconkr@pycon.kr" target="_blank" rel="noreferrer">pyconkr@pycon.kr</a><br />
