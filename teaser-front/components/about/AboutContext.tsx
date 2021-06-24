@@ -1,13 +1,18 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 
-const AboutBlock = styled.div`
+export const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     
     h1 {
         font-size: 4rem;
         color: #F5DF4D;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: #F5DF4D
     }
 
     h3 {
@@ -56,8 +61,6 @@ function AboutContext() {
             <AboutBlock>
 
                 <h1>문의 공식 계정</h1>
-
-                <h1>문의 & 공식 계정</h1>
 
                 <p>파이콘 한국 2021에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 

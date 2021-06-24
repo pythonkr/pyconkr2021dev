@@ -136,14 +136,19 @@ function Header () {
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === `/support`}>
                                         <Link href="/support">
-                                            <a>후원 혜택 안내</a>
+                                            <a>후원사 모집</a>
                                         </Link>
                                     </SupportCategory>
-                                    {/* <SupportCategory active={router.pathname === `/support`}>
-                                        <Link href="/support">
-                                            <a>후원 혜택 안내</a>
+                                    <SupportCategory active={router.pathname === `/supportvalue`}>
+                                        <Link href="/supportvalue">
+                                            <a>후원사의 가치</a>
                                         </Link>
-                                    </SupportCategory> */}
+                                    </SupportCategory>
+                                    <SupportCategory active={router.pathname === `/supportbenefits`}>
+                                        <Link href="/supportbenefits">
+                                            <a>후원사 혜택 안내</a>
+                                        </Link>
+                                    </SupportCategory>
                                 </SupportToggle>
                             }
                             
