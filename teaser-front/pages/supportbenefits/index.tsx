@@ -1,15 +1,15 @@
+import styled from '@emotion/styled';
 import Header from '../../components/Header';
 import PyconLogo from '../../components/PyconLogo';
 import Footer from '../../components/Footer';
-import AboutSponsors from '../../components/support/AboutSponsors';
+import DetailBenefits from '../../components/support/DetailBenefits';
 
-
-export default function support() {
+export default function supportbenefits() {
     return (
         <>
             <Header />
             <PyconLogo />
-            <AboutSponsors />
+            <DetailBenefits />
             <Footer />
         </>
     )

@@ -1,13 +1,18 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 
-const AboutBlock = styled.div`
+export const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     
     h1 {
         font-size: 4rem;
         color: #F5DF4D;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: #F5DF4D
     }
 
     h3 {
