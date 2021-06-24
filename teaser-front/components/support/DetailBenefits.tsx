@@ -9,9 +9,13 @@ export const TitleSponsorBlock = styled.h1`
     font-size: 4rem;
 `;
 
+const DetailBenefitsBlock = styled(ContentBackgroundBlock)`
+    line-height: 3rem;
+`;
+
 function DetailBenefits() {
     return (
-        <ContentBackgroundBlock>
+        <DetailBenefitsBlock>
             <TitleSponsorBlock>구체적인 후원사 혜택 상세</TitleSponsorBlock>
             <AboutBlock>
                 <h1>키스톤 인터뷰</h1>
@@ -70,7 +74,7 @@ function DetailBenefits() {
                     <p>파이콘 한국 홈페이지는 지난 홈페이지도 계속 보관, 유지되어 지속적으로 로고가 노출됩니다. 파이콘 한국 홈페이지는 개발자들이 지난 세션 자료를 찾기 위해서 지속적으로 방문하는 웹사이트라는 점을 다시 한 번 강조드립니다.</p>
                 </div>
             </AboutBlock>
-        </ContentBackgroundBlock>
+        </DetailBenefitsBlock>
     )
 }
 
