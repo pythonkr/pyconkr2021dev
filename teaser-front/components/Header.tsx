@@ -40,7 +40,7 @@ const Positionier = styled.div`
     z-index: 990;
     top: 0px;
     width: 100%;
-    background-color: black;
+    background-color: #121212;
 `;
 
 const HeaderContents = styled.div`
