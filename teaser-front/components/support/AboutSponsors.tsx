@@ -22,8 +22,8 @@ function AboutSponsors() {
             <SupportBlock>
                 <h1>후원 혜택 안내</h1>
                 <h3>2021 파이콘 한국과 함께 하는 파트너스</h3>
+                <TableSponsor />
             </SupportBlock>
-            <TableSponsor />
         </ContentBackgroundBlock>
     )
 }
