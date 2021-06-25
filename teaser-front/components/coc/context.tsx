@@ -30,7 +30,7 @@ const PartBlock = styled.div`
     }
 `;
 
-const TitleBlock = styled.div`
+export const TitleBlock = styled.div`
     margin: 0 2rem;
     color: #F5DF4D;
     font-size: 2rem;

@@ -127,8 +127,11 @@ const PyconPersonsBlock = styled.div`
 
     h2 {
         color: #F5DF4D;
-        text-decoration: underline 10px;
         font-size: 3rem;
+
+        span {
+            text-decoration: underline 10px;
+        }
     }
     
 `;
@@ -169,7 +172,7 @@ function MakePyCon() {
                 <TextBlock>파이콘 한국 준비위원회는 2014년 조직되어, 올해 여덟 번째 한국에서의 파이콘 행사를 준비하고 있습니다.<br />
                     준비위원회는 매년 신규 멤버를 모집하는 파이콘을 사랑하는 사람들의 열린 모임입니다.</TextBlock>
                 <PyconPersonsBlock>
-                    <h2>준비위원회 명단 {'('}가나다 순{')'} </h2>
+                    <h2><span>준비위원회 명단</span> {'('}가나다 순{')'} </h2>
                     <div>
                         {pyconPersons.map(person => (
                             <PyconPersonBlock key={person.name}>
@@ -189,7 +192,7 @@ function MakePyCon() {
                     </div>
                 </PyconPersonsBlock>
                 <PyconPersonsBlock>
-                    <h2>환영하는 분위기를 만들어 주세요</h2>
+                    <h2><span>환영하는 분위기를 만들어 주세요</span></h2>
                     <TextBlock>“파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 행사입니다. 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다. 발표자, 준비위원회, 참가자 등 모든 인원이 금전적 이득 없이 순수히 오픈소스 프로그래밍 언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.<br />
                         파이콘 한국 행사 진행과정을 포함하여 모든 의사소통 과정에서 CoC를 준수하고, 파이콘 한국 준비위원회 가이드를 따라주세요. 파이콘 한국 준비위원회는 전원 자원봉사로 이루어진 커뮤니티이기에 모든 요청에 실시간으로 대응하기 어렵습니다.”</TextBlock>
 
