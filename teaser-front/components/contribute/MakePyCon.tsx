@@ -26,7 +26,7 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '강종연',
-        img: `/img/personimg/jongyeon.jpg`,
+        img: `/img/personimg/jongyeon.JPG`,
         introduce: '다양한 곳에서 활동하고 있는 액티브한 개발자입니다.'
     },
     {
