@@ -59,7 +59,7 @@ const HeaderContents = styled.div`
 `;
 
 const SupportToggle = styled.div`
-    background-color: black;
+    background-color: #121212;
     z-index: 995;
     color: white;
     max-width: 100%;
