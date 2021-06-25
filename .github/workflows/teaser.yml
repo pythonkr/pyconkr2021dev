@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CD
 
 # Controls when the workflow will run
 on:
@@ -26,12 +26,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: actions/setup-node@v1
         with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build # will run `yarn build` command
+          node-version: 14
+      - run: npm install -g yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+#       - uses: borales/actions-yarn@v2.3.0
+#         with:
+#           cmd: install # will run `yarn install` command
+#       - uses: borales/actions-yarn@v2.3.0
+#         with:
+#           cmd: build # will run `yarn build` command
       #- uses: borales/actions-yarn@v2.3.0
       #  with:
       #    cmd: test # will run `yarn test` command
