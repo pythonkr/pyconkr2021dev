@@ -37,7 +37,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_IAM_MANAGER_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_IAM_MANAGER_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
-      - run: aws s3 sync ./out s3://pyconkr-2021-devdev
+      - run: aws s3 sync ./out s3://pyconkr-2021-devdev --acl public-read
+      - run: aws cloudfront create-invalidation --distribution-id E2ENGY1BIJ5F53 --paths "/*"
 #       - uses: borales/actions-yarn@v2.3.0
 #         with:
 #           cmd: install # will run `yarn install` command
