@@ -15,6 +15,7 @@ const GotoSectionBlock = styled.div`
 
     p {
         font-size: 2rem;
+        cursor: pointer;
     }
 `;
 
