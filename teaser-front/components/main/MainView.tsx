@@ -7,7 +7,7 @@ const MainViewBlock = styled.div`
     padding-top: 2rem;
     margin-top: 4rem;
     margin-bottom: 8rem;
-    
+    color: #939597;
 `;
 
 const SloganBlock = styled.h1`
@@ -68,6 +68,9 @@ export function Slogan() {
     )  
 }
 
+const GuideButtonBlock = styled.div`
+    font-size: 1.5rem;
+`;
 
 function MainView () {
     return (
@@ -77,9 +80,12 @@ function MainView () {
                 <ScheduleBlock>
                     온라인 컨퍼런스 10/2(토)~10/3(일)
                 </ScheduleBlock>
-                <RegisterButtonBlock>
+                {/* <RegisterButtonBlock>
                     참가 등록
                 </RegisterButtonBlock>
+                <GuideButtonBlock>
+                    * 참가버튼은 내부 일정이 확정되는대로 활성화 될 예정입니다.
+                </GuideButtonBlock> */}
             </MainViewBlock>
         </ContentBackgroundBlock>
         
