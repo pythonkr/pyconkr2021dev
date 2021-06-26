@@ -6,8 +6,9 @@ const MainViewBlock = styled.div`
     text-align: center;
     padding-top: 2rem;
     margin-top: 4rem;
-    margin-bottom: 8rem;
     color: #939597;
+
+    align-items: center;
 `;
 
 const SloganBlock = styled.h1`
@@ -16,7 +17,7 @@ const SloganBlock = styled.h1`
     color: #F5DF4D;
 
     @media (max-width: 768px) {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
     @media (min-width: 768px) and (max-width: 1199px) {
         font-size: 6rem;
