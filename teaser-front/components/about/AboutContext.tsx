@@ -5,6 +5,8 @@ export const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     
+    line-height: 3rem;
+
     h1 {
         font-size: 4rem;
         color: #F5DF4D;
