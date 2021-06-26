@@ -88,8 +88,8 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '전병우',
-        img: ``,
-        introduce: ''
+        img: `/img/personimg/byungwoo.jpg`,
+        introduce: '파이콘이 누군가에게 희망과 기회가 되길바라는 마음으로 참여하고 있습니다.'
     },
     {
         name: '추교영',
