@@ -77,6 +77,10 @@ const Category = styled.div<{active?: boolean}>`
     margin: 3rem;
     text-align: center;
 
+    span {
+        cursor: pointer;
+    }
+
     ${(props) => props.active && css`color: #F5DF4D;`
     }
 
@@ -131,7 +135,7 @@ function Header () {
                         </Category>
 
                         <Category onClick={() => onToggle()}>
-                            {navsupport ? '후원하기▴' : '후원하기▾'}
+                            <span>{navsupport ? '후원하기▴' : '후원하기▾'}</span>
                             {navsupport && 
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === `/support`}>

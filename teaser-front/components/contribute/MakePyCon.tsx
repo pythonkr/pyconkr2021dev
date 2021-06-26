@@ -136,21 +136,22 @@ const PyconPersonsBlock = styled.div`
     
 `;
 
-const PersonImgBlock = styled.div`
+const BlankImgBlock = styled.div`
     width: 8rem;
     height: 8rem;
     border-radius: 4rem;
     margin: 1rem;
     background-color: #939597;
+`;
+
+const PersonImgBlock = styled(BlankImgBlock)`
+
+    background-color: transparent;
 
     Img {
         border-radius: 4rem;
     }
-
-    
 `;
-
-
 
 const PersonIntroBlock = styled.div`
     align-items: center;
@@ -176,9 +177,8 @@ function MakePyCon() {
                     <div>
                         {pyconPersons.map(person => (
                             <PyconPersonBlock key={person.name}>
-                                <PersonImgBlock>
-                                    {person.img && <Image src={person.img} width={100} height={100} alt={person.name} layout="responsive"/>}
-                                </PersonImgBlock>
+                                {person.img ? <PersonImgBlock><Image src={person.img} width={100} height={100} alt={person.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
+                                
                                 <PersonIntroBlock>
                                     <h3>{person.name}</h3>
                                     <TextBlock>
