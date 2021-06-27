@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
+import Link from 'next/link';
 
 export const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     
+    line-height: 3rem;
+
     h1 {
         font-size: 4rem;
         color: #F5DF4D;
@@ -65,9 +68,9 @@ function AboutContext() {
                 <p>파이콘 한국 2021에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 
                 <p>
-                    <strong>이메일</strong> <a href="mailto:pyconkr@pycon.kr" target="_blank" rel="noreferrer">pyconkr@pycon.kr</a><br />
-                    <strong>페이스북</strong> <a href="https://www.facebook.com/pyconkorea/" target="_blank" rel="noreferrer">https://www.facebook.com/pyconkorea/</a><br />
-                    <strong>후원사</strong> <a href="mailto:sponsor@pycon.kr" target="_blank" rel="noreferrer">sponsor@pycon.kr</a>
+                    <strong>이메일</strong> <Link href="mailto:pyconkr@pycon.kr"><a target="_blank" rel="noreferrer">pyconkr@pycon.kr</a></Link><br />
+                    <strong>페이스북</strong> <Link href="https://www.facebook.com/pyconkorea/"><a target="_blank" rel="noreferrer">https://www.facebook.com/pyconkorea/</a></Link><br />
+                    <strong>후원사</strong> <Link href="mailto:sponsor@pycon.kr"><a target="_blank" rel="noreferrer">sponsor@pycon.kr</a></Link>
                 </p>
             </AboutBlock>
             </div>

@@ -26,7 +26,7 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '강종연',
-        img: `/img/personimg/jongyeon.jpg`,
+        img: `/img/personimg/jongyeon.JPG`,
         introduce: '다양한 곳에서 활동하고 있는 액티브한 개발자입니다.'
     },
     {
@@ -88,8 +88,8 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '전병우',
-        img: ``,
-        introduce: ''
+        img: `/img/personimg/byungwoo.jpg`,
+        introduce: '파이콘이 누군가에게 희망과 기회가 되길바라는 마음으로 참여하고 있습니다.'
     },
     {
         name: '추교영',
@@ -136,21 +136,22 @@ const PyconPersonsBlock = styled.div`
     
 `;
 
-const PersonImgBlock = styled.div`
+const BlankImgBlock = styled.div`
     width: 8rem;
     height: 8rem;
     border-radius: 4rem;
     margin: 1rem;
     background-color: #939597;
+`;
+
+const PersonImgBlock = styled(BlankImgBlock)`
+
+    background-color: transparent;
 
     Img {
         border-radius: 4rem;
     }
-
-    
 `;
-
-
 
 const PersonIntroBlock = styled.div`
     align-items: center;
@@ -176,9 +177,8 @@ function MakePyCon() {
                     <div>
                         {pyconPersons.map(person => (
                             <PyconPersonBlock key={person.name}>
-                                <PersonImgBlock>
-                                    {person.img && <Image src={person.img} width={100} height={100} alt={person.name} layout="responsive"/>}
-                                </PersonImgBlock>
+                                {person.img ? <PersonImgBlock><Image src={person.img} width={100} height={100} alt={person.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
+                                
                                 <PersonIntroBlock>
                                     <h3>{person.name}</h3>
                                     <TextBlock>

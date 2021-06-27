@@ -59,7 +59,7 @@ const HeaderContents = styled.div`
 `;
 
 const SupportToggle = styled.div`
-    background-color: black;
+    background-color: #121212;
     z-index: 995;
     color: white;
     max-width: 100%;
@@ -76,6 +76,10 @@ const Category = styled.div<{active?: boolean}>`
     font-weight: 700;
     margin: 3rem;
     text-align: center;
+
+    span {
+        cursor: pointer;
+    }
 
     ${(props) => props.active && css`color: #F5DF4D;`
     }
@@ -131,7 +135,7 @@ function Header () {
                         </Category>
 
                         <Category onClick={() => onToggle()}>
-                            {navsupport ? '후원하기▴' : '후원하기▾'}
+                            <span>{navsupport ? '후원하기▴' : '후원하기▾'}</span>
                             {navsupport && 
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === `/support`}>
