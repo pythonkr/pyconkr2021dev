@@ -1,34 +1,8 @@
-import styled from '@emotion/styled';
 import Header from '../../components/Header';
 import PyconLogo from '../../components/PyconLogo';
 import Footer from '../../components/Footer';
-import { ContentBackgroundBlock } from '../../components/ContentBackground';
+import AboutSponsors from '../../components/support/AboutSponsors';
 
-const SupportBlock = styled.div`
-
-
-    h1 {
-        font-size: 4rem;
-        color: #F5DF4D;
-    }
-    h3 {
-        font-size: 2rem;
-    }
-`;
-
-const AboutSupportBenefitsBlock = styled.div`
-    height: 50rem;
-    width: 50rem;
-    background-color: #f5df4d;
-    border-radius: 1rem;
-    
-    @media (max-width: 768px) {
-        width: 70vh;
-    }
-    /* @media (min-width: 768px) and (max-width: 1280px) {
-        width: 70rem;
-    } */
-`;
 
 export default function support() {
     return (
@@ -42,6 +16,7 @@ export default function support() {
                     <AboutSupportBenefitsBlock></AboutSupportBenefitsBlock>
                 </SupportBlock>
             </ContentBackgroundBlock>
+            <AboutSponsors />
             <Footer />
         </>
     )

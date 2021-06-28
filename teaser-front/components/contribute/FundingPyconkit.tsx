@@ -7,15 +7,18 @@ const AboutFundingBlock = styled.div`
     border-radius: 1rem;
     width: 40rem;
 `;
+const ComingSoonBlock = styled.h3`
+    color: #939597;
+`;
 
 function FundingPyconkit () {
     return(
         <ContentBackgroundBlock>
             <GuideContributeBlock>
                 <div>
-                    <h1>PYCON 2021 KIT</h1>
-                    <h3>파이콘 2021 한국 굿즈 펀딩하기</h3>
-                    <AboutFundingBlock></AboutFundingBlock>
+                    <h1>2021 PYCON KIT</h1>
+                    <h3>2021 파이콘 한국 굿즈 펀딩하기</h3>
+                    <ComingSoonBlock>Coming Soon...</ComingSoonBlock>
                 </div>
             </GuideContributeBlock>
         </ContentBackgroundBlock>
