@@ -143,6 +143,11 @@ function Header () {
                                             <a>후원사 모집</a>
                                         </Link>
                                     </SupportCategory>
+                                    <SupportCategory active={router.pathname === `/supportjoin`}>
+                                        <Link href="/supportjoin">
+                                            <a>후원사로 참여하기</a>
+                                        </Link>
+                                    </SupportCategory>
                                     <SupportCategory active={router.pathname === `/supportvalue`}>
                                         <Link href="/supportvalue">
                                             <a>후원사의 가치</a>
