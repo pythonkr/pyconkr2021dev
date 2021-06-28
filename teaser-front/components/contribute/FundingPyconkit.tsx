@@ -13,8 +13,8 @@ function FundingPyconkit () {
         <ContentBackgroundBlock>
             <GuideContributeBlock>
                 <div>
-                    <h1>2021 PYCON KIT</h1>
-                    <h3>2021 파이콘 한국 굿즈 펀딩하기</h3>
+                    <h1>PYCON 2021 KIT</h1>
+                    <h3>파이콘 2021 한국 굿즈 펀딩하기</h3>
                     <AboutFundingBlock></AboutFundingBlock>
                 </div>
             </GuideContributeBlock>
