@@ -41,14 +41,14 @@ const ScheduleBlock = styled.div`
     }
 `;
 
-const RegisterButtonBlock = styled.button`
+export const RegisterButtonBlock = styled.button`
     background-color: #F5DF4D;
     color: black;
     border-radius: 4rem;
     font-size: 3rem;
     font-weight: 700;
     padding: 1rem 17rem;
-
+    margin-bottom: 3rem;
     @media (max-width: 768px) {
         padding: 1rem 5rem;
         font-size: 1.5rem;
