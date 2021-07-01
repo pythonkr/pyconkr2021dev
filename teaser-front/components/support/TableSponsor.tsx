@@ -48,6 +48,14 @@ const aboutBenefits:aboutBenefitsType = [
         name: '키스톤 인터뷰',
         contents: ['O', 'X', 'X', 'X', 'X', 'X', 'X']
     },
+    {
+        name: '후원사 수',
+        contents: ['1', '5', '5', '3', '4', '10', '제한 없음']
+    },
+    {
+        name: 'col total',
+        contents: ['1000', '3500', '2500', '1200', '400', '10', ' ']
+    },
 ]
 
 
@@ -80,6 +88,10 @@ function TableSponsor() {
                             </TableRow>
                         )
                     })}
+                    <TableRow>
+                        <TableCell>total</TableCell>
+                        <TableCell>최대 8610만원</TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
         </TableContainer>
