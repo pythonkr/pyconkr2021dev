@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 import { AboutBlock } from '../about/AboutContext';
 import Image from 'next/image';
+import Link from 'next/link';
 // import gateherImg from '../../public/img/gathertown.png';
 
 export const TitleSponsorBlock = styled.h1`
@@ -14,6 +15,10 @@ export const TitleSponsorBlock = styled.h1`
 `;
 
 const AboutbenefitsBlock = styled(AboutBlock)`
+
+    span {
+        color: #F5DF4D;
+    }
 
     @media (max-width: 768px) {
         h1 {
@@ -69,7 +74,16 @@ function DetailBenefits() {
                 <p>제한된 3분 10초라는 시간 동안 파이썬에 관한 여러분의 이야기를 자유롭게 들려주실 수 있는 기회입니다. 회사에 대한 소개, 앞으로의 비전, 우리 회사/단체의 자랑 또는 채용 등 어떤 내용이라도 좋습니다. 3.10 토크는 3분 10초라는 시간 제한이 있으니 꼭 지켜주시길 바랍니다.</p><br/>
                 <p>보내주신 영상은 행사가 진행되는 이틀 동안 발표 세션 중간에 후원 등급별 노출 횟수에 따라 송출될 예정입니다. 총 노출 횟수가 1회를 초과하는 후원 등급의 후원사의 경우 다수의 영상 송출도 가능합니다. 예를 들어, 총 노출 횟수가 4회인 키스톤 후원사는 4개의 영상을 한 번씩 송출하거나, 2개의 영상을 두 번씩 송출하는 방식 모두 가능합니다.</p><br />
                 <p>영상의 이름은 ‘3.10 토크 - [여기에 제목을 입력]’ 형태로 알려주시면 좋습니다. 제목은 간단하게 회사 이름만 적는 것도 가능하며, 파이콘을 보다 재미있게 만들어주는 제목 또한 환영합니다! <br />
-                    다만, 파이콘 한국의 행동강령에 위배되는 내용은 삭제될 수도 있으니 꼭 명심해주시기 바랍니다.</p>
+                    다만, 파이콘 한국의 행동강령에 위배되는 내용은 삭제될 수도 있으니 꼭 명심해주시기 바랍니다.</p><br />
+                <p>
+                    <Link href="https://drive.google.com/file/d/106CkCTGDK7fPaDMZyo9EqaGC8uJMO9ph/view?usp=drivesdk">
+                        <a target="_blank" rel="noreferrer">
+                            <span><strong>예시 영상 보러가기 →</strong></span>
+                        </a>
+                    </Link>
+                    <br /> (딜리버리히어로 코리아, 파이콘 한국 2020)
+                </p>
+                
             </AboutbenefitsBlock>
             <AboutbenefitsBlock>
                 <h1>버추얼 부스 in 게더타운</h1>
