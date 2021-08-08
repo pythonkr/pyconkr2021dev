@@ -18,7 +18,7 @@ type aboutBenefitsType = aboutBenefitType[];
 const aboutBenefits:aboutBenefitsType = [
     {
         name: '금액',
-        contents: ['1000만원', '700만원', '500만원', '400만원', '100만원', '1만원', '도서/서비스 제공']
+        contents: ['1000만 원', '700만 원', '500만 원', '400만 원', '100만 원', '1만 원', '도서/서비스 제공']
     },
     {
         name: '소셜미디어 홍보',
@@ -33,12 +33,12 @@ const aboutBenefits:aboutBenefitsType = [
         contents: ['O', 'O', 'O', 'O', 'O', 'O', 'O']
     },
     {
-        name: '후원사세션',
-        contents: ['2세션', '1세션', '1세션', 'X', '1세션(15분)', '1세션(15분)', 'X']
+        name: '후원사 세션',
+        contents: ['2세션', '1세션', '1세션', 'X', '1세션 (15분)', '1세션 (15분)', 'X']
     },
     {
-        name: '게더타운 버츄얼부스',
-        contents: ['4', '2', '2', '1', '1', '1(선택)', '1(선택)']
+        name: '게더타운 버추얼 부스',
+        contents: ['4', '2', '2', '1', '1', '1 (선택)', '1 (선택)']
     },
     {
         name: '3.10 토크 노출 횟수',
@@ -70,7 +70,7 @@ function TableSponsor() {
                         <TableCell>골드</TableCell>
                         <TableCell>스타트업</TableCell>
                         <TableCell>커뮤니티</TableCell>
-                        <TableCell>출판사/미디어/기술후원</TableCell>
+                        <TableCell>출판사/미디어/기술 후원</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
