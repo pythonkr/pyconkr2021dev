@@ -44,7 +44,7 @@ function GotoContribute() {
                 <h3>
                     <span>
                         <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfzxutOlm01HZ_g_ZMmb1zAWIsF48hzZLzUUqtuNFTikNUY2g/viewform">
-                            <a target="_blank">파이콘 2021 CFP 폼 →</a>
+                            <a target="_blank">파이콘 한국 2021 CFP 폼 →</a>
                         </Link>
                     </span>
                 </h3>

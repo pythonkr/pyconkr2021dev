@@ -27,7 +27,7 @@ const categories:CategoriesType = [
     },
     {
         name: 'coc',
-        text: '행동강령'
+        text: '행동 강령'
     }
 ]
 
@@ -116,7 +116,7 @@ function Header () {
                 <HeaderContents>
                     <Category active={router.pathname === '/'}>
                         <Link href="/">
-                            <a>PYCON KR 2021</a>
+                            <a>PYCON.KR 2021</a>
                         </Link>
                     </Category>
 
@@ -165,7 +165,7 @@ function Header () {
                         </Category>
                         <Category active={router.pathname === `/coc`}>
                             <Link href="/coc">
-                                <a>행동강령</a>
+                                <a>행동 강령</a>
                             </Link>
                         </Category>
                     </RightCategoryBlock>

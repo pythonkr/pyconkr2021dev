@@ -32,7 +32,7 @@ const pyconPersons:pyconpersonsType = [
     {
         name: '권혁민',
         img: `/img/personimg/khm.jpg`,
-        introduce: 'ie, Remidomine... Dona eis requiem!'
+        introduce: 'Pie, Remidomine... Dona eis requiem!'
     },
     {
         name: '김순태',
