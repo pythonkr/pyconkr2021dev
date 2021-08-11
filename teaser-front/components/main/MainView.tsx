@@ -57,6 +57,9 @@ export const RegisterButtonBlock = styled.button`
         padding: 1rem 10rem;
         font-size: 2rem;
     }
+    &:disabled {
+        opacity: 0.5;
+    }
 `;
 
 export function Slogan() {
