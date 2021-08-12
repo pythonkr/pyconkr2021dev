@@ -1,7 +1,9 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 import { AboutBlock } from '../about/AboutContext';
 import { RegisterButtonBlock } from '../main/MainView';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import Link from 'next/link';
 
 const AboutSupportBlock = styled(AboutBlock)`
@@ -11,9 +13,28 @@ const AboutSupportBlock = styled(AboutBlock)`
     }
 `;
 
+const SupportEndedMessage = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    font-size: 24px;
+    line-height: 1.43;
+    border-radius: 8px;
+    background-color: rgba(172,172,172,0.2);
+`;
+
+const SupportEndedIcon = styled(ErrorOutlineIcon)`
+    font-size: 28px;
+    margin-right: 6px;
+`
+
+
 function JoinSponsor() {
     return (
         <ContentBackgroundBlock>
+            <SupportEndedMessage>
+                <SupportEndedIcon />현재 후원사 모집은 종료되었습니다.
+            </SupportEndedMessage>
             <AboutSupportBlock>
                 <h1>후원사로 참여하기</h1><br />
                 <h3>선정 절차</h3>
@@ -33,12 +54,8 @@ function JoinSponsor() {
                     <li><p>전자세금계산서가 우선적으로 필요하신 경우 전자세금계산서 발행용 이메일 주소를 기록하여 계산서 발행을 요청해주시기 바랍니다.</p></li>
                 </ol>
             </AboutSupportBlock>
-            <RegisterButtonBlock>
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSelp_QhwYk6k2VZ4tsp1TjhyDNnirQKF7tKlYCiIScCmV4hFQ/viewform">
-                    <a target="_blank" rel="noreferrer">
-                        후원사로 참여하기
-                    </a>
-                </Link>
+            <RegisterButtonBlock disabled>
+                후원사로 참여하기
             </RegisterButtonBlock>
         </ContentBackgroundBlock>
     )
