@@ -6,8 +6,9 @@ const MainViewBlock = styled.div`
     text-align: center;
     padding-top: 2rem;
     margin-top: 4rem;
-    margin-bottom: 8rem;
-    
+    color: #939597;
+
+    align-items: center;
 `;
 
 const SloganBlock = styled.h1`
@@ -16,7 +17,7 @@ const SloganBlock = styled.h1`
     color: #F5DF4D;
 
     @media (max-width: 768px) {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
     @media (min-width: 768px) and (max-width: 1199px) {
         font-size: 6rem;
@@ -40,14 +41,14 @@ const ScheduleBlock = styled.div`
     }
 `;
 
-const RegisterButtonBlock = styled.button`
+export const RegisterButtonBlock = styled.button`
     background-color: #F5DF4D;
     color: black;
     border-radius: 4rem;
     font-size: 3rem;
     font-weight: 700;
     padding: 1rem 17rem;
-
+    margin-bottom: 3rem;
     @media (max-width: 768px) {
         padding: 1rem 5rem;
         font-size: 1.5rem;
@@ -55,6 +56,9 @@ const RegisterButtonBlock = styled.button`
     @media (min-width: 768px) and (max-width: 1199px) {
         padding: 1rem 10rem;
         font-size: 2rem;
+    }
+    &:disabled {
+        opacity: 0.5;
     }
 `;
 
@@ -68,6 +72,9 @@ export function Slogan() {
     )  
 }
 
+const GuideButtonBlock = styled.div`
+    font-size: 1.5rem;
+`;
 
 function MainView () {
     return (
@@ -77,9 +84,12 @@ function MainView () {
                 <ScheduleBlock>
                     온라인 컨퍼런스 10/2(토)~10/3(일)
                 </ScheduleBlock>
-                <RegisterButtonBlock>
+                {/* <RegisterButtonBlock>
                     참가 등록
                 </RegisterButtonBlock>
+                <GuideButtonBlock>
+                    * 참가버튼은 내부 일정이 확정되는대로 활성화 될 예정입니다.
+                </GuideButtonBlock> */}
             </MainViewBlock>
         </ContentBackgroundBlock>
         

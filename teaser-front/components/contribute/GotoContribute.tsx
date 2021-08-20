@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
+import Link from 'next/link';
 
 export const GuideContributeBlock = styled.div`
     font-weight: 700;
     padding-top: 2rem;
     padding-bottom: 3rem;
-    width: 50rem;
+
+    line-height: 3rem;
 
     h1 {
         font-size: 4rem;
@@ -13,6 +15,15 @@ export const GuideContributeBlock = styled.div`
     }
     h3 {
         font-size: 2rem;
+        span {
+            cursor: pointer;
+        }
+    }
+
+    
+    
+    h4 {
+        color: #939597;
     }
 
     @media (max-width: 1199px) {
@@ -30,8 +41,13 @@ function GotoContribute() {
         <ContentBackgroundBlock>
             <GuideContributeBlock>
                 <h1>파이콘 한국 2021 기여하기</h1>
-                <h3>키노트 연사 신청하기 → </h3>
-                <h3>파이콘 2021 CFP 폼 → </h3>
+                <h3>
+                    <span>
+                        <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfzxutOlm01HZ_g_ZMmb1zAWIsF48hzZLzUUqtuNFTikNUY2g/viewform">
+                            <a target="_blank">파이콘 한국 2021 CFP 폼 →</a>
+                        </Link>
+                    </span>
+                </h3>
             </GuideContributeBlock>
         </ContentBackgroundBlock>
 

@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CD
+name: CD-teaser-main
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ teaser-develop ]
+    branches: [ teaser-main ]
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -37,5 +37,5 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_IAM_MANAGER_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_IAM_MANAGER_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
-      - run: aws s3 sync ./out s3://pyconkr-2021-devdev --acl public-read
-      - run: aws cloudfront create-invalidation --distribution-id ${{  secrets.AWS_CLOUDFRONT_TEASER_DEVELOP_ID  }} --paths "/*"
+      - run: aws s3 sync ./out s3://pyconkr-2021 --acl public-read
+      - run: aws cloudfront create-invalidation --distribution-id ${{  secrets.AWS_CLOUDFRONT_TEASER_MAIN_ID  }} --paths "/*"

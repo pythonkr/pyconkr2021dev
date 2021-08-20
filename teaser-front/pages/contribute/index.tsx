@@ -3,6 +3,7 @@ import FundingPyconkit from '../../components/contribute/FundingPyconkit';
 import GotoContribute from '../../components/contribute/GotoContribute';
 import PyconLogo from '../../components/PyconLogo';
 import Footer from '../../components/Footer';
+import MakePyCon from '../../components/contribute/MakePyCon';
 
 export default function contribute() {
     return (
@@ -11,6 +12,7 @@ export default function contribute() {
             <PyconLogo />
             <GotoContribute />
             <FundingPyconkit />
+            <MakePyCon />
             <Footer />
         </div>
     )
