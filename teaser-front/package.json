@@ -7,7 +7,8 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "serverless"
+    "deploy": "serverless",
+    "build_docker": "next build"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
@@ -23,12 +24,15 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "17.0.2",
     "serverless": "^2.46.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "typescript": "^4.4.2",
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0"
   },
   "devDependencies": {
     "@types/react": "17.0.11",
     "eslint": "7.28.0",
     "eslint-config-next": "11.0.0",
-    "typescript": "4.3.3"
+    "typescript": "^4.4.2"
   }
 }
