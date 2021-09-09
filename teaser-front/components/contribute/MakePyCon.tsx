@@ -36,13 +36,14 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '김순태',
-        img: ``,
-        introduce: ''
+        img: `/img/personimg/kst.jpg`,
+        introduce: '계발하는 개발자입니다!',
+        newlineintro: '우물 안 개발자를 지양하고 있어요.'
     },
     {
         name: '류현지',
-        img: ``,
-        introduce: ''
+        img: `/img/personimg/hyunji.jpg`,
+        introduce: 'DEV AnythinG'
     },
     {
         name: '박성흠',
@@ -68,8 +69,7 @@ const pyconPersons:pyconpersonsType = [
     {
         name: '오주영',
         img: `/img/personimg/JuYoung.jpg`,
-        introduce: '💛 DevRel in Finance 💛',
-        newlineintro: '같지만 다르게, 파이콘 한국에 기여하고 있습니다'
+        introduce: '파이콘 한국에서 다양한 사람들과 만나기를 기대합니다 🥰',
     },
     {
         name: '이재경',
