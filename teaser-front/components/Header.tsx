@@ -138,6 +138,11 @@ function Header () {
                             <span>{navsupport ? '후원하기▴' : '후원하기▾'}</span>
                             {navsupport && 
                                 <SupportToggle>
+                                    <SupportCategory active={router.pathname === `/supportinfo`}>
+                                        <Link href="/supportinfo">
+                                            <a>후원사</a>
+                                        </Link>
+                                    </SupportCategory>
                                     <SupportCategory active={router.pathname === `/support`}>
                                         <Link href="/support">
                                             <a>후원사 모집</a>
