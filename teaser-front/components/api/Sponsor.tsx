@@ -72,6 +72,7 @@ function Sponsor({ data_sponsor } : any) {
             <ContentBackgroundBlock>
                 <AboutBlock>
                     <h1>후원사</h1>
+                    <p>파이콘 한국 2021은 아래의 후원사와 함께합니다</p>
                     {
                         data_sponsor.map((d:any, idx:number) => {
                             
