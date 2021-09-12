@@ -8,8 +8,9 @@ import AboutContext, { AboutBlock } from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
+import Sponsor from '../components/api/Sponsor'
 
-export default function Home({ data } : any) {
+export default function Home({ data, data_sponsor } : any) {
   return (
     <>
         <Header />
@@ -17,6 +18,7 @@ export default function Home({ data } : any) {
         <ContentBackgroundBlock>
             <div>
             <AboutBlock>
+              
                 <h1>공지사항</h1> 
 
                     {
@@ -30,6 +32,8 @@ export default function Home({ data } : any) {
             </div>
 
         </ContentBackgroundBlock>
+        
+        <Sponsor data_sponsor={data_sponsor} />
 
         <GotoContribute />
         <FundingPyconkit />
@@ -53,13 +57,21 @@ export async function getStaticProps() {
   const res = await fetch('https://dev.2021.api.pycon.kr/api/v1/article')
   const data = await res.json()
 
-  if (!data) {
+  const res_sponsor = await fetch('https://dev.2021.api.pycon.kr/api/v1/sponsors')
+  const data_sponsor = await res_sponsor.json()
+
+  if (!data || !data_sponsor) {
     return {
       notFound: true,
     }
   }
 
+  console.log('notice_data: ', data)
+  console.log('sponsor_data: ', data_sponsor)
+
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data: data, 
+             data_sponsor: data_sponsor 
+    }, // will be passed to the page component as props
   }
 }

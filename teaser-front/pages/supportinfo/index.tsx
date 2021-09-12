@@ -88,8 +88,6 @@ export default function supportjoin( { data } : any ) {
                       {
                         d.sponsors.map( (s:any) => (
                           <>
-                            <h3>{s.name}</h3>
-
                             <PyconPersonBlock key={s.name}>
                             {s.logo_image ? <PersonImgBlock><Image src={s.logo_image} width={100} height={100} alt={s.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
                             
@@ -111,7 +109,7 @@ export default function supportjoin( { data } : any ) {
 
             </AboutSupportBlock>
 
-            <Footer />
+            <Footer/>
         </>
     )
 }
