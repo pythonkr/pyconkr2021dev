@@ -54,10 +54,12 @@ export default function Home({ data, data_sponsor } : any) {
 
 
 export async function getStaticProps() {
-  const res = await fetch('https://dev.2021.api.pycon.kr/api/v1/article')
+const url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'http://127.0.0.1:8000/api/v1'
+
+  const res = await fetch(url + '/article')
   const data = await res.json()
 
-  const res_sponsor = await fetch('https://dev.2021.api.pycon.kr/api/v1/sponsors')
+  const res_sponsor = await fetch(url + '/sponsors')
   const data_sponsor = await res_sponsor.json()
 
   if (!data || !data_sponsor) {
