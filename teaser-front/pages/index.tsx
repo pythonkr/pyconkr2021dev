@@ -33,7 +33,7 @@ export default function Home({ data, data_sponsor } : any) {
 
         </ContentBackgroundBlock>
         
-        <Sponsor data_sponsor={data_sponsor} />
+        {/* <Sponsor data_sponsor={data_sponsor} /> */}
 
         <GotoContribute />
         <FundingPyconkit />
