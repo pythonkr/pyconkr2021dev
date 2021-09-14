@@ -8,7 +8,7 @@ import AboutContext, { AboutBlock } from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
-import Sponsor from '../components/api/Sponsor'
+// import Sponsor from '../components/api/Sponsor'
 
 export default function Home({ data, data_sponsor } : any) {
   return (
