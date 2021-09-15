@@ -41,13 +41,14 @@ const ScheduleBlock = styled.div`
     }
 `;
 
-export const RegisterButtonBlock = styled.button`
+export const RegisterLink = styled.a`
+    display: inline-block;
     background-color: #F5DF4D;
     color: black;
     border-radius: 4rem;
     font-size: 3rem;
     font-weight: 700;
-    padding: 1rem 17rem;
+    padding: 1.4rem 17rem;
     margin-bottom: 3rem;
     @media (max-width: 768px) {
         padding: 1rem 5rem;
@@ -84,9 +85,7 @@ function MainView () {
                 <ScheduleBlock>
                     온라인 컨퍼런스 10/2(토)~10/3(일)
                 </ScheduleBlock>
-                <RegisterButtonBlock>
-                    <a href="https://festa.io/events/1788/">참가 등록</a>
-                </RegisterButtonBlock>
+                <RegisterLink href="https://festa.io/events/1788/">참가 등록</RegisterLink>
                 {/* <GuideButtonBlock>
                     * 참가버튼은 내부 일정이 확정되는대로 활성화 될 예정입니다.
                 </GuideButtonBlock> */}

@@ -1,4 +1,3 @@
-
 import Image from 'next/image'
 import FundingPyconkit from '../components/contribute/FundingPyconkit'
 import GotoContribute from '../components/contribute/GotoContribute'
@@ -8,33 +7,18 @@ import AboutContext, { AboutBlock } from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
+import MainNotice from "../components/main/MainNotice";
 // import Sponsor from '../components/api/Sponsor'
 
-export default function Home({ data, data_sponsor } : any) {
+export default function Home({ notice_data, data_sponsor } : any) {
   return (
     <>
         <Header />
         <MainView />
         <ContentBackgroundBlock>
-            <div>
-            <AboutBlock>
-              
-                <h1>공지사항</h1> 
-
-                    {
-                        data.map((d : any) => (
-                            <p key={d.title}>
-                                <a href={d.link}>{d.title}</a>
-                            </p>
-                        ))
-                    }
-            </AboutBlock>
-            </div>
-
+            <MainNotice noticeData={notice_data} />
         </ContentBackgroundBlock>
-        
         {/* <Sponsor data_sponsor={data_sponsor} /> */}
-
         <GotoContribute />
         <FundingPyconkit />
         <AboutContext />
@@ -76,7 +60,7 @@ export async function getStaticProps() {
   console.log('sponsor_data: ', data_sponsor)
 
   return {
-    props: { data: data, 
+    props: { notice_data: data,
              data_sponsor: data_sponsor 
     }, // will be passed to the page component as props
   }
