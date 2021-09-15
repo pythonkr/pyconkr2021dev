@@ -2,9 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 import { AboutBlock } from '../about/AboutContext';
-import { RegisterButtonBlock } from '../main/MainView';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import Link from 'next/link';
 
 const AboutSupportBlock = styled(AboutBlock)`
     margin-bottom: 10rem;
@@ -54,9 +52,6 @@ function JoinSponsor() {
                     <li><p>전자세금계산서가 우선적으로 필요하신 경우 전자세금계산서 발행용 이메일 주소를 기록하여 계산서 발행을 요청해주시기 바랍니다.</p></li>
                 </ol>
             </AboutSupportBlock>
-            <RegisterButtonBlock disabled>
-                후원사로 참여하기
-            </RegisterButtonBlock>
         </ContentBackgroundBlock>
     )
 }
