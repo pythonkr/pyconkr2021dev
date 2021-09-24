@@ -1,5 +1,3 @@
-import React from 'react'
-import {NextSeo} from 'next-seo'
 import Image from 'next/image'
 import FundingPyconkit from '../components/contribute/FundingPyconkit'
 import GotoContribute from '../components/contribute/GotoContribute'
@@ -9,7 +7,7 @@ import AboutContext from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
-import MainNotice from '../components/main/MainNotice';
+import MainNotice from "../components/main/MainNotice";
 // import Sponsor from '../components/api/Sponsor'
 
 export default function Home({ notice_data, data_sponsor } : any) {
@@ -57,9 +55,6 @@ export async function getStaticProps() {
       notFound: true,
     }
   }
-
-  console.log('notice_data: ', data)
-  console.log('sponsor_data: ', data_sponsor)
 
   return {
     props: { notice_data: data,

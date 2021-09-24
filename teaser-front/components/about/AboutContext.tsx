@@ -5,7 +5,6 @@ import Link from 'next/link';
 export const AboutBlock = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
-    
     line-height: 3rem;
 
     h1 {
