@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import FundingPyconkit from '../components/contribute/FundingPyconkit'
 import GotoContribute from '../components/contribute/GotoContribute'
@@ -7,7 +8,7 @@ import AboutContext from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
-import MainNotice from "../components/main/MainNotice";
+import MainNotice from '../components/main/MainNotice';
 // import Sponsor from '../components/api/Sponsor'
 
 export default function Home({ notice_data, data_sponsor } : any) {
@@ -31,7 +32,7 @@ export default function Home({ notice_data, data_sponsor } : any) {
         <ContentBackgroundBlock>
           <Image src="/img/dot2.png" width={700} height={100} alt="dot1" layout="responsive" />
         </ContentBackgroundBlock>
-      
+
     </>
   )
 }
@@ -61,7 +62,7 @@ export async function getStaticProps() {
 
   return {
     props: { notice_data: data,
-             data_sponsor: data_sponsor 
+             data_sponsor: data_sponsor
     }, // will be passed to the page component as props
   }
 }
