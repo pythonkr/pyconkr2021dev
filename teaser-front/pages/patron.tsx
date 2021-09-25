@@ -93,7 +93,13 @@ export default function Patron({ data_patron } : any) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://dev.2021.api.pycon.kr/api/v1/patron/')
+    let url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'https://2021.api.pycon.kr/api/v1'
+
+    if (process.env.ENV == 'LOCAL') {
+      url = 'http://127.0.0.1:8000/api/v1'
+    }
+
+    const res = await fetch(url + '/patron/')
     const data_patron = await res.json()
 
     if (!data_patron) {
