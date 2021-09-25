@@ -8,7 +8,6 @@ import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
 import MainNotice from "../components/main/MainNotice";
-// import Sponsor from '../components/api/Sponsor'
 
 export default function Home({ notice_data, data_sponsor } : any) {
   return (
@@ -18,7 +17,6 @@ export default function Home({ notice_data, data_sponsor } : any) {
         <ContentBackgroundBlock>
             <MainNotice noticeData={notice_data} />
         </ContentBackgroundBlock>
-        {/* <Sponsor data_sponsor={data_sponsor} /> */}
         <GotoContribute />
         <FundingPyconkit />
         <AboutContext />
@@ -31,7 +29,6 @@ export default function Home({ notice_data, data_sponsor } : any) {
         <ContentBackgroundBlock>
           <Image src="/img/dot2.png" width={700} height={100} alt="dot1" layout="responsive" />
         </ContentBackgroundBlock>
-
     </>
   )
 }
