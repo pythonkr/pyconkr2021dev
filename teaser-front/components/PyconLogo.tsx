@@ -63,7 +63,7 @@ function PyconLogo() {
                     border-radius: 50%;
                 `}
                 ><PyImageBlock>
-                    <Image src="/img/profile_wht.png" width={100} height={100} alt="python logo" layout="responsive"/>
+                    <Image src="https://pyconkr-2021.s3.ap-northeast-2.amazonaws.com/img/profile_wht.png" width={100} height={100} alt="python logo" layout="responsive"/>
                 </PyImageBlock>
             </TextBlock>
             <TextBlock
