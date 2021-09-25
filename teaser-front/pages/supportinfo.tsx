@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import PyconLogo from "../components/PyconLogo";
 import JoinSponsor from "../components/support/JoinSponsor";
 import styled from '@emotion/styled';
+import { ContentBackgroundBlock } from '../components/ContentBackground';
 
 
 const AboutSupportBlock = styled(AboutBlock)`
@@ -76,49 +77,54 @@ export default function supportjoin( { data } : any ) {
             <Header />
             <PyconLogo />
 
-            <AboutSupportBlock>
+            <ContentBackgroundBlock>
+              <AboutSupportBlock>
 
-            {
-                data.map((d:any, idx:number) => {
+              {
+                  data.map((d:any, idx:number) => {
 
-                  return (
-                    <>
-                      <h3>{d.name}</h3>
+                    return (
+                      <>
+                        <h3>{d.name}</h3>
 
-                      {
-                        d.sponsors.map( (s:any) => (
-                          <>
-                            <PyconPersonBlock key={s.name}>
-                            {s.logo_image ? <PersonImgBlock><Image src={s.logo_image} width={100} height={100} alt={s.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
+                        {
+                          d.sponsors.map( (s:any) => (
+                            <>
+                              <PyconPersonBlock key={s.name}>
+                              {s.logo_image ? <PersonImgBlock><Image src={s.logo_image} width={100} height={100} alt={s.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
 
-                            <PersonIntroBlock>
-                                <h3>{s.name}</h3>
+                              <PersonIntroBlock>
+                                  <h3>{s.name}</h3>
 
-                                <div className="product-des" dangerouslySetInnerHTML={{ __html: s.desc }}></div>
+                                  <div className="product-des" dangerouslySetInnerHTML={{ __html: s.desc }}></div>
 
-                            </PersonIntroBlock>
-                          </PyconPersonBlock>
-                          </>
-                        ))
-                      }
+                              </PersonIntroBlock>
+                            </PyconPersonBlock>
+                            </>
+                          ))
+                        }
 
-                    </>
-                  )
-              })
-            }
+                      </>
+                    )
+                })
+              }
 
-            </AboutSupportBlock>
-
+              </AboutSupportBlock>
+            </ContentBackgroundBlock>
             <Footer/>
         </>
     )
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://dev.2021.api.pycon.kr/api/v1/sponsors')
-    const data = await res.json()
+    let url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'https://2021.api.pycon.kr/api/v1'
 
-    const test = {"test" : "testValue"}
+    if (process.env.ENV == 'LOCAL') {
+      url = 'http://127.0.0.1:8000/api/v1'
+    }
+
+    const res = await fetch(url + '/sponsors')
+    const data = await res.json()
 
     console.log(data)
     console.log('length: ', data.length)

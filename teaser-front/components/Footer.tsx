@@ -6,9 +6,9 @@ import { ContentBackgroundBlock } from './ContentBackground';
 function Footer() {
     return (
         <ContentBackgroundBlock>
-            <Image src="/img/dot1.png" width={500} height={100} alt="dot1" layout="responsive" />
+            <Image src="https://pyconkr-2021.s3.ap-northeast-2.amazonaws.com/img/dot1.png" width={500} height={100} alt="dot1" layout="responsive" />
             <Slogan />
-            <Image src="/img/dot2.png" width={500} height={100} alt="dot1" layout="responsive" />
+            <Image src="https://pyconkr-2021.s3.ap-northeast-2.amazonaws.com/img/dot2.png" width={500} height={100} alt="dot1" layout="responsive" />
         </ContentBackgroundBlock>
     )
 }
