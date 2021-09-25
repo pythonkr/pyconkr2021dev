@@ -107,10 +107,8 @@ function Header () {
 
     const router = useRouter();
     const [navsupport, SetNavSupport] = useState<boolean>(false);
-    const [navsupport_program, SetNavSupport_program] = useState<boolean>(false);
 
     const onToggle = () => SetNavSupport(!navsupport)
-    const onToggle_program = () => SetNavSupport_program(!navsupport_program)
 
     return(
         <Positionier>
@@ -122,82 +120,62 @@ function Header () {
                         </Link>
                     </Category>
 
-                    
-                    
+
+
                     <RightCategoryBlock>
-                        <Category active={router.pathname === `/about`}>
+                        <Category active={router.pathname === '/about'}>
                             <Link href="/about">
                                 <a>ABOUT</a>
                             </Link>
                         </Category>
-                        <Category active={router.pathname === `/contribute`}>
+                        <Category active={router.pathname === '/contribute'}>
                             <Link href="/contribute">
                                 <a>기여하기</a>
                             </Link>
                         </Category>
-
-                        <Category onClick={() => onToggle_program()}>
-                            <span>{navsupport_program ? '프로그램▴' : '프로그램▾'}</span>
-
-                            {navsupport_program && 
-                                <SupportToggle>
-
-                                    <SupportCategory active={router.pathname === `/sessionday2`}>
-                                        <Link href="/sessionday2">
-                                            <a>1일차</a>
-                                        </Link>
-                                    </SupportCategory>
-
-                                    <SupportCategory active={router.pathname === `/sessionday3`}>
-                                        <Link href="/sessionday3">
-                                            <a>2일차</a>
-                                        </Link>
-                                    </SupportCategory>
-
-                                </SupportToggle>
-                            }
+                        <Category active={router.pathname === '/session'}>
+                            <Link href="/session">프로그램</Link>
                         </Category>
-
                         <Category onClick={() => onToggle()}>
                             <span>{navsupport ? '후원하기▴' : '후원하기▾'}</span>
-                            {navsupport && 
+                            {navsupport &&
                                 <SupportToggle>
-                                    <SupportCategory active={router.pathname === `/supportinfo`}>
+                                    <SupportCategory active={router.pathname === '/supportinfo'}>
                                         <Link href="/supportinfo">
                                             <a>후원사</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === `/patron`}>
+                                    <SupportCategory active={router.pathname === '/patron'}>
                                         <Link href="/patron">
                                             <a>개인후원</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === `/support`}>
+                                    <SupportCategory active={router.pathname === '/support'}>
                                         <Link href="/support">
                                             <a>후원사 모집</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === `/supportjoin`}>
+                                    <SupportCategory active={router.pathname === '/supportjoin'}>
                                         <Link href="/supportjoin">
                                             <a>후원사로 참여하기</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === `/supportvalue`}>
+                                    <SupportCategory active={router.pathname === '/supportvalue'}>
                                         <Link href="/supportvalue">
                                             <a>후원사의 가치</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === `/supportbenefits`}>
+                                    <SupportCategory active={router.pathname === '/supportbenefits'}>
                                         <Link href="/supportbenefits">
                                             <a>후원사 혜택 안내</a>
                                         </Link>
                                     </SupportCategory>
                                 </SupportToggle>
                             }
-                            
-                            
+
+
                         </Category>
-                        <Category active={router.pathname === `/coc`}>
+                        <Category active={router.pathname === '/coc'}>
                             <Link href="/coc">
                                 <a>행동 강령</a>
                             </Link>
