@@ -107,8 +107,10 @@ function Header () {
 
     const router = useRouter();
     const [navsupport, SetNavSupport] = useState<boolean>(false);
+    const [navsupport_program, SetNavSupport_program] = useState<boolean>(false);
 
     const onToggle = () => SetNavSupport(!navsupport)
+    const onToggle_program = () => SetNavSupport_program(!navsupport_program)
 
     return(
         <Positionier>
@@ -132,6 +134,28 @@ function Header () {
                             <Link href="/contribute">
                                 <a>기여하기</a>
                             </Link>
+                        </Category>
+
+                        <Category onClick={() => onToggle_program()}>
+                            <span>{navsupport_program ? '프로그램▴' : '프로그램▾'}</span>
+
+                            {navsupport_program && 
+                                <SupportToggle>
+
+                                    <SupportCategory active={router.pathname === `/sessionday2`}>
+                                        <Link href="/sessionday2">
+                                            <a>1일차</a>
+                                        </Link>
+                                    </SupportCategory>
+
+                                    <SupportCategory active={router.pathname === `/sessionday3`}>
+                                        <Link href="/sessionday3">
+                                            <a>2일차</a>
+                                        </Link>
+                                    </SupportCategory>
+
+                                </SupportToggle>
+                            }
                         </Category>
 
                         <Category onClick={() => onToggle()}>
