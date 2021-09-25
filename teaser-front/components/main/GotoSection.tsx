@@ -25,7 +25,7 @@ export function GotoSupport () {
         <ContentBackgroundBlock>
             <GotoSectionBlock>
                 <h1>후원하기</h1>
-                <p><Link href={`/support`}>파이콘 한국 2021 후원 안내 →</Link></p>
+                <p><Link href={'/support'}>파이콘 한국 2021 후원 안내 →</Link></p>
             </GotoSectionBlock>
         </ContentBackgroundBlock>
     )
@@ -36,7 +36,7 @@ export function GotoCoc () {
         <ContentBackgroundBlock>
             <GotoSectionBlock>
                 <h1>행동강령</h1>
-                <p><Link href={`/coc`}>파이콘 한국 2021 행동 강령 확인하기 →</Link></p>
+                <p><Link href={'/coc'}>파이콘 한국 2021 행동 강령 확인하기 →</Link></p>
             </GotoSectionBlock>
         </ContentBackgroundBlock>
     )

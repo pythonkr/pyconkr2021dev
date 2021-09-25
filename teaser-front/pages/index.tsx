@@ -7,7 +7,7 @@ import AboutContext from '../components/about/AboutContext'
 import { GotoSupport, GotoCoc } from '../components/main/GotoSection'
 import PyconLogo from '../components/PyconLogo'
 import { ContentBackgroundBlock } from '../components/ContentBackground'
-import MainNotice from "../components/main/MainNotice";
+import MainNotice from '../components/main/MainNotice';
 
 export default function Home({ notice_data, data_sponsor } : any) {
   return (

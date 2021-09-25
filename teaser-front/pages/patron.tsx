@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
-import { ContentBackgroundBlock } from "../components/ContentBackground";
-import { GuideContributeBlock } from "../components/contribute/GotoContribute";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import PyconLogo from "../components/PyconLogo";
+import styled from '@emotion/styled';
+import { ContentBackgroundBlock } from '../components/ContentBackground';
+import { GuideContributeBlock } from '../components/contribute/GotoContribute';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import PyconLogo from '../components/PyconLogo';
 
 const PyconPersonBlock = styled.div`
     display: flex;
