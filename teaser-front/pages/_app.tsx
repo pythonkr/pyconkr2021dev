@@ -4,7 +4,7 @@ import Head from 'next/head';
 import styled from '@emotion/styled';
 
 const GlobalLayout = styled.div`
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 `
 

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import SessionTable from '../components/session/SessionTable';
-import { Program } from '../interfaces/program';
+import { Program } from '../types/program';
 import Layout  from '../components/Layout';
 import axios from 'axios'
 import SessionToggleButton from '../components/session/SessionToggleButton';
 
+interface SessionProps {
+  day1: Program[],
+  day2: Program[]
+}
 
-export default function Session(props: any) {
+export default function Session(data: SessionProps) {
   const [selectedDay, setSelectedDay] = useState<string>('day1')
 
   const updateSelectedDay = (day: string): void => {
@@ -17,8 +21,8 @@ export default function Session(props: any) {
       <Layout>
         <SessionToggleButton handleClick={updateSelectedDay} />
         {selectedDay === 'day1'
-          ? <SessionTable programList={props.day1} />
-          : <SessionTable programList={props.day2} />
+          ? <SessionTable headers={['101', '102']} programList={data.day1} />
+          : <SessionTable headers={['103', '104']} programList={data.day2} />
         }
       </Layout>
   )
