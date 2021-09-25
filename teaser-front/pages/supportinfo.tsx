@@ -95,8 +95,8 @@ export default function supportjoin( { data } : any ) {
 
                               <PersonIntroBlock>
                                   <h3>{s.name}</h3>
-
-                                  <div className="product-des" dangerouslySetInnerHTML={{ __html: s.desc }}></div>
+                                  {/* <p><a href="/">후원사 알아보기</a></p> */}
+                                  {/* <div className="product-des" dangerouslySetInnerHTML={{ __html: s.desc }}></div> */}
 
                               </PersonIntroBlock>
                             </PyconPersonBlock>
