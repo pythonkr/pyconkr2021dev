@@ -39,7 +39,8 @@ const Positionier = styled.div`
     position: fixed;
     z-index: 990;
     top: 0px;
-    width: 100%;
+    left: 0;
+    right: 0;
     background-color: #121212;
 `;
 
