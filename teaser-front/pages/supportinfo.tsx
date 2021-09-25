@@ -65,9 +65,7 @@ const PersonImgBlock = styled(BlankImgBlock)`
 
     background-color: transparent;
 
-    Img {
-        border-radius: 4rem;
-    }
+
 `;
 
 
@@ -91,7 +89,7 @@ export default function supportjoin( { data } : any ) {
                           d.sponsors.map( (s:any) => (
                             <>
                               <PyconPersonBlock key={s.name}>
-                              {s.logo_image ? <PersonImgBlock><Image src={s.logo_image} width={100} height={100} alt={s.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
+                              {s.logo_image ? <PersonImgBlock><Image src={s.logo_image} width={100} height={100} alt={s.name} layout="responsive" objectFit="contain"/></PersonImgBlock> : <BlankImgBlock />}
 
                               <PersonIntroBlock>
                                   <h3>{s.name}</h3>
