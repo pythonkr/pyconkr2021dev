@@ -106,6 +106,29 @@ interface ProgramTableProps {
   programList: Program[]
 }
 
+interface SessionItemProps {
+  program: Program
+}
+
+const SessionItem: React.FC<SessionItemProps> = ({program}) => {
+  return (
+      <ProgramItem>
+        <Title>
+          {program.title}
+          {program.title !== '-' &&
+            (
+              <Difficulty level={program.difficulty}>
+                {DifficultyLabel[program.difficulty as keyof typeof DifficultyLabel]}
+              </Difficulty>
+            )
+          }
+        </Title>
+        <Speaker>{program.user_name}</Speaker>
+        {/*<Category>{program.category}</Category>*/}
+      </ProgramItem>
+  )
+}
+
 const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }) => {
   const programListLength = programList.length;
 
@@ -137,28 +160,10 @@ const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }
                       <>
                         <td>{time}</td>
                         <td>
-                          <ProgramItem>
-                            <Title>
-                              {program.title}
-                              <Difficulty level={program.difficulty}>
-                                {DifficultyLabel[program.difficulty as keyof typeof DifficultyLabel]}
-                              </Difficulty>
-                            </Title>
-                            <Speaker>{program.user_name}</Speaker>
-                            {/*<Category>{program.category}</Category>*/}
-                          </ProgramItem>
+                          <SessionItem program={program} />
                         </td>
                         <td>
-                          <ProgramItem>
-                            <Title>
-                              {sameTimeProgram.title}
-                              <Difficulty level={sameTimeProgram.difficulty}>
-                                {DifficultyLabel[sameTimeProgram.difficulty as keyof typeof DifficultyLabel]}
-                              </Difficulty>
-                            </Title>
-                            <Speaker>{sameTimeProgram.user_name}</Speaker>
-                            {/*<Category>{sameTimeProgram.category}</Category>*/}
-                          </ProgramItem>
+                          <SessionItem program={sameTimeProgram} />
                         </td>
                       </>
                     )
