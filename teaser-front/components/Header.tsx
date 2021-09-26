@@ -51,7 +51,8 @@ const HeaderContents = styled.div`
     flex-direction: row;
 
     @media (min-width: 768px) and (max-width: 1280px) {
-        width: 768px;
+        width: 100%;
+        
     }
     @media (max-width: 768px) {
         width: 100vh;
@@ -63,7 +64,19 @@ const SupportToggle = styled.div`
     background-color: #121212;
     z-index: 995;
     color: white;
-    max-width: 100%;
+    position: absolute;
+    top: calc(100% - 2rem);
+    left: 0;
+    right: 0;
+    padding: 0 0.8rem;
+    font-size: 1rem;
+    word-break: keep-all;
+    
+    @media (max-width: 1280px) {
+        width: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 `;
 
 const RightCategoryBlock = styled.div`
@@ -75,31 +88,39 @@ const Category = styled.div<{active?: boolean}>`
     font-size: 1.25rem;
     letter-spacing: 2px;
     font-weight: 700;
-    margin: 3rem;
+    padding: 3rem;
     text-align: center;
-
-    span {
-        cursor: pointer;
-    }
+    position: relative;
+    cursor: pointer;
 
     ${(props) => props.active && css`color: #F5DF4D;`
     }
 
     @media (min-width: 768px) and (max-width: 1280px) {
-        margin-left: 1rem;
-        margin-right: 1rem;
         font-size: 1rem;
+        padding: 3rem 1rem;
     }
     @media (max-width: 768px) {
         font-size: 0.75rem;
         margin-left: 1.25rem;
         margin-right: 1.25rem;
+        padding: 2rem 0.5rem;
     }
 `;
 
 const SupportCategory = styled(Category)`
     margin: 0;
-    margin-top: 3rem;
+    padding: 2rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+     @media (min-width: 768px) and (max-width: 1280px) {
+        margin: 0;
+        font-size: 1rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 0.75rem;
+        margin: 0;
+    }
 `;
 
 
