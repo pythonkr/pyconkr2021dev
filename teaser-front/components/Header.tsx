@@ -116,6 +116,7 @@ const SupportCategory = styled(Category)`
      @media (min-width: 768px) and (max-width: 1280px) {
         margin: 0;
         font-size: 1rem;
+        padding: 1.3rem 0;
     }
     @media (max-width: 768px) {
         font-size: 0.75rem;
