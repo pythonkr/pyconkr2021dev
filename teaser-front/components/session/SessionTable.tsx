@@ -24,13 +24,9 @@ const Styles = styled.div`
     th {
       height: 3rem;
       font-size: 1.5rem;
-      border-right: 1px solid #fff;
       padding: 0.5rem;
       :first-of-type {
         width: 120px;
-      }
-      :last-child {
-        border-right: 0;
       }
     }
     tbody {
