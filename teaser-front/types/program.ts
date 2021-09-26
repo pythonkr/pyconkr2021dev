@@ -2,6 +2,7 @@ export interface Program {
   title: string,
   brief: string,
   desc: string,
+  user_name: string,
   comment: string,
   difficulty: string,
   duration: string,

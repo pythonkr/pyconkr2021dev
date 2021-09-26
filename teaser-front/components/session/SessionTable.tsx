@@ -52,7 +52,12 @@ const ProgramItem = styled.div`
 `
 
 const Title = styled.div`
-  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+`
+
+const Speaker = styled.div`
+  margin-top: 1.3rem;
+  font-size: 1.3rem;
 `
 
 const Category = styled.span`
@@ -66,23 +71,31 @@ const Category = styled.span`
 
 const Difficulty = styled.span<{ level: string }>`
   display: inline-block;
-  padding: 0.4em 0.6em;
-  font-size: 1.1rem;
+  vertical-align: top;
+  padding: 0.3em 0.5em;
+  font-size: 0.9rem;
   border-radius: 4px;
   line-height: 1;
+  margin-left: 0.7rem;
+  margin-top: 0.4rem;
   ${({ level }) => {
     if(level === 'B') {
       return `
         background-color: #139d2b;
       `
     }
-    if(level === 'I') {
+    else if(level === 'I') {
       return `
         background-color: #ff7f00;
       `
     }
+    else if(level === 'A') {
+      return `
+        background-color: #cf3535;
+      `
+    }
     return `
-      background-color: #cf3535;
+      display: none;
     `
   }}
 `
@@ -125,19 +138,25 @@ const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }
                         <td>{time}</td>
                         <td>
                           <ProgramItem>
-                            <Title>{program.title}</Title>
-                            <Difficulty level={program.difficulty}>
-                              {DifficultyLabel[program.difficulty as keyof typeof DifficultyLabel]}
-                            </Difficulty>
+                            <Title>
+                              {program.title}
+                              <Difficulty level={program.difficulty}>
+                                {DifficultyLabel[program.difficulty as keyof typeof DifficultyLabel]}
+                              </Difficulty>
+                            </Title>
+                            <Speaker>{program.user_name}</Speaker>
                             {/*<Category>{program.category}</Category>*/}
                           </ProgramItem>
                         </td>
                         <td>
                           <ProgramItem>
-                            <Title>{sameTimeProgram.title}</Title>
-                            <Difficulty level={sameTimeProgram.difficulty}>
-                              {DifficultyLabel[sameTimeProgram.difficulty as keyof typeof DifficultyLabel]}
-                            </Difficulty>
+                            <Title>
+                              {sameTimeProgram.title}
+                              <Difficulty level={sameTimeProgram.difficulty}>
+                                {DifficultyLabel[sameTimeProgram.difficulty as keyof typeof DifficultyLabel]}
+                              </Difficulty>
+                            </Title>
+                            <Speaker>{sameTimeProgram.user_name}</Speaker>
                             {/*<Category>{sameTimeProgram.category}</Category>*/}
                           </ProgramItem>
                         </td>
