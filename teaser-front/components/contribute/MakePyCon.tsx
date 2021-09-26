@@ -16,7 +16,7 @@ type pyconpersonsType = pyconpersonType[]
 const pyconPersons:pyconpersonsType = [
     {
         name: '강지우',
-        img: '/img/personimg/jiwoo.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/jiwoo.jpg',
         introduce: 'https://constmoon.github.io'
     },
     {
@@ -26,23 +26,23 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '강종연',
-        img: '/img/personimg/jongyeon.JPG',
+        img: 'https://2021.pycon.kr/img/personimg/jongyeon.JPG',
         introduce: '다양한 곳에서 활동하고 있는 액티브한 개발자입니다.'
     },
     {
         name: '권혁민',
-        img: '/img/personimg/khm.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/khm.jpg',
         introduce: 'Pie, Remidomine... Dona eis requiem!'
     },
     {
         name: '김순태',
-        img: '/img/personimg/kst.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/kst.jpg',
         introduce: '계발하는 개발자입니다!',
         newlineintro: '우물 안 개발자를 지양하고 있어요.'
     },
     {
         name: '류현지',
-        img: '/img/personimg/hyunji.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/hyunji.jpg',
         introduce: 'DEV AnythinG'
     },
     {
@@ -52,58 +52,48 @@ const pyconPersons:pyconpersonsType = [
     },
     {
         name: '배권한',
-        img: '/img/personimg/KwonHan.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/KwonHan.jpg',
         introduce: 'What do you mean? An African or European swallow?'
     },
     {
         name: '오시영',
-        img: '/img/personimg/siyoung.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/siyoung.jpg',
         introduce: 'Errors should never pass silently. Unless explicitly silenced. 세상을 디버깅하고 싶어 civic hacking 하고 있습니다.'
 
     },
     {
-        name: '오세인',
-        img: '',
-        introduce: ''
-    },
-    {
         name: '오주영',
-        img: '/img/personimg/JuYoung.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/JuYoung.jpg',
         introduce: '파이콘 한국에서 다양한 사람들과 만나기를 기대합니다 🥰',
     },
     {
         name: '이재경',
-        img: '/img/personimg/jaegyeong.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/jaegyeong.jpg',
         introduce: '#플라스크 #백엔드 #코틀린 #안드로이드 #개발'
     },
     {
         name: '이현호',
-        img: '/img/personimg/hyunho.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/hyunho.jpg',
         introduce: '노래하는 개발자 입니다. 사람을 좋아하고 이야기를 잘 듣습니다!'
     },
     {
-        name: '장지창',
-        img: '',
-        introduce: ''
-    },
-    {
         name: '전병우',
-        img: '/img/personimg/byungwoo.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/byungwoo.jpg',
         introduce: '파이콘이 누군가에게 희망과 기회가 되길바라는 마음으로 참여하고 있습니다.'
     },
     {
         name: '추교영',
-        img: '/img/personimg/ChuKY.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/ChuKY.jpg',
         introduce: '파이콘 한국 3년이면 파이썬을 쓸 일이 생긴다(?!)'
     },
     {
         name: '한연희',
-        img: '/img/personimg/yhhan.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/yhhan.jpg',
         introduce: '파이썬 뉴비입니다! WomenTechMakers Korea Ambassador로도 활동 중입니다 +ㅁ+'
     },
     {
         name: '홍연의',
-        img: '/img/personimg/alicehong.jpg',
+        img: 'https://2021.pycon.kr/img/personimg/alicehong.jpg',
         introduce: 'Developer Relations & Tech Communicator. IT 업계에서 개발자 커뮤니티를 위해 일하고 있어요.',
         newlineintro: '인생의 원동력은 일과 사람, 그리고 사랑 ♥︎'
     }
