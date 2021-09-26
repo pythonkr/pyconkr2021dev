@@ -21,8 +21,8 @@ export default function Session(data: SessionProps) {
       <Layout>
         <SessionToggleButton handleClick={updateSelectedDay} />
         {selectedDay === 'day1'
-          ? <SessionTable headers={['101', '102']} programList={data.day1} />
-          : <SessionTable headers={['103', '104']} programList={data.day2} />
+          ? <SessionTable day='day1' headers={['101', '102']} programList={data.day1} />
+          : <SessionTable day='day2' headers={['103', '104']} programList={data.day2} />
         }
       </Layout>
   )

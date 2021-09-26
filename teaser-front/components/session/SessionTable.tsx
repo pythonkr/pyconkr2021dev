@@ -16,7 +16,7 @@ const Styles = styled.div`
     tr {
       :last-child {
         td {
-          border-bottom: 0;
+          border-bottom: 1px solid #fff;
         }
       }
     }
@@ -88,11 +88,12 @@ const Difficulty = styled.span<{ level: string }>`
 `
 
 interface ProgramTableProps {
+  day: string,
   headers: string[],
   programList: Program[]
 }
 
-const SessionTable: React.FC<ProgramTableProps> = ({ headers, programList }) => {
+const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }) => {
   const programListLength = programList.length;
 
   return (
@@ -107,6 +108,11 @@ const SessionTable: React.FC<ProgramTableProps> = ({ headers, programList }) => 
             </tr>
           </thead>
           <tbody>
+            { day === 'day1' &&
+              (
+                <tr><td colSpan={3}><ProgramItem>오프닝</ProgramItem></td></tr>
+              )
+            }
             {programList.map((program: Program, index: number, elements) => {
               const time = program.video_open_at.slice(-5)
               if(index < programListLength-1) {
@@ -142,6 +148,11 @@ const SessionTable: React.FC<ProgramTableProps> = ({ headers, programList }) => 
                 )
               }
             })}
+            { day === 'day2' &&
+            (
+              <tr><td colSpan={3}><ProgramItem>클로징</ProgramItem></td></tr>
+            )
+            }
           </tbody>
         </table>
       </Styles>
