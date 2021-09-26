@@ -89,7 +89,7 @@ const Difficulty = styled.span<{ level: string }>`
         background-color: #ff7f00;
       `
     }
-    else if(level === 'A') {
+    else if(level === 'E') {
       return `
         background-color: #cf3535;
       `
