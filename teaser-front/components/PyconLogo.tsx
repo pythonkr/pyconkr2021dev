@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 import Image from 'next/image';
 
 const PyconLogoBlock = styled.div`
@@ -55,7 +55,7 @@ const PyImageBlock = styled.div`
 function PyconLogo() {
     return (
         <PyconLogoBlock>
-            <TextBlock 
+            <TextBlock
                 css={css`
                     border-color: #939597;
                     color: #939597;
@@ -76,7 +76,7 @@ function PyconLogo() {
                     padding-bottom: 2rem;
                 `}
                 >con</TextBlock>
-            <TextBlock 
+            <TextBlock
                 css={css`
                     border-color: #939597;
                     color: #939597;
@@ -84,7 +84,7 @@ function PyconLogo() {
                 >kr</TextBlock>
             <TextBlock>2021</TextBlock>
         </PyconLogoBlock>
-        
+
     )
 }
 

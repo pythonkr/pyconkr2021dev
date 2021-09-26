@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 const GlobalLayout = styled.div`
   max-width: 1280px;
   margin: 0 auto;
+  width: 100vh;
 `
 
 function App({ Component, pageProps }: AppProps) {

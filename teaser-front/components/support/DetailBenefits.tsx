@@ -65,7 +65,7 @@ function DetailBenefits() {
                     <li><p>발표 주제는 조금이라도 개발자 커뮤니티나, 파이썬 등에 관련이 되어야 합니다.</p></li>
                     <li><p>후원사 세션의 발표자는 별도의 발표자 선정 과정을 거치지 않습니다.</p></li>
                     <li><p>후원사 세션의 발표자는 일반 세션의 발표자와 마찬가지로 발표 가이드라인 및 CoC를 지켜야 합니다.</p></li>
-                    <li><p>후원사 세션의 경우, 홈페이지 및 기타 안내에 {`'`}후원사 세션{`'`} 문구가 별도로 표기됩니다.</p></li>
+                    <li><p>후원사 세션의 경우, 홈페이지 및 기타 안내에 {'\''}후원사 세션{'\''} 문구가 별도로 표기됩니다.</p></li>
                 </ul>
             </AboutbenefitsBlock>
             <AboutbenefitsBlock>
@@ -83,7 +83,7 @@ function DetailBenefits() {
                     </Link>
                     <br /> (딜리버리히어로 코리아, 파이콘 한국 2020)
                 </p>
-                
+
             </AboutbenefitsBlock>
             <AboutbenefitsBlock>
                 <h1>버추얼 부스 in 게더타운</h1>

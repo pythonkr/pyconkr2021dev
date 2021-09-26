@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { AboutBlock } from "../components/about/AboutContext";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import PyconLogo from "../components/PyconLogo";
-import JoinSponsor from "../components/support/JoinSponsor";
+import { AboutBlock } from '../components/about/AboutContext';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import PyconLogo from '../components/PyconLogo';
+import JoinSponsor from '../components/support/JoinSponsor';
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../components/ContentBackground';
 
