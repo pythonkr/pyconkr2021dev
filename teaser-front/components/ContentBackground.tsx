@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const ContentBackgroundBlock = styled.div`
-    padding: 0 15rem;
     padding-top: 5rem;
     flex: 1;
     display: flex;
