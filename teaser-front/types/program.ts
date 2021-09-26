@@ -1,6 +1,6 @@
 export interface Program {
-  title: string
-  brief: string
+  title: string,
+  brief: string,
   desc: string,
   comment: string,
   difficulty: string,
