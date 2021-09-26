@@ -3,7 +3,8 @@ export interface Sponsor {
   desc: string,
   logo_image: string,
   url: string,
-  slug: string
+  slug: string,
+  level: string
 }
 
 export interface Sponsors {

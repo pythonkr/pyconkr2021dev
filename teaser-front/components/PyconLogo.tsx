@@ -7,7 +7,7 @@ const PyconLogoBlock = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 9rem;
     margin-bottom: 5rem;
     margin-right: 2rem;
     color: #F5DF4D;

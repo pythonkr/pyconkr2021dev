@@ -2,24 +2,14 @@ import React from 'react'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import Layout from '../../../components/Layout'
-import styled from '@emotion/styled'
 import axios from "axios";
 import {Sponsor, Sponsors} from "../../../types/sponsors";
+import SponsorDetail from "../../../components/sponsor/SponsorDetail";
 
-
-const SponsorsDetailContainer = styled.div`
-  padding: 0 5rem;
-`
-
-const SponsorsDetail = () => {
-  const router = useRouter()
-  const { slug } = router.query
-
+const SponsorsDetail = (sponsor: Sponsor) => {
   return (
       <Layout>
-        <SponsorsDetailContainer>
-          sponsor: {slug}
-        </SponsorsDetailContainer>
+          <SponsorDetail sponsor={sponsor} />
       </Layout>
   )
 }
