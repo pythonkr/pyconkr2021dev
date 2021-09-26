@@ -51,8 +51,6 @@ const PersonImgBlock = styled(BlankImgBlock)`
 const PersonIntroBlock = styled.div`
     align-items: center;
     padding-bottom: 1rem;
-    padding-left: 1rem;
-    width: 80%;
 `;
 
 export const TextBlock = styled.p`
