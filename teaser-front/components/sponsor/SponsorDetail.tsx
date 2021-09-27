@@ -86,6 +86,9 @@ const SponsorContent = styled.p`
     border-top: 1px solid #fff;
     padding: 2rem 1.4rem;
     margin: 0;
+    a:hover {
+        text-decoration: underline;
+    }
 `
 
 
@@ -95,6 +98,17 @@ interface SponsorDetailProps {
 
 const SponsorDetail: React.FC<SponsorDetailProps> = ({sponsor}) => {
     const stripedDesc = sponsor.desc.replace(/<[^>]+>/g, '');
+
+    const urlify = (text: string) => {
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.split(urlRegex)
+            .map(part => {
+                if(part.match(urlRegex)) {
+                    return <a href={part}>{part}</a>;
+                }
+                return part;
+            });
+    }
 
     return (
         <SponsorsDetailContainer>
@@ -106,7 +120,7 @@ const SponsorDetail: React.FC<SponsorDetailProps> = ({sponsor}) => {
             <SponsorInfoBlock>
                 <SponsorUrl href={sponsor.url}>{sponsor.url}</SponsorUrl>
             </SponsorInfoBlock>
-            <SponsorContent>{stripedDesc}</SponsorContent>
+            <SponsorContent>{urlify(stripedDesc)}</SponsorContent>
         </SponsorsDetailContainer>
     )
 }
