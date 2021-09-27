@@ -23,14 +23,54 @@ const SponsorInfoBlock = styled.div`
     margin-top: 2rem;
     font-size: 1.4rem;
 `
-const SponsorLevel = styled.span`
+const SponsorLevel = styled.span<{level:string}>`
     border-radius: 8px;
     padding: 0.5rem 1rem;
-    background-color: #7a7a7a;
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
     margin-left: 1.6rem;
+    ${({ level }) => {
+        if(level === '키스톤') {
+            return `
+            background-color: #8B00FF;
+          `
+        }
+        else if(level === '다이아몬드') {
+            return `
+            background-color: #0000FF;
+          `
+        }
+        else if(level === '플래티넘') {
+            return `
+            background-color: #00FFFF;
+            color: #121212;
+          `
+        } else if (level === '골드') {
+            return `
+            background-color: #00FF00;
+            color: #121212;
+            `
+        }
+        else if (level === '스타트업') {
+            return `
+            background-color: #FFFF00;
+            color: #121212;
+            `
+        }
+        else if(level === '커뮤니티') {
+            return `
+            background-color: #FF7F00;
+          `
+        } else if (level === '출판사/미디어/기술후원') {
+            return `
+            background-color: #FF0000;
+          `
+        }
+        return `
+          background-color: #7a7a7a;
+        `
+    }}
 `
 const SponsorUrl = styled.a`
     display: block;
@@ -60,7 +100,7 @@ const SponsorDetail: React.FC<SponsorDetailProps> = ({sponsor}) => {
         <SponsorsDetailContainer>
             <SponsorTitle>
                 {sponsor.name}
-                {/*<SponsorLevel>{sponsor.level}</SponsorLevel>*/}
+                <SponsorLevel level={sponsor.level}>{sponsor.level}</SponsorLevel>
             </SponsorTitle>
             <SponsorImage src={sponsor.logo_image} alt={sponsor.name}/>
             <SponsorInfoBlock>
