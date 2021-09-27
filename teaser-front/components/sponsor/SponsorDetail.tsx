@@ -76,6 +76,7 @@ const SponsorLevel = styled.span<{level:string}>`
 const SponsorUrl = styled.a`
     display: block;
     padding: 2rem 1.4rem;
+    color: #00bfff;
     &:hover {
         text-decoration: underline;
     }
@@ -87,8 +88,11 @@ const SponsorContent = styled.p`
     border-top: 1px solid #fff;
     padding: 2rem 1.4rem;
     margin: 0;
-    a:hover {
-        text-decoration: underline;
+    a {
+        color: #00bfff;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 `
 
