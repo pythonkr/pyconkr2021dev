@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { AboutBlock } from '../../components/about/AboutContext';
@@ -8,49 +8,61 @@ import { Sponsors, Sponsor } from '../../types/sponsors';
 import Layout from "../../components/Layout";
 
 
-const AboutSupportBlock = styled(AboutBlock)`
-    margin-bottom: 10rem;
-    li {
-        font-size: 1.75rem;
+const SupportBackgroundBlock = styled(ContentBackgroundBlock)`
+    padding-top: 2rem;
+    @media (max-width: 768px) {
+        width: 100vh;
+        padding: 2rem;
     }
+    @media (min-width: 768px) and (max-width: 1199px) {
+        padding: 2rem;
+    }
+`
+const AboutSupportBlock = styled(AboutBlock)`
+    margin: 0;
+    font-size: 1.75rem;
 `;
 
-const PyconPersonBlock = styled.div`
+const SponsorLevel = styled.div`
+    margin-bottom: 6rem;
+`
+const SponsorLevelTitle = styled.h3`
+    margin: 0;
+`
+const SponsorGroup = styled.ul`
     display: flex;
     align-items: center;
-    
-    h3 {
-        color: white;
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
+`
 
-    & + & {
-        margin-top: 2rem;
-    }
-`;
-
-const PersonIntroBlock = styled.div`
+const SponsorItem = styled.li`
+    min-height: 100px;
+    max-width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
     align-items: center;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    width: 80%;
-`;
+    & + & {
+        margin-left: 1.6rem;
+        @media (max-width: 768px) {
+            margin-left: 0;
+            margin-top: 2rem;
+        }
+    }
+`
 
-export const TextBlock = styled.p`
-    font-size: 1.5em;
-    font-weight: 500;
-`;
+const SponsorImage = styled.img`
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+`
 
-const BlankImgBlock = styled.div`
-    width: 8rem;
-    height: 8rem;
-    border-radius: 4rem;
-    margin: 1rem;
-    background-color: #939597;
-`;
-
-const PersonImgBlock = styled(BlankImgBlock)`
-    background-color: transparent;
-`;
 
 interface SponsorIndexProps {
     sponsors: Sponsors[]
@@ -59,35 +71,30 @@ interface SponsorIndexProps {
 export default function Index(data: SponsorIndexProps) {
     return (
         <Layout>
-            <ContentBackgroundBlock>
+            <SupportBackgroundBlock>
             <AboutSupportBlock>
             {data.sponsors.map((item:Sponsors) => {
                 return (
-                    <>
-                        <h3>{item.name}</h3>
+                    <SponsorLevel key={item.name}>
+                        <SponsorLevelTitle>{item.name}</SponsorLevelTitle>
+                        <SponsorGroup>
                         {item.sponsors.map((sponsor: Sponsor) => (
-                            <Link href={`/sponsors/${sponsor.slug}`} key={sponsor.slug}>
-                                <a>
-                                    <PyconPersonBlock key={sponsor.name}>
-                                    {sponsor.logo_image
-                                        ? (
-                                            <PersonImgBlock>
-                                                <Image src={sponsor.logo_image} width={100} height={100} alt={sponsor.name} layout="responsive" objectFit="contain"/>
-                                            </PersonImgBlock>
-                                        )
-                                        : <BlankImgBlock />
-                                    }
-                                    <PersonIntroBlock>
-                                        <h3>{sponsor.name}</h3>
-                                        </PersonIntroBlock>
-                                    </PyconPersonBlock>
-                                </a>
-                            </Link>
+                            <SponsorItem key={sponsor.slug}>
+                                <Link href={`/sponsors/${sponsor.slug}`}>
+                                    <a>
+                                        <SponsorImage
+                                            src={sponsor.logo_image}
+                                            alt={sponsor.name}
+                                        />
+                                    </a>
+                                </Link>
+                            </SponsorItem>
                         ))}
-                    </>
+                        </SponsorGroup>
+                    </SponsorLevel>
             )})}
             </AboutSupportBlock>
-            </ContentBackgroundBlock>
+            </SupportBackgroundBlock>
         </Layout>
     )
 }
