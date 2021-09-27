@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import {Sponsor} from '../../types/sponsors'
+import Linkify from 'react-linkify'
 
 const SponsorsDetailContainer = styled.div`
     margin: 6rem 8rem;
@@ -99,17 +100,6 @@ interface SponsorDetailProps {
 const SponsorDetail: React.FC<SponsorDetailProps> = ({sponsor}) => {
     const stripedDesc = sponsor.desc.replace(/<[^>]+>/g, '');
 
-    const urlify = (text: string) => {
-        const urlRegex = /(https?:\/\/[^\s]+)/g;
-        return text.split(urlRegex)
-            .map(part => {
-                if(part.match(urlRegex)) {
-                    return <a href={part}>{part}</a>;
-                }
-                return part;
-            });
-    }
-
     return (
         <SponsorsDetailContainer>
             <SponsorTitle>
@@ -120,7 +110,9 @@ const SponsorDetail: React.FC<SponsorDetailProps> = ({sponsor}) => {
             <SponsorInfoBlock>
                 <SponsorUrl href={sponsor.url}>{sponsor.url}</SponsorUrl>
             </SponsorInfoBlock>
-            <SponsorContent>{urlify(stripedDesc)}</SponsorContent>
+            <SponsorContent>
+                <Linkify>{stripedDesc}</Linkify>
+            </SponsorContent>
         </SponsorsDetailContainer>
     )
 }
