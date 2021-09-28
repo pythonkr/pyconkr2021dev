@@ -90,7 +90,7 @@ function DetailBenefits() {
                 <h3>* 대상 후원 등급: 모든 후원사 (등급별 부스 개수 상이)</h3>
                 <p>올해 파이콘 한국도 온라인으로 진행됨에 따라 행사장 부스에서 하시던 개발자 채용, 회사 또는 서비스 홍보, 코딩 챌린지, 제비 뽑기 등의 다양한 행사를 온라인으로 진행할 수 있도록 버추얼 부스를 준비했습니다.</p><br />
                 <p>하지만 작년과는 달리 올해 버추얼 부스는 오프라인의 느낌을 최대한 살릴 수 있는 게더타운에서 진행됩니다. 버추얼부스는 하나의 행사장에 후원사마다 각각 부스 공간이 배분되며, 부스 개수는 후원사 등급마다 차등 제공됩니다. 또한 부스 구성은 배너와 색상만 정해주시면 파이콘 한국 준비위원회에서 준비해 드릴 예정입니다. 부스 예시는 아래의 사진과 같습니다.</p>
-                <Image src="/img/gathertown.png" width={457} height={250} alt="gathertown" layout="responsive" />
+                <Image src="https://2021.pycon.kr/img/gathertown.png" width={457} height={250} alt="gathertown" layout="responsive" />
                 <p>[출처] ICLR 2021 ML in Korea (LG AI연구원, ICLR 2021 ML in Korea 참가 : 네이버 포스트 (naver.com))</p>
             </AboutbenefitsBlock>
             <AboutbenefitsBlock>
