@@ -27,13 +27,19 @@ export const AboutBlock = styled.div`
     }
 `;
 
+const LinkItem = styled.a`
+    color: #4cc5f4;
+    &:hover {
+        text-decoration: underline;
+    }
+`
 
 function AboutContext() {
     return (
         <ContentBackgroundBlock>
             <div>
             <AboutBlock>
-                <h1>행사 상세</h1> 
+                <h1>행사 상세</h1>
                 <p>파이콘 한국은 한국의 파이썬 개발자들이 지식을 공유하고 만남을 갖기 위한 장입니다. <br />
                 파이콘 한국 2021은 온라인으로 진행됩니다.</p>
             </AboutBlock>
@@ -43,7 +49,7 @@ function AboutContext() {
                 <p>
                     우리 삶의 많은 것들이 바뀌고, 당연하던 것들이 더 이상 당연하지 않게 됐습니다. <br />
                     하지만 우리는 여전히 파이썬을 사랑하고 파이썬을 통해 공감하며 파이썬을 이야기합니다.<br /><br />
-                    
+
                     이러한 마음을 담아 올해도 각자의 공간에서<br />
                     더 풍성하고 서로의 공감을 이끌어 낼 수 있는 프로그램을 통해<br />
                     거리는 멀어졌지만 변함 없이 함께 한다는 것을 느껴보시는 건 어떨까요?<br /><br />
@@ -67,9 +73,9 @@ function AboutContext() {
                 <p>파이콘 한국 2021에 대한 모든 문의는 아래의 공식 연락처로 주시기 바랍니다.</p>
 
                 <p>
-                    <strong>이메일</strong> <Link href="mailto:pyconkr@pycon.kr"><a target="_blank" rel="noreferrer">pyconkr@pycon.kr</a></Link><br />
-                    <strong>페이스북</strong> <Link href="https://www.facebook.com/pyconkorea/"><a target="_blank" rel="noreferrer">https://www.facebook.com/pyconkorea/</a></Link><br />
-                    <strong>후원사</strong> <Link href="mailto:sponsor@pycon.kr"><a target="_blank" rel="noreferrer">sponsor@pycon.kr</a></Link>
+                    <strong>이메일</strong> <Link href="mailto:pyconkr@pycon.kr"><LinkItem target="_blank" rel="noreferrer">pyconkr@pycon.kr</LinkItem></Link><br />
+                    <strong>페이스북</strong> <Link href="https://www.facebook.com/pyconkorea"><LinkItem target="_blank" rel="noreferrer">https://www.facebook.com/pyconkorea</LinkItem></Link><br />
+                    <strong>후원사</strong> <Link href="mailto:sponsor@pycon.kr"><LinkItem target="_blank" rel="noreferrer">sponsor@pycon.kr</LinkItem></Link>
                 </p>
             </AboutBlock>
             </div>

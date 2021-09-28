@@ -89,7 +89,7 @@ const SponsorContent = styled.p`
     padding: 2rem 1.4rem;
     margin: 0;
     a {
-        color: #00bfff;
+        color: #4cc5f4;
         &:hover {
             text-decoration: underline;
         }

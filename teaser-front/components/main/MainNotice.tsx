@@ -14,6 +14,13 @@ const NoticeTitle = styled.h1`
 const NoticeItem = styled.li`
     font-size: 1.75rem;
 `
+const NoticeLink = styled.a`
+    color: #4cc5f4;
+    &:hover {
+        text-decoration: underline;
+    }
+`
+
 
 interface MainNoticeProps {
     noticeData: {
@@ -26,11 +33,13 @@ const MainNotice: React.FC<MainNoticeProps> = ({ noticeData }) => {
     return (
         <NoticeBlock>
             <NoticeTitle>공지사항</NoticeTitle>
+            <ul>
             {noticeData.map((notice : any) => (
                 <NoticeItem key={notice.title}>
-                    <a href={notice.link}>{notice.title}</a>
+                    <NoticeLink href={notice.link}>{notice.title}</NoticeLink>
                 </NoticeItem>
             ))}
+            </ul>
         </NoticeBlock>
 
     )
