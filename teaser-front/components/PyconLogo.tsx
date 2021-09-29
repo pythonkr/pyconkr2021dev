@@ -2,6 +2,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import Image from 'next/image';
+import useMobileDetect from '../hooks/useMobileDetect';
 
 const PyconLogoBlock = styled.div`
     display: flex;
@@ -10,15 +11,17 @@ const PyconLogoBlock = styled.div`
     margin-top: 9rem;
     margin-bottom: 5rem;
     margin-right: 2rem;
-    color: #F5DF4D;
+    color: #f5df4d;
     @media (max-width: 768px) {
         width: 100vh;
+        margin: 3rem 0;
     }
     @media (min-width: 768px) and (max-width: 1024px) {
         width: 100%;
+        margin-top: 10rem;
+        margin-bottom: 2rem;
     }
 `;
-
 
 const TextBlock = styled.div`
     font-weight: 700;
@@ -28,14 +31,14 @@ const TextBlock = styled.div`
     padding: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-align: center;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
     margin: 1rem;
 
     @media (max-width: 768px) {
         margin: 0.5rem;
     }
-    @media  (max-width: 1199px) {
+    @media (max-width: 1199px) {
         font-size: 2rem;
     }
 `;
@@ -44,48 +47,62 @@ const PyImageBlock = styled.div`
     width: 10rem;
     height: 10rem;
 
-
     @media (max-width: 1199px) {
         width: 6rem;
         height: 6rem;
     }
 `;
 
-
 function PyconLogo() {
+    const isMobile = useMobileDetect();
+    console.log(isMobile);
     return (
         <PyconLogoBlock>
+            {!isMobile && (
+                <TextBlock
+                    css={css`
+                        border-color: #939597;
+                        color: #939597;
+                        padding: 0;
+                        border-radius: 50%;
+                    `}
+                >
+                    <PyImageBlock>
+                        <Image
+                            src="https://pyconkr-2021.s3.ap-northeast-2.amazonaws.com/img/profile_wht.png"
+                            width={100}
+                            height={100}
+                            alt="python logo"
+                            layout="responsive"
+                        />
+                    </PyImageBlock>
+                </TextBlock>
+            )}
             <TextBlock
                 css={css`
-                    border-color: #939597;
-                    color: #939597;
-                    padding: 0;
-                    border-radius: 50%;
+                    padding-bottom: 2rem;
                 `}
-                ><PyImageBlock>
-                    <Image src="https://pyconkr-2021.s3.ap-northeast-2.amazonaws.com/img/profile_wht.png" width={100} height={100} alt="python logo" layout="responsive"/>
-                </PyImageBlock>
+            >
+                py
             </TextBlock>
             <TextBlock
                 css={css`
                     padding-bottom: 2rem;
                 `}
-                >py</TextBlock>
-            <TextBlock
-                css={css`
-                    padding-bottom: 2rem;
-                `}
-                >con</TextBlock>
+            >
+                con
+            </TextBlock>
             <TextBlock
                 css={css`
                     border-color: #939597;
                     color: #939597;
                 `}
-                >kr</TextBlock>
+            >
+                kr
+            </TextBlock>
             <TextBlock>2021</TextBlock>
         </PyconLogoBlock>
-
-    )
+    );
 }
 
 export default PyconLogo;

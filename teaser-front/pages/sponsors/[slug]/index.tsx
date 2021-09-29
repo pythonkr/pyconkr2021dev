@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
-import { useRouter } from 'next/router'
 import Layout from '../../../components/Layout'
 import axios from "axios";
 import {Sponsor, Sponsors} from "../../../types/sponsors";

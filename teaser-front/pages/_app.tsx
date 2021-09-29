@@ -1,12 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Head from 'next/head'
 import styled from '@emotion/styled'
 import { NextSeo } from 'next-seo'
 
 const GlobalLayout = styled.div`
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
   @media (max-width: 768px) {
     width: 100vh;
   }

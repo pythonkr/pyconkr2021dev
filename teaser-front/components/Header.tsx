@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import {useState, useCallback} from 'react';
+import { useState } from 'react';
 import { css } from '@emotion/react';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
+import useMobileDetect from '../hooks/useMobileDetect';
+import MobileHeader from './MobileHeader';
 
-
-type CategoriesType = CategoryType[]
+type CategoriesType = CategoryType[];
 
 type CategoryType = {
     name: string;
     text: string;
-}
+};
 
-const categories:CategoriesType = [
+const categories: CategoriesType = [
     {
         name: 'about',
         text: 'ABOUT'
@@ -29,9 +30,7 @@ const categories:CategoriesType = [
         name: 'coc',
         text: '행동 강령'
     }
-]
-
-
+];
 
 const Positionier = styled.div`
     display: flex;
@@ -52,7 +51,6 @@ const HeaderContents = styled.div`
 
     @media (min-width: 768px) and (max-width: 1280px) {
         width: 100%;
-        
     }
     @media (max-width: 768px) {
         width: 100vh;
@@ -65,13 +63,13 @@ const SupportToggle = styled.div`
     z-index: 995;
     color: white;
     position: absolute;
-    top: calc(100% - 2rem);
+    top: 120px;
     left: 0;
     right: 0;
     padding: 0 0.8rem;
     font-size: 1rem;
     word-break: keep-all;
-    
+
     @media (max-width: 1280px) {
         width: 150%;
         left: 50%;
@@ -84,7 +82,7 @@ const RightCategoryBlock = styled.div`
     flex-direction: row;
 `;
 
-const Category = styled.div<{active?: boolean}>`
+const Category = styled.div<{ active?: boolean }>`
     font-size: 1.25rem;
     letter-spacing: 2px;
     font-weight: 700;
@@ -93,8 +91,11 @@ const Category = styled.div<{active?: boolean}>`
     position: relative;
     cursor: pointer;
 
-    ${(props) => props.active && css`color: #F5DF4D;`
-    }
+    ${(props) =>
+        props.active &&
+        css`
+            color: #f5df4d;
+        `}
 
     @media (min-width: 768px) and (max-width: 1280px) {
         font-size: 1rem;
@@ -113,7 +114,7 @@ const SupportCategory = styled(Category)`
     padding: 2rem 0;
     font-size: 1.1rem;
     line-height: 1.5;
-    
+
     a {
         display: block;
     }
@@ -128,16 +129,16 @@ const SupportCategory = styled(Category)`
     }
 `;
 
-
-
-function Header () {
-
+function Header() {
     const router = useRouter();
     const [navsupport, SetNavSupport] = useState<boolean>(false);
+    const isMobile = useMobileDetect();
 
-    const onToggle = () => SetNavSupport(!navsupport)
+    const onToggle = () => SetNavSupport(!navsupport);
 
-    return(
+    console.log('header:', isMobile);
+
+    return !isMobile ? (
         <Positionier>
             <div>
                 <HeaderContents>
@@ -146,9 +147,6 @@ function Header () {
                             <a>PYCON.KR 2021</a>
                         </Link>
                     </Category>
-
-
-
                     <RightCategoryBlock>
                         <Category active={router.pathname === '/about'}>
                             <Link href="/about">
@@ -164,43 +162,62 @@ function Header () {
                             <Link href="/session">프로그램</Link>
                         </Category>
                         <Category onClick={() => onToggle()}>
-                            <span>{navsupport ? '후원하기▴' : '후원하기▾'}</span>
-                            {navsupport &&
+                            <span>
+                                {navsupport ? '후원하기▴' : '후원하기▾'}
+                            </span>
+                            {navsupport && (
                                 <SupportToggle>
-                                    <SupportCategory active={router.pathname === '/sponsors'}>
+                                    <SupportCategory
+                                        active={router.pathname === '/sponsors'}
+                                    >
                                         <Link href="/sponsors">
                                             <a>후원사</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === '/patron'}>
+                                    <SupportCategory
+                                        active={router.pathname === '/patron'}
+                                    >
                                         <Link href="/patron">
                                             <a>개인후원</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === '/support'}>
+                                    <SupportCategory
+                                        active={router.pathname === '/support'}
+                                    >
                                         <Link href="/support">
                                             <a>후원사 모집</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === '/supportjoin'}>
+                                    <SupportCategory
+                                        active={
+                                            router.pathname === '/supportjoin'
+                                        }
+                                    >
                                         <Link href="/supportjoin">
                                             <a>후원사로 참여하기</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === '/supportvalue'}>
+                                    <SupportCategory
+                                        active={
+                                            router.pathname === '/supportvalue'
+                                        }
+                                    >
                                         <Link href="/supportvalue">
                                             <a>후원사의 가치</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory active={router.pathname === '/supportbenefits'}>
+                                    <SupportCategory
+                                        active={
+                                            router.pathname ===
+                                            '/supportbenefits'
+                                        }
+                                    >
                                         <Link href="/supportbenefits">
                                             <a>후원사 혜택 안내</a>
                                         </Link>
                                     </SupportCategory>
                                 </SupportToggle>
-                            }
-
-
+                            )}
                         </Category>
                         <Category active={router.pathname === '/coc'}>
                             <Link href="/coc">
@@ -211,6 +228,8 @@ function Header () {
                 </HeaderContents>
             </div>
         </Positionier>
+    ) : (
+        <MobileHeader />
     );
 }
 
