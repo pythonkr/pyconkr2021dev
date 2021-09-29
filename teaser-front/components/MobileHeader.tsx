@@ -11,7 +11,7 @@ const MenuButton = styled.button`
     margin: 0;
     width: 100px;
     height: 100px;
-    background-color: inherit;
+    background-color: #121212;
     border: 2px solid #939597;
     border-radius: 50%;
 `;
@@ -32,11 +32,12 @@ const RouteContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     z-index: 999;
+    overflow-y: scroll;
 `;
 const RouteList = styled.ul`
     margin: 0;
     padding: 0;
-    margin-top: 10rem;
+    margin-top: 2rem;
 `;
 const RouteItem = styled.li`
     margin: 0;
@@ -53,7 +54,7 @@ const RouteItem = styled.li`
 
 const CloseButton = styled.button`
     position: absolute;
-    right: 0;
+    left: 0;
     padding: 2rem;
     font-size: 2.5rem;
     color: #fff;
@@ -73,6 +74,73 @@ const PyconTextLogo = styled.div`
         font-size: inherit;
     }
 `;
+
+const DropDownRouteGroup = styled.div``;
+const DropDownOpenButton = styled.button`
+    display: block;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    text-align: right;
+    border: 0;
+    width: 100%;
+    background-color: inherit;
+    color: #fff;
+`;
+const DropDownRouteItem = styled(RouteItem)`
+    font-size: 1.8rem;
+    padding: 0;
+    a {
+        padding: 1rem;
+    }
+`;
+const NavIcon = styled.span`
+    font-size: 1.8rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.6rem;
+`;
+
+interface RouteType {
+    name: string;
+    path?: string;
+}
+interface RouteListType {
+    name: string;
+    routeType: string;
+    routeGroup?: RouteType[];
+    path?: string;
+}
+
+interface DropDownRouteComponentProps {
+    buttonName: string;
+    routes?: RouteType[];
+}
+
+const DropDownRouteComponent: React.FC<DropDownRouteComponentProps> = ({
+    buttonName,
+    routes = []
+}) => {
+    const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
+
+    const handleClick = () => {
+        setIsSubMenuOpened(!isSubMenuOpened);
+    };
+
+    return (
+        <DropDownRouteGroup>
+            <DropDownOpenButton onClick={handleClick}>
+                {buttonName}
+                <NavIcon>{isSubMenuOpened ? '▾' : '▴'}</NavIcon>
+            </DropDownOpenButton>
+            {isSubMenuOpened &&
+                routes.map((subRoute: RouteType, index: number) => (
+                    <DropDownRouteItem key={index}>
+                        <a href={subRoute.path}>{subRoute.name}</a>
+                    </DropDownRouteItem>
+                ))}
+        </DropDownRouteGroup>
+    );
+};
 
 const MobileHeader = () => {
     const routes = ROUTES;
@@ -97,11 +165,20 @@ const MobileHeader = () => {
                         X
                     </CloseButton>
                     <RouteList>
-                        {routes.map((route, index) => (
-                            <RouteItem key={index}>
-                                <a href={route.path}>{route.name}</a>
-                            </RouteItem>
-                        ))}
+                        {routes.map((route: RouteListType, index: number) => {
+                            return (
+                                <RouteItem key={index}>
+                                    {route.routeType === 'single' ? (
+                                        <a href={route.path}>{route.name}</a>
+                                    ) : (
+                                        <DropDownRouteComponent
+                                            buttonName={route.name}
+                                            routes={route.routeGroup}
+                                        />
+                                    )}
+                                </RouteItem>
+                            );
+                        })}
                     </RouteList>
                 </RouteContainer>
             )}

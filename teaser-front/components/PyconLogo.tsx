@@ -80,14 +80,14 @@ function PyconLogo() {
             )}
             <TextBlock
                 css={css`
-                    padding-bottom: 2rem;
+                    padding-bottom: 1.3rem;
                 `}
             >
                 py
             </TextBlock>
             <TextBlock
                 css={css`
-                    padding-bottom: 2rem;
+                    padding-bottom: 1.3rem;
                 `}
             >
                 con

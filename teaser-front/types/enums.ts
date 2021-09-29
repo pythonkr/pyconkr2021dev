@@ -22,26 +22,52 @@ export const SHORTCUT_LINK = [
 export const ROUTES = [
     {
         name: 'ABOUT',
-        path: ' /about'
+        path: ' /about',
+        routeType: 'single'
     },
     {
         name: '기여하기',
-        path: '/contribute'
+        path: '/contribute',
+        routeType: 'single'
     },
     {
         path: '/session',
-        name: '프로그램'
+        name: '프로그램',
+        routeType: 'single'
     },
     {
-        name: '후원사 모집',
-        path: '/support'
-    },
-    {
-        name: '개인후원',
-        path: '/patron'
+        name: '후원하기',
+        routeType: 'nested',
+        routeGroup: [
+            {
+                name: '후원사',
+                path: '/sponsors'
+            },
+            {
+                name: '개인 후원',
+                path: '/patron'
+            },
+            {
+                name: '후원사 모집',
+                path: '/support'
+            },
+            {
+                name: '후원사로 참여하기',
+                path: '/supportjoin'
+            },
+            {
+                name: '후원사의 가치',
+                path: '/supportvalue'
+            },
+            {
+                name: '후원사 혜택 안내',
+                path: '/supportbenefits'
+            }
+        ]
     },
     {
         name: '행동 강령',
-        path: '/coc'
+        path: '/coc',
+        routeType: 'single'
     }
 ];

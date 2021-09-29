@@ -8,6 +8,11 @@ const PartBlock = styled.div`
     line-height: 1.6;
     position: relative;
 
+    @media (max-width: 768px) {
+        font-size: 1.75rem;
+        line-height: 1.5;
+    }
+
     h2 {
         text-decoration: underline 10px;
         color: #f5df4d;
@@ -26,10 +31,6 @@ const PartBlock = styled.div`
     }
     div {
         margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 1.8rem;
     }
 `;
 
@@ -50,7 +51,7 @@ const Target = styled.div`
     left: 0px;
     top: -160px;
 `;
-const ShoutcutBlock = styled.div`
+const ShorctcutBlock = styled.div`
     margin: 0 2rem;
     font-size: 2rem;
     line-height: 1.6;
@@ -58,14 +59,11 @@ const ShoutcutBlock = styled.div`
         color: #f5df4d;
         margin: 0.4rem 0;
     }
-    li {
-        font-size: 1.4rem;
-    }
 `;
 
 const Shortcut = () => {
     return (
-        <ShoutcutBlock>
+        <ShorctcutBlock>
             <h2>목차</h2>
             <ul>
                 <li>
@@ -96,7 +94,7 @@ const Shortcut = () => {
                     <StyledLink url="#contribution">기여하기</StyledLink>
                 </li>
             </ul>
-        </ShoutcutBlock>
+        </ShorctcutBlock>
     );
 };
 
