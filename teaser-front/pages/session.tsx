@@ -4,11 +4,23 @@ import { Program } from '../types/program';
 import Layout  from '../components/Layout';
 import axios from 'axios'
 import SessionToggleButton from '../components/session/SessionToggleButton';
+import styled from '@emotion/styled';
+import StyledLink from '../components/StyledLink'
 
 interface SessionProps {
   day1: Program[],
   day2: Program[]
 }
+
+const SessionInfo = styled.div`
+    margin: 0 6rem 7rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+`
+
+const SessionInfoItem = styled.div`
+    margin-bottom: 1rem;
+`
 
 export default function Session(data: SessionProps) {
   const [selectedDay, setSelectedDay] = useState<string>('day1')
@@ -19,6 +31,13 @@ export default function Session(data: SessionProps) {
 
   return (
       <Layout>
+          <SessionInfo>
+              <SessionInfoItem>세션은 <StyledLink url='https://www.youtube.com/c/PyConKRtube'>파이콘 한국 유튜브</StyledLink>를 통해 시청하실 수 있습니다.</SessionInfoItem>
+              <SessionInfoItem>파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다.<br />
+                  해당시점에 문자 통역 플랫폼인 쉐어타이핑에 비밀번호를 통해 접속하는 방식으로 실시간 통역을 제공합니다.<br />
+                  문자 통역 URL은 당일 유튜브 공개시 공지 드릴 예정입니다.
+              </SessionInfoItem>
+          </SessionInfo>
         <SessionToggleButton handleClick={updateSelectedDay} />
         {selectedDay === 'day1'
           ? <SessionTable day='day1' headers={['101', '102']} programList={data.day1} />
