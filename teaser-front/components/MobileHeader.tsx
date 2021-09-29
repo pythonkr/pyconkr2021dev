@@ -11,7 +11,7 @@ const MenuButton = styled.button`
     margin: 0;
     width: 100px;
     height: 100px;
-    background-color: #000;
+    background-color: inherit;
     border: 2px solid #939597;
     border-radius: 50%;
 `;
