@@ -2,8 +2,15 @@ import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 import StyledLink from '../StyledLink';
 
+const TitleBlock = styled.div`
+    h1 {
+        font-size: 4rem;
+        color: #f5df4d;
+    }
+`;
+
 const PartBlock = styled.div`
-    margin: 5rem 2rem;
+    margin: 5rem 0;
     font-size: 1.4rem;
     line-height: 1.6;
     position: relative;
@@ -33,16 +40,6 @@ const PartBlock = styled.div`
         margin-top: 4rem;
     }
 `;
-
-export const TitleBlock = styled.div`
-    margin: 0 2rem;
-    color: #f5df4d;
-    font-size: 2rem;
-    @media (max-width: 768px) {
-        font-size: 1.8rem;
-    }
-`;
-
 const MailBlock = styled.span`
     color: #4cc5f4;
 `;

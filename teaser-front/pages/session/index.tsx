@@ -18,7 +18,7 @@ const SessionInfo = styled.div`
     line-height: 1.5;
     @media (max-width: 768px) {
         font-size: 2rem;
-        padding: 2rem;
+        padding: 3rem;
     }
 `;
 

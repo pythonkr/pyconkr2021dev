@@ -10,6 +10,6 @@ export const ContentBackgroundBlock = styled.div`
 
     @media (max-width: 768px) {
         width: 100vh;
-        padding: 2rem;
+        padding: 3rem;
     }
 `;
