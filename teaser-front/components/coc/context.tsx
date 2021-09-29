@@ -56,11 +56,11 @@ const ShoutcutBlock = styled.div`
 const Shortcut = () => {
     return (
         <ShoutcutBlock>
-            <h3>목차</h3>
+            <h2>목차</h2>
             <ul>
                 <li><StyledLink url="#purpose">의도와 목적</StyledLink></li>
                 <li><StyledLink url="#community">커뮤니티</StyledLink></li>
-                <li><StyledLink url="#communication">의사소통</StyledLink></li>
+                <li><StyledLink url="#communication">의사 소통</StyledLink></li>
                 <li><StyledLink url="#privacy">프라이버시</StyledLink></li>
                 <li><StyledLink url="#profit">영리 행위</StyledLink></li>
                 <li><StyledLink url="#public-manners">공중 도덕</StyledLink></li>
