@@ -3,8 +3,7 @@ import {GuideContributeBlock} from './GotoContribute';
 import { ContentBackgroundBlock } from '../ContentBackground';
 
 const FundingText = styled.div`
-    font-size: 2rem;
-    font-weight: normal;
+    font-size: 1.75rem;
 `
 const FundingLink = styled.a`
     display: inline-block;

@@ -30,11 +30,12 @@ const SupportEndedIcon = styled(ErrorOutlineIcon)`
 function JoinSponsor() {
     return (
         <ContentBackgroundBlock>
-            <SupportEndedMessage>
-                <SupportEndedIcon />현재 후원사 모집은 종료되었습니다.
-            </SupportEndedMessage>
             <AboutSupportBlock>
-                <h1>후원사로 참여하기</h1><br />
+                <h1>후원사로 참여하기</h1>
+                <SupportEndedMessage>
+                    <SupportEndedIcon />현재 후원사 모집은 종료되었습니다.
+                </SupportEndedMessage>
+                <br />
                 <h3>선정 절차</h3>
                 <p>후원사 신청 이후 선정 절차는 아래와 같으며, 관련 안내는 파이콘 홈페이지 또는 이메일로 진행됩니다.</p>
                 <ol>

@@ -1,8 +1,6 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
 import { GuideContributeBlock } from './GotoContribute';
-import Image from 'next/image';
 
 type pyconpersonType = {
     name: string;
@@ -114,16 +112,14 @@ const PyconPersonBlock = styled.div`
 `;
 
 const PyconPersonsBlock = styled.div`
-
     h2 {
         color: #F5DF4D;
         font-size: 3rem;
-
         span {
             text-decoration: underline 10px;
         }
     }
-    
+    margin-bottom: 6rem;
 `;
 
 const BlankImgBlock = styled.div`
@@ -135,9 +131,7 @@ const BlankImgBlock = styled.div`
 `;
 
 const PersonImgBlock = styled(BlankImgBlock)`
-
     background-color: transparent;
-
     Img {
         border-radius: 4rem;
     }
@@ -145,30 +139,47 @@ const PersonImgBlock = styled(BlankImgBlock)`
 
 const PersonIntroBlock = styled.div`
     align-items: center;
-    padding-bottom: 1rem;
+    margin: 0 0 1rem 1.7rem;
+    flex: 1;
 `;
 
+const PersonNameBlock = styled.h4`
+    margin-top: 0;
+    margin-bottom: 1rem;
+`
+
 export const TextBlock = styled.p`
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 `;
+
+const PersonsListTitle = styled.h3`
+    margin-top: 4rem;
+    font-size: 3rem;
+    color: #F5DF4D;
+`
+
+const PersonImage = styled.img`
+    width: 100%;
+    height: 100%;
+`
 
 function MakePyCon() {
     return (
         <ContentBackgroundBlock>
             <GuideContributeBlock>
-                <h1>파이콘 한국 2021을 만드는 사람들</h1>
-                <TextBlock>파이콘 한국 준비위원회는 2014년 조직되어, 올해 여덟 번째 한국에서의 파이콘 행사를 준비하고 있습니다.<br />
-                    준비위원회는 매년 신규 멤버를 모집하는 파이콘을 사랑하는 사람들의 열린 모임입니다.</TextBlock>
+                <h2><span>파이콘 한국 2021을 만드는 사람들</span></h2>
+                <TextBlock>파이콘 한국 준비위원회는 2014년 조직되어, 올해 여덟 번째 한국에서의 파이콘 행사를 준비하고 있습니다. 준비위원회는 매년 신규 멤버를 모집하는 파이콘을 사랑하는 사람들의 열린 모임입니다.</TextBlock>
                 <PyconPersonsBlock>
-                    <h2><span>준비위원회 명단</span> {'('}가나다 순{')'} </h2>
+                    <PersonsListTitle>준비위원회 명단 {'('}가나다 순{')'} </PersonsListTitle>
                     <div>
                         {pyconPersons.map(person => (
                             <PyconPersonBlock key={person.name}>
-                                {person.img ? <PersonImgBlock><Image src={person.img} width={100} height={100} alt={person.name} layout="responsive"/></PersonImgBlock> : <BlankImgBlock />}
-
+                                {person.img ? <PersonImgBlock><PersonImage src={person.img} width={100} height={100} alt={person.name}/></PersonImgBlock> : <BlankImgBlock />}
                                 <PersonIntroBlock>
-                                    <h3>{person.name}</h3>
+                                    <PersonNameBlock>{person.name}</PersonNameBlock>
                                     <TextBlock>
                                         {person.introduce || ''}
                                         {person.newlineintro && <br />}
@@ -183,7 +194,6 @@ function MakePyCon() {
                     <h2><span>환영하는 분위기를 만들어 주세요</span></h2>
                     <TextBlock>“파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 행사입니다. 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다. 발표자, 준비위원회, 참가자 등 모든 인원이 금전적 이득 없이 순수히 오픈소스 프로그래밍 언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.<br />
                         파이콘 한국 행사 진행과정을 포함하여 모든 의사소통 과정에서 CoC를 준수하고, 파이콘 한국 준비위원회 가이드를 따라주세요. 파이콘 한국 준비위원회는 전원 자원봉사로 이루어진 커뮤니티이기에 모든 요청에 실시간으로 대응하기 어렵습니다.”</TextBlock>
-
                     <TextBlock>“PyCon Korea is a non-profitable, developer-oriented event organized by community members, and has different characteristics from conferences organized companies or organizations. All attendees, including speakers, tutorial hosts, voluntary workers, and organizers, participate in PyCon Korea without any profitable purpose, and only to broaden the usage of Python, an open source programming language, and activate its community.”</TextBlock>
                 </PyconPersonsBlock>
             </GuideContributeBlock>
