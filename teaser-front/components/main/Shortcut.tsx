@@ -8,6 +8,10 @@ const ShortcutContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0 2rem;
+    
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const ShortcutLink = styled.a`
@@ -20,6 +24,10 @@ const ShortcutLink = styled.a`
     font-weight: bold;
     border-radius: 4rem;
     cursor: pointer;
+    
+    @media(max-width: 768px) {
+        margin: 1rem 0;
+    }
 `
 
 const ShortcutComponent: React.FC = () => {

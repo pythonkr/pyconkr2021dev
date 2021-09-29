@@ -36,6 +36,7 @@ const ScheduleBlock = styled.div`
 
     @media (max-width: 768px) {
         font-size: 1.75rem;
+        margin: 5rem 0;
     }
     @media (min-width: 768px) and (max-width: 1199px) {
         font-size: 2.25rem;

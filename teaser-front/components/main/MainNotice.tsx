@@ -2,9 +2,13 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 const NoticeBlock = styled.div`
-    margin-top: 6rem;
+    margin-top: 10rem;
     margin-bottom: 3rem;
     line-height: 3rem;
+    
+    @media(max-width: 768px) {
+        margin-top: 2rem;
+    }
 `;
 
 const NoticeTitle = styled.h1`
