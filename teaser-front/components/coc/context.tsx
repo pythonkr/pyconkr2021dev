@@ -20,9 +20,6 @@ const PartBlock = styled.div`
     div {
         margin-top: 4rem;
     }
-    li {
-        line-height: 1.9;
-    }
 `;
 
 export const TitleBlock = styled.div`
