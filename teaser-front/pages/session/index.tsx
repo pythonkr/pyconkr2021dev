@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import SessionTable from '../components/session/SessionTable';
-import { Program } from '../types/program';
-import Layout  from '../components/Layout';
+import SessionTable from '../../components/session/SessionTable';
+import { Session } from '../../types/session';
+import Layout  from '../../components/Layout';
 import axios from 'axios'
-import SessionToggleButton from '../components/session/SessionToggleButton';
+import SessionToggleButton from '../../components/session/SessionToggleButton';
 import styled from '@emotion/styled';
-import StyledLink from '../components/StyledLink'
+import StyledLink from '../../components/StyledLink'
 
 interface SessionProps {
-  day1: Program[],
-  day2: Program[]
+  day1: Session[],
+  day2: Session[]
 }
 
 const SessionInfo = styled.div`
@@ -22,7 +22,7 @@ const SessionInfoItem = styled.div`
     margin-bottom: 1rem;
 `
 
-export default function Session(data: SessionProps) {
+export default function Index(data: SessionProps) {
   const [selectedDay, setSelectedDay] = useState<string>('day1')
 
   const updateSelectedDay = (day: string): void => {
@@ -40,8 +40,8 @@ export default function Session(data: SessionProps) {
           </SessionInfo>
         <SessionToggleButton handleClick={updateSelectedDay} />
         {selectedDay === 'day1'
-          ? <SessionTable day='day1' headers={['101', '102']} programList={data.day1} />
-          : <SessionTable day='day2' headers={['103', '104']} programList={data.day2} />
+          ? <SessionTable day='day1' headers={['101', '102']} sessionList={data.day1} />
+          : <SessionTable day='day2' headers={['103', '104']} sessionList={data.day2} />
         }
       </Layout>
   )

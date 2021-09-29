@@ -1,5 +1,5 @@
 import React from 'react';
-import { Program } from '../../types/program';
+import { Session } from '../../types/session';
 import styled from '@emotion/styled';
 import { DifficultyLabel } from '../../types/enums';
 
@@ -100,37 +100,36 @@ const Difficulty = styled.span<{ level: string }>`
   }}
 `
 
-interface ProgramTableProps {
+interface SessionTableProps {
   day: string,
   headers: string[],
-  programList: Program[]
+  sessionList: Session[]
 }
 
 interface SessionItemProps {
-  program: Program
+  session: Session
 }
 
-const SessionItem: React.FC<SessionItemProps> = ({program}) => {
+const SessionItem: React.FC<SessionItemProps> = ({session}) => {
   return (
       <ProgramItem>
         <Title>
-          {program.title}
-          {program.title !== '-' &&
+          {session.title}
+          {session.title !== '-' &&
             (
-              <Difficulty level={program.difficulty}>
-                {DifficultyLabel[program.difficulty as keyof typeof DifficultyLabel]}
+              <Difficulty level={session.difficulty}>
+                {DifficultyLabel[session.difficulty as keyof typeof DifficultyLabel]}
               </Difficulty>
             )
           }
         </Title>
-        <Speaker>{program.user_name}</Speaker>
-        {/*<Category>{program.category}</Category>*/}
+        <Speaker>{session.user_name}</Speaker>
       </ProgramItem>
   )
 }
 
-const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }) => {
-  const programListLength = programList.length;
+const SessionTable: React.FC<SessionTableProps> = ({ day, headers, sessionList }) => {
+  const programListLength = sessionList.length;
 
   return (
       <Styles>
@@ -149,8 +148,8 @@ const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }
                 <tr><td colSpan={3}><ProgramItem>오프닝</ProgramItem></td></tr>
               )
             }
-            {programList.map((program: Program, index: number, elements) => {
-              const time = program.video_open_at.slice(-5)
+            {sessionList.map((session: Session, index: number, elements) => {
+              const time = session.video_open_at.slice(-5)
               if(index < programListLength-1) {
                 const sameTimeProgram = elements[index+1]
                 return (
@@ -160,10 +159,10 @@ const SessionTable: React.FC<ProgramTableProps> = ({ day, headers, programList }
                       <>
                         <td>{time}</td>
                         <td>
-                          <SessionItem program={program} />
+                          <SessionItem session={session} />
                         </td>
                         <td>
-                          <SessionItem program={sameTimeProgram} />
+                          <SessionItem session={sameTimeProgram} />
                         </td>
                       </>
                     )

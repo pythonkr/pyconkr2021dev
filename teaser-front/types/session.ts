@@ -1,4 +1,4 @@
-export interface Program {
+export interface Session {
   title: string,
   brief: string,
   desc: string,
