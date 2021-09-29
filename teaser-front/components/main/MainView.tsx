@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
+import Shortcut from "./Shortcut";
 
 
 const MainViewBlock = styled.div`
@@ -67,7 +68,7 @@ export function Slogan() {
             Stay Home, <br />
             Stay Connected
         </SloganBlock>
-    )  
+    )
 }
 
 const GuideButtonBlock = styled.div`
@@ -82,13 +83,10 @@ function MainView () {
                 <ScheduleBlock>
                     온라인 컨퍼런스 10/2(토)~10/3(일)
                 </ScheduleBlock>
-                <RegisterLink href="https://festa.io/events/1788/">참가 등록</RegisterLink>
-                {/* <GuideButtonBlock>
-                    * 참가버튼은 내부 일정이 확정되는대로 활성화 될 예정입니다.
-                </GuideButtonBlock> */}
+                <Shortcut />
             </MainViewBlock>
         </ContentBackgroundBlock>
-        
+
     )
 }
 

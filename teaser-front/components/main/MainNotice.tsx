@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 const NoticeBlock = styled.div`
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
     line-height: 3rem;
 `;
 
