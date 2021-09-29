@@ -5,6 +5,9 @@ import Linkify from 'react-linkify'
 
 const SponsorsDetailContainer = styled.div`
     margin: 6rem 8rem;
+    @media(max-width: 768px) {
+        margin: 6rem 4rem;
+    }
 `
 const SponsorTitle = styled.h3`
     font-size: 3rem;
@@ -83,8 +86,8 @@ const SponsorUrl = styled.a`
 `
 const SponsorContent = styled.p`
     white-space: pre-wrap;
-    font-size: 1.3rem;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.5;
     border-top: 1px solid #fff;
     padding: 2rem 1.4rem;
     margin: 0;

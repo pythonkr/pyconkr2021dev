@@ -153,6 +153,9 @@ export const TextBlock = styled.p`
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    & + & {
+        margin-top: 1rem;
+    }
 `;
 
 const PersonsListTitle = styled.h3`
@@ -164,6 +167,9 @@ const PersonsListTitle = styled.h3`
 const PersonImage = styled.img`
     width: 100%;
     height: 100%;
+`
+const PersonText = styled(TextBlock)`
+   font-size: 1.5rem;
 `
 
 function MakePyCon() {
@@ -180,11 +186,11 @@ function MakePyCon() {
                                 {person.img ? <PersonImgBlock><PersonImage src={person.img} width={100} height={100} alt={person.name}/></PersonImgBlock> : <BlankImgBlock />}
                                 <PersonIntroBlock>
                                     <PersonNameBlock>{person.name}</PersonNameBlock>
-                                    <TextBlock>
+                                    <PersonText>
                                         {person.introduce || ''}
                                         {person.newlineintro && <br />}
                                         {person.newlineintro || ''}
-                                    </TextBlock>
+                                    </PersonText>
                                 </PersonIntroBlock>
                             </PyconPersonBlock>
                         ))}
@@ -192,8 +198,8 @@ function MakePyCon() {
                 </PyconPersonsBlock>
                 <PyconPersonsBlock>
                     <h2><span>환영하는 분위기를 만들어 주세요</span></h2>
-                    <TextBlock>“파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 행사입니다. 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다. 발표자, 준비위원회, 참가자 등 모든 인원이 금전적 이득 없이 순수히 오픈소스 프로그래밍 언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.<br />
-                        파이콘 한국 행사 진행과정을 포함하여 모든 의사소통 과정에서 CoC를 준수하고, 파이콘 한국 준비위원회 가이드를 따라주세요. 파이콘 한국 준비위원회는 전원 자원봉사로 이루어진 커뮤니티이기에 모든 요청에 실시간으로 대응하기 어렵습니다.”</TextBlock>
+                    <TextBlock>“파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 행사입니다. 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다. 발표자, 준비위원회, 참가자 등 모든 인원이 금전적 이득 없이 순수히 오픈소스 프로그래밍 언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.<br /></TextBlock>
+                    <TextBlock>파이콘 한국 행사 진행과정을 포함하여 모든 의사소통 과정에서 CoC를 준수하고, 파이콘 한국 준비위원회 가이드를 따라주세요. 파이콘 한국 준비위원회는 전원 자원봉사로 이루어진 커뮤니티이기에 모든 요청에 실시간으로 대응하기 어렵습니다.”</TextBlock>
                     <TextBlock>“PyCon Korea is a non-profitable, developer-oriented event organized by community members, and has different characteristics from conferences organized companies or organizations. All attendees, including speakers, tutorial hosts, voluntary workers, and organizers, participate in PyCon Korea without any profitable purpose, and only to broaden the usage of Python, an open source programming language, and activate its community.”</TextBlock>
                 </PyconPersonsBlock>
             </GuideContributeBlock>

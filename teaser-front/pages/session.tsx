@@ -14,7 +14,7 @@ interface SessionProps {
 
 const SessionInfo = styled.div`
     margin: 0 6rem 7rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.5;
 `
 
