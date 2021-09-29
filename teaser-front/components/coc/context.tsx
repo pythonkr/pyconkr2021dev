@@ -6,17 +6,15 @@ const PartBlock = styled.div`
     margin: 5rem 2rem;
     font-size: 1.4rem;
     line-height: 1.6;
+    position: relative;
     
-    h3 {
-        font-size: 2rem;
-    }
-
     h2 {
         text-decoration : underline 10px;
         color: #F5DF4D;
         font-size: 2rem;
     }
     h3 {
+        font-size: 2rem;
         color: #F5DF4D;
     }
     div {
@@ -36,11 +34,48 @@ export const TitleBlock = styled.div`
 const MailBlock = styled.span`
     color: #4cc5f4;
 `
+const Target = styled.div`
+    position: absolute;
+    left: 0px;
+    top: -160px;
+`
+const ShoutcutBlock = styled.div`
+    margin: 0 2rem;
+    font-size: 2rem;
+    line-height: 1.6;
+    h3 {
+        color: #F5DF4D;
+        margin: 0.4rem 0;
+    }
+    li {
+        font-size: 1.4rem;
+    }
+`
 
+
+const Shortcut = () => {
+    return (
+        <ShoutcutBlock>
+            <h3>목차</h3>
+            <ul>
+                <li><StyledLink url="#purpose">의도와 목적</StyledLink></li>
+                <li><StyledLink url="#community">커뮤니티</StyledLink></li>
+                <li><StyledLink url="#communication">의사소통</StyledLink></li>
+                <li><StyledLink url="#privacy">프라이버시</StyledLink></li>
+                <li><StyledLink url="#profit">영리 행위</StyledLink></li>
+                <li><StyledLink url="#public-manners">공중 도덕</StyledLink></li>
+                <li><StyledLink url="#reporting">신고하기</StyledLink></li>
+                <li><StyledLink url="#requests">당부의 말</StyledLink></li>
+                <li><StyledLink url="#contribution">기여하기</StyledLink></li>
+            </ul>
+        </ShoutcutBlock>
+    )
+}
 
 const IntentPart = () => {
     return (
         <PartBlock>
+            <Target id="purpose" />
             <h2>의도와 목적</h2>
             <div>
                 <h3>파이콘 한국은 모든 참가자를 포용합니다</h3>
@@ -86,6 +121,7 @@ const IntentPart = () => {
 const CommunityPart = () => {
     return (
         <PartBlock>
+            <Target id="community" />
             <h2>커뮤니티</h2>
             <div>
                 <h3>환영하는 분위기를 만들어주세요</h3>
@@ -218,6 +254,7 @@ const CommunityPart = () => {
 const CommunicationPart = () => {
     return (
         <PartBlock>
+            <Target id="communication" />
             <h2>의사 소통</h2>
             <div>
                 <h3>발표할 때에는 발표자를 존중해주세요</h3>
@@ -269,6 +306,7 @@ const CommunicationPart = () => {
 const PrivacyPart = () => {
     return (
         <PartBlock>
+            <Target id="privacy" />
             <h2>프라이버시</h2>
             <div>
                 <h3>사진과 영상을 촬영할 때 주의해주세요</h3>
@@ -305,6 +343,7 @@ const PrivacyPart = () => {
 const ForProfitPart = () => {
     return (
         <PartBlock>
+            <Target id="profit" />
             <h2>영리 행위</h2>
             <div>
                 <p>파이콘 한국은 허가를 받지 않은 단체의 영리 행위를 금지합니다. 영리 행위는 물건을 팔아서 이득을 취하는 행위, 당장 이득을 취하지는 않지만 장기적으로 개인 혹은 단체가 금전적인 이득을 취할 수 있는 행위를 의미합니다.</p>
@@ -322,6 +361,7 @@ const ForProfitPart = () => {
 const PublicMoralsPart = () => {
     return (
         <PartBlock>
+            <Target id="public-manners" />
             <h2>공중 도덕</h2>
             <p>파이콘 한국이 진행되는 공간은 많은 사람들이 모이는 공공장소입니다.<br />모두가 쾌적하게 행사를 즐길 수 있도록 공중 도덕을 지켜주세요.</p>
             <div>
@@ -345,6 +385,7 @@ const PublicMoralsPart = () => {
 const ReportPart = () => {
     return (
         <PartBlock>
+            <Target id="reporting" />
             <h2>신고하기</h2>
             <div>
                 <h3>이렇게 신고해주세요</h3>
@@ -373,6 +414,7 @@ const ReportPart = () => {
 const UrgePart = () => {
     return (
         <PartBlock>
+            <Target id="requests" />
             <h2>당부의 말</h2>
             <div>
                 <h3>준비위원회를 존중해주세요</h3>
@@ -391,6 +433,7 @@ const UrgePart = () => {
 const ContributePart = () => {
     return (
         <PartBlock>
+            <Target id="contribution" />
             <h2>기여하기</h2>
             <p>본 파이콘 한국 행동 강령은 의도와 목적, 지향하는 가치를 더 잘 전달하기 위해 내용이 변경될 수 있습니다.<br />여러분의 기여를 통해 파이콘 한국 행동 강령은 지속적으로 발전할 수 있습니다.</p>
             <div>
@@ -412,10 +455,9 @@ const ContributePart = () => {
             <div>
                 <h3>제안할 내용이 있다면 기여해주세요</h3>
                 <p>파이콘 한국 행동 강령은 더 나은 커뮤니티를 위해 계속해서 변화하고 있습니다. 파이콘 한국 준비위원회와 많은 사람들의 노력에도 불구하고, 본 행동 강령에는 여전히 개선할 점이 존재합니다.</p>
-                <p>행동 강령을 개선하는 과정에 여러분도 동참할 수 있습니다. 제안, 의견 혹은 행동 강령과 관련된 어떠한 내용이라도 언제든지 자유롭게 coc@pycon.kr 로 보내주세요. 보내주신 의견은 준비위원회가 면밀히 검토하겠습니다.</p>
+                <p>행동 강령을 개선하는 과정에 여러분도 동참할 수 있습니다. 제안, 의견 혹은 행동 강령과 관련된 어떠한 내용이라도 언제든지 자유롭게 <MailBlock>coc@pycon.kr</MailBlock>로 보내주세요. 보내주신 의견은 준비위원회가 면밀히 검토하겠습니다.</p>
                 <p>파이콘 한국 준비위원회는 투명성과 기록의 가치를 믿습니다. 행동 강령에 변경 사항이 있다면 그 내역을 모두 기록하고 웹사이트를 통해 공개할 것입니다. (<StyledLink url="https://github.com/pythonkr/pycon-code-of-conduct/releases">릴리즈 노트</StyledLink>)</p>
-                <p>본 행동 강령은 파이콘 한국 2019 준비위원회가 외부 전문가들의 자문을 받아 작성하였습니다.</p>
-                <p>파이콘 한국 2020 준비위원회가 온라인 행사에 맞추어 일부 내용을 수정하였습니다.</p>
+                <p>본 행동 강령은 파이콘 한국 2019 준비위원회가 외부 전문가들의 자문을 받아 작성하였습니다.<br />파이콘 한국 2020 준비위원회가 온라인 행사에 맞추어 일부 내용을 수정하였습니다.</p>
             </div>
         </PartBlock>
     )
@@ -427,6 +469,7 @@ export default function CocContext() {
             <TitleBlock>
                 <h1>파이콘 한국 행동 강령</h1>
             </TitleBlock>
+            <Shortcut />
             <IntentPart />
             <CommunityPart />
             <CommunicationPart />
