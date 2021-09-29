@@ -1,21 +1,23 @@
 import styled from '@emotion/styled';
 import { ContentBackgroundBlock } from '../ContentBackground';
-import Shortcut from "./Shortcut";
-
+import Shortcut from './Shortcut';
 
 const MainViewBlock = styled.div`
     text-align: center;
     padding-top: 2rem;
     margin-top: 4rem;
     color: #939597;
-
     align-items: center;
+    @media (max-width: 768px) {
+        padding-top: 0;
+        margin-top: 0;
+    }
 `;
 
 const SloganBlock = styled.h1`
     font-size: 8rem;
     text-align: center;
-    color: #F5DF4D;
+    color: #f5df4d;
 
     @media (max-width: 768px) {
         font-size: 4.5rem;
@@ -45,7 +47,7 @@ const ScheduleBlock = styled.div`
 
 export const RegisterLink = styled.a`
     display: inline-block;
-    background-color: #F5DF4D;
+    background-color: #f5df4d;
     color: black;
     border-radius: 4rem;
     font-size: 3rem;
@@ -63,32 +65,28 @@ export const RegisterLink = styled.a`
 `;
 
 export function Slogan() {
-
     return (
         <SloganBlock>
             Stay Home, <br />
             Stay Connected
         </SloganBlock>
-    )
+    );
 }
 
 const GuideButtonBlock = styled.div`
     font-size: 1.5rem;
 `;
 
-function MainView () {
+function MainView() {
     return (
         <ContentBackgroundBlock>
             <MainViewBlock>
                 <Slogan />
-                <ScheduleBlock>
-                    온라인 컨퍼런스 10/2(토)~10/3(일)
-                </ScheduleBlock>
+                <ScheduleBlock>온라인 컨퍼런스 10/2(토)~10/3(일)</ScheduleBlock>
                 <Shortcut />
             </MainViewBlock>
         </ContentBackgroundBlock>
-
-    )
+    );
 }
 
 export default MainView;
