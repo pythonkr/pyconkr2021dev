@@ -7,22 +7,6 @@ interface SessionListProps {
     sessionList: Session[];
 }
 
-const SessionListContainer = styled.div`
-    margin: 6rem 8rem;
-    font-size: 1.75rem;
-    line-height: 1;
-    @media (max-width: 768px) {
-        margin: 0;
-        padding: 2rem;
-    }
-    ul,
-    li {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-`;
-
 const SessionList: React.FC<SessionListProps> = ({ sessionList }) => {
     let categoryGroupObject: any = {};
     sessionList.forEach((session: Session) => {
@@ -41,11 +25,7 @@ const SessionList: React.FC<SessionListProps> = ({ sessionList }) => {
 
     const categoryList = Object.keys(categoryGroupObject).map((item) => categoryGroupObject[item]);
 
-    return (
-        <SessionListContainer>
-            <CategoryList categoryList={categoryList} />
-        </SessionListContainer>
-    );
+    return <CategoryList categoryList={categoryList} />;
 };
 
 export default SessionList;
