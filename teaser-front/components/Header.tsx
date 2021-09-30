@@ -136,8 +136,6 @@ function Header() {
 
     const onToggle = () => SetNavSupport(!navsupport);
 
-    console.log('header:', isMobile);
-
     return !isMobile ? (
         <Positionier>
             <div>

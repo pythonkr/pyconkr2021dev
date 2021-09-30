@@ -55,7 +55,6 @@ const PyImageBlock = styled.div`
 
 function PyconLogo() {
     const isMobile = useMobileDetect();
-    console.log(isMobile);
     return (
         <PyconLogoBlock>
             {!isMobile && (
