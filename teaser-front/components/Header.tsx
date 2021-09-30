@@ -131,10 +131,9 @@ const SupportCategory = styled(Category)`
 
 function Header() {
     const router = useRouter();
-    const [navsupport, SetNavSupport] = useState<boolean>(false);
+    const [navSupport, setNavSupport] = useState<boolean>(false);
+    const [isProgramOpen, setIsProgramOpen] = useState<boolean>(false);
     const isMobile = useMobileDetect();
-
-    const onToggle = () => SetNavSupport(!navsupport);
 
     return !isMobile ? (
         <Positionier>
@@ -156,60 +155,56 @@ function Header() {
                                 <a>기여하기</a>
                             </Link>
                         </Category>
-                        <Category active={router.pathname === '/session'}>
-                            <Link href="/session">프로그램</Link>
-                        </Category>
-                        <Category onClick={() => onToggle()}>
-                            <span>
-                                {navsupport ? '후원하기▴' : '후원하기▾'}
-                            </span>
-                            {navsupport && (
+                        <Category
+                            onClick={() => setIsProgramOpen(!isProgramOpen)}
+                            active={router.pathname === '/session'}
+                        >
+                            <span>{isProgramOpen ? '프로그램▴' : '프로그램▾'}</span>
+                            {isProgramOpen && (
                                 <SupportToggle>
-                                    <SupportCategory
-                                        active={router.pathname === '/sponsors'}
-                                    >
+                                    <SupportCategory active={router.pathname === '/session'}>
+                                        <Link href="/session">
+                                            <a>발표 시간표</a>
+                                        </Link>
+                                    </SupportCategory>
+                                    <SupportCategory active={router.pathname === '/session/list'}>
+                                        <Link href="/session/list">
+                                            <a>발표 목록</a>
+                                        </Link>
+                                    </SupportCategory>
+                                </SupportToggle>
+                            )}
+                        </Category>
+                        <Category onClick={() => setNavSupport(!navSupport)}>
+                            <span>{navSupport ? '후원하기▴' : '후원하기▾'}</span>
+                            {navSupport && (
+                                <SupportToggle>
+                                    <SupportCategory active={router.pathname === '/sponsors'}>
                                         <Link href="/sponsors">
                                             <a>후원사</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory
-                                        active={router.pathname === '/patron'}
-                                    >
+                                    <SupportCategory active={router.pathname === '/patron'}>
                                         <Link href="/patron">
                                             <a>개인후원</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory
-                                        active={router.pathname === '/support'}
-                                    >
+                                    <SupportCategory active={router.pathname === '/support'}>
                                         <Link href="/support">
                                             <a>후원사 모집</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory
-                                        active={
-                                            router.pathname === '/supportjoin'
-                                        }
-                                    >
+                                    <SupportCategory active={router.pathname === '/supportjoin'}>
                                         <Link href="/supportjoin">
                                             <a>후원사로 참여하기</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory
-                                        active={
-                                            router.pathname === '/supportvalue'
-                                        }
-                                    >
+                                    <SupportCategory active={router.pathname === '/supportvalue'}>
                                         <Link href="/supportvalue">
                                             <a>후원사의 가치</a>
                                         </Link>
                                     </SupportCategory>
-                                    <SupportCategory
-                                        active={
-                                            router.pathname ===
-                                            '/supportbenefits'
-                                        }
-                                    >
+                                    <SupportCategory active={router.pathname === '/supportbenefits'}>
                                         <Link href="/supportbenefits">
                                             <a>후원사 혜택 안내</a>
                                         </Link>
