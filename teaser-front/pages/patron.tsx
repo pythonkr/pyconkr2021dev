@@ -21,7 +21,7 @@ const PatronsIntro = styled.div`
     line-height: 1.5;
 `;
 const PatronsBlock = styled.div`
-    margin-top: 6rem;
+    margin: 6rem 0;
 `;
 
 const Ellipse = styled.div`
