@@ -44,47 +44,32 @@ export default function Index(data: SessionProps) {
     return (
         <Layout>
             <SessionInfo>
-                <SessionTitle>세션 시간표</SessionTitle>
+                <SessionTitle>발표 시간표</SessionTitle>
                 <SessionInfoItem>
-                    세션은{' '}
-                    <StyledLink url="https://www.youtube.com/c/PyConKRtube">
-                        파이콘 한국 유튜브
-                    </StyledLink>
-                    를 통해 시청하실 수 있습니다.
+                    세션은 <StyledLink url="https://www.youtube.com/c/PyConKRtube">파이콘 한국 유튜브</StyledLink>를
+                    통해 시청하실 수 있습니다.
                 </SessionInfoItem>
                 <SessionInfoItem>
-                    파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자
-                    통역을 지원합니다.
+                    파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다.
                     <br />
-                    해당시점에 문자 통역 플랫폼인 쉐어타이핑에 비밀번호를 통해
-                    접속하는 방식으로 실시간 통역을 제공합니다.
+                    해당시점에 문자 통역 플랫폼인 쉐어타이핑에 비밀번호를 통해 접속하는 방식으로 실시간 통역을
+                    제공합니다.
                     <br />
                     문자 통역 URL은 당일 유튜브 공개시 공지 드릴 예정입니다.
                 </SessionInfoItem>
             </SessionInfo>
             <SessionToggleButton handleClick={updateSelectedDay} />
             {selectedDay === 'day1' ? (
-                <SessionTable
-                    day="day1"
-                    headers={['101', '102']}
-                    sessionList={data.day1}
-                />
+                <SessionTable day="day1" headers={['101', '102']} sessionList={data.day1} />
             ) : (
-                <SessionTable
-                    day="day2"
-                    headers={['103', '104']}
-                    sessionList={data.day2}
-                />
+                <SessionTable day="day2" headers={['103', '104']} sessionList={data.day2} />
             )}
         </Layout>
     );
 }
 
 export async function getStaticProps() {
-    let url =
-        process.env.ENV == 'DEV'
-            ? 'https://dev.2021.api.pycon.kr/api/v1'
-            : 'https://2021.api.pycon.kr/api/v1';
+    let url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'https://2021.api.pycon.kr/api/v1';
 
     if (process.env.ENV == 'LOCAL') {
         url = 'http://127.0.0.1:8000/api/v1';

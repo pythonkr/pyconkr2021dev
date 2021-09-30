@@ -11,7 +11,7 @@ export enum LanguageType {
 
 export const SHORTCUT_LINK = [
     {
-        name: '세션 시간표',
+        name: '발표 시간표',
         url: '/session'
     },
     {
@@ -36,9 +36,18 @@ export const ROUTES = [
         routeType: 'single'
     },
     {
-        path: '/session',
         name: '프로그램',
-        routeType: 'single'
+        routeType: 'nested',
+        routeGroup: [
+            {
+                name: '발표 시간표',
+                path: '/session'
+            },
+            {
+                name: '발표 목록',
+                path: '/session/list'
+            }
+        ]
     },
     {
         name: '후원하기',

@@ -3,12 +3,7 @@ import { ContentBackgroundBlock } from '../components/ContentBackground';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PyconLogo from '../components/PyconLogo';
-import {
-    PersonIntroBlock,
-    PersonNameBlock,
-    PersonText,
-    PyconPersonBlock
-} from '../components/contribute/MakePyCon';
+import { PersonIntroBlock, PersonNameBlock, PersonText, PyconPersonBlock } from '../components/contribute/MakePyCon';
 
 const PatronTitle = styled.h1`
     font-size: 4rem;
@@ -36,11 +31,11 @@ const Ellipse = styled.div`
     margin: 1rem 0;
 `;
 
-const YellowEllipse = styled(Ellipse)`
+export const YellowEllipse = styled(Ellipse)`
     background-color: #f5df4d;
 `;
 
-const GreyEllipse = styled(Ellipse)`
+export const GreyEllipse = styled(Ellipse)`
     background-color: #939597;
 `;
 
@@ -52,22 +47,15 @@ export default function Patron({ data_patron }: any) {
             <ContentBackgroundBlock>
                 <PatronTitle>개인 후원자 목록</PatronTitle>
                 <PatronsIntro>
-                    파이콘 한국 2021을 후원해주신 개인 후원자 분들의 명단입니다.
-                    후원해주셔서 감사합니다.
+                    파이콘 한국 2021을 후원해주신 개인 후원자 분들의 명단입니다. 후원해주셔서 감사합니다.
                 </PatronsIntro>
                 <PatronsBlock>
                     {data_patron.map((d: any, index: number) => {
                         return (
                             <PyconPersonBlock key={d.user_name}>
-                                {index % 2 === 0 ? (
-                                    <YellowEllipse />
-                                ) : (
-                                    <GreyEllipse />
-                                )}
+                                {index % 2 === 0 ? <YellowEllipse /> : <GreyEllipse />}
                                 <PatronIntroBlock>
-                                    <PersonNameBlock>
-                                        {d.user_name}
-                                    </PersonNameBlock>
+                                    <PersonNameBlock>{d.user_name}</PersonNameBlock>
                                     <PersonText>{d.desc}</PersonText>
                                 </PatronIntroBlock>
                             </PyconPersonBlock>
@@ -81,10 +69,7 @@ export default function Patron({ data_patron }: any) {
 }
 
 export async function getStaticProps() {
-    let url =
-        process.env.ENV == 'DEV'
-            ? 'https://dev.2021.api.pycon.kr/api/v1'
-            : 'https://2021.api.pycon.kr/api/v1';
+    let url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'https://2021.api.pycon.kr/api/v1';
 
     if (process.env.ENV == 'LOCAL') {
         url = 'http://127.0.0.1:8000/api/v1';

@@ -116,10 +116,7 @@ interface DropDownRouteComponentProps {
     routes?: RouteType[];
 }
 
-const DropDownRouteComponent: React.FC<DropDownRouteComponentProps> = ({
-    buttonName,
-    routes = []
-}) => {
+const DropDownRouteComponent: React.FC<DropDownRouteComponentProps> = ({ buttonName, routes = [] }) => {
     const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
 
     const handleClick = () => {
@@ -128,9 +125,11 @@ const DropDownRouteComponent: React.FC<DropDownRouteComponentProps> = ({
 
     return (
         <DropDownRouteGroup>
-            <DropDownOpenButton onClick={handleClick}>
-                {buttonName}
-                <NavIcon>{isSubMenuOpened ? '▾' : '▴'}</NavIcon>
+            <DropDownOpenButton onClick={handleClick} aria-expanded={isSubMenuOpened}>
+                <a href="#">
+                    {buttonName}
+                    <NavIcon>{isSubMenuOpened ? '▾' : '▴'}</NavIcon>
+                </a>
             </DropDownOpenButton>
             {isSubMenuOpened &&
                 routes.map((subRoute: RouteType, index: number) => (
@@ -161,9 +160,7 @@ const MobileHeader = () => {
                 </MenuButton>
             ) : (
                 <RouteContainer>
-                    <CloseButton onClick={() => setIsMenuOpened(false)}>
-                        X
-                    </CloseButton>
+                    <CloseButton onClick={() => setIsMenuOpened(false)}>X</CloseButton>
                     <RouteList>
                         {routes.map((route: RouteListType, index: number) => {
                             return (
@@ -171,10 +168,7 @@ const MobileHeader = () => {
                                     {route.routeType === 'single' ? (
                                         <a href={route.path}>{route.name}</a>
                                     ) : (
-                                        <DropDownRouteComponent
-                                            buttonName={route.name}
-                                            routes={route.routeGroup}
-                                        />
+                                        <DropDownRouteComponent buttonName={route.name} routes={route.routeGroup} />
                                     )}
                                 </RouteItem>
                             );
