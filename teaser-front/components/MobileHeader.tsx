@@ -46,10 +46,10 @@ const RouteItem = styled.li`
     font-size: 2.5rem;
     padding: 1rem 1.5rem;
     text-align: right;
-    a {
-        display: block;
-        padding: 1rem 1.5rem;
-    }
+`;
+const RouteLink = styled.a`
+    display: block;
+    padding: 1rem 1.5rem;
 `;
 
 const CloseButton = styled.button`
@@ -90,7 +90,8 @@ const DropDownRouteItem = styled(RouteItem)`
     font-size: 1.8rem;
     padding: 0;
     a {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
+        display: block;
     }
 `;
 const NavIcon = styled.span`
@@ -166,7 +167,7 @@ const MobileHeader = () => {
                             return (
                                 <RouteItem key={index}>
                                     {route.routeType === 'single' ? (
-                                        <a href={route.path}>{route.name}</a>
+                                        <RouteLink href={route.path}>{route.name}</RouteLink>
                                     ) : (
                                         <DropDownRouteComponent buttonName={route.name} routes={route.routeGroup} />
                                     )}
