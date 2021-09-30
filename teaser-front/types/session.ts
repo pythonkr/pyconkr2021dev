@@ -7,10 +7,13 @@ export interface Session {
     difficulty: string;
     duration: string;
     language: string;
-    category: string;
     introduction?: string;
     video_url?: string;
     slide_url?: string;
     video_open_at: string;
     id: number;
+    category_data: {
+        id: number;
+        name: string;
+    };
 }
