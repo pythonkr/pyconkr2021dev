@@ -81,7 +81,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ categoryList }) => {
                                 <SessionItem key={session.id}>
                                     <SessionLink href={`/session/${session.id}`}>
                                         <SessionBlock>
-                                            {index % 2 === 0 ? <YellowImage /> : <GreyImage />}
+                                            {index % 2 === 0 ? <GreyImage /> : <YellowImage />}
                                             <PersonBlock>
                                                 <Speaker>{session.user_name}</Speaker>
                                                 <Title>{session.title}</Title>

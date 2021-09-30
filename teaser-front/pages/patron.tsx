@@ -53,7 +53,7 @@ export default function Patron({ data_patron }: any) {
                     {data_patron.map((d: any, index: number) => {
                         return (
                             <PyconPersonBlock key={d.user_name}>
-                                {index % 2 === 0 ? <YellowEllipse /> : <GreyEllipse />}
+                                {index % 2 === 0 ? <GreyEllipse /> : <YellowEllipse />}
                                 <PatronIntroBlock>
                                     <PersonNameBlock>{d.user_name}</PersonNameBlock>
                                     <PersonText>{d.desc}</PersonText>
