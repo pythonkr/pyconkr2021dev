@@ -158,8 +158,11 @@ function Header() {
                         <Category
                             onClick={() => setIsProgramOpen(!isProgramOpen)}
                             active={router.pathname === '/session'}
+                            aria-expanded={isProgramOpen}
                         >
-                            <span>{isProgramOpen ? '프로그램▴' : '프로그램▾'}</span>
+                            <a href="#">
+                                <span>{isProgramOpen ? '프로그램▴' : '프로그램▾'}</span>
+                            </a>
                             {isProgramOpen && (
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === '/session'}>
@@ -175,8 +178,10 @@ function Header() {
                                 </SupportToggle>
                             )}
                         </Category>
-                        <Category onClick={() => setNavSupport(!navSupport)}>
-                            <span>{navSupport ? '후원하기▴' : '후원하기▾'}</span>
+                        <Category onClick={() => setNavSupport(!navSupport)} aria-expanded={navSupport}>
+                            <a href="#">
+                                <span>{navSupport ? '후원하기▴' : '후원하기▾'}</span>
+                            </a>
                             {navSupport && (
                                 <SupportToggle>
                                     <SupportCategory active={router.pathname === '/sponsors'}>
