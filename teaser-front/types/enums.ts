@@ -4,6 +4,11 @@ export enum DifficultyLabel {
     E = '고급'
 }
 
+export enum LanguageType {
+    K = '한국어',
+    E = '영어'
+}
+
 export const SHORTCUT_LINK = [
     {
         name: '세션 시간표',

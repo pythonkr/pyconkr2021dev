@@ -1,48 +1,71 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { Session } from '../../../types/session';
-import Layout from "../../../components/Layout";
+import SessionDetail from '../../../components/session/SessionDetail';
+import Layout from '../../../components/Layout';
+import axios from 'axios';
 
-const SessionDetail = (session: Session) => {
+const SessionDetailIndex = (session: Session) => {
     return (
-        <Layout>{session.title}</Layout>
-    )
-}
+        <Layout>
+            <SessionDetail session={session} />
+        </Layout>
+    );
+};
 
-export const getStaticPaths = () => {
-    return {
-        paths: [
-            {
-                params: {
-                    id: '1'
-                }
-            }
-        ],
-        fallback: false
+export const getStaticPaths = async () => {
+    let url =
+        process.env.ENV == 'DEV'
+            ? 'https://dev.2021.api.pycon.kr/api/v1'
+            : 'https://2021.api.pycon.kr/api/v1';
+    if (process.env.ENV == 'LOCAL') {
+        url = 'http://127.0.0.1:8000/api/v1';
     }
-}
 
-export const getStaticProps: GetStaticProps<{id: number | string }> = (context: GetStaticPropsContext) => {
-    const slug = context.params?.id
-
-    return {
-        props: {
-            id: 1,
-            title: "기획자가 한 번 추천한 음식은 ‘당분간’ 추천하지 말라고 했다.",
-            brief: "<p><span style=\"font-size: 14px;\">기획자가 한 번 추천한 음식은 ‘당분간’ 추천하지 말라고 했다.</span><br></p>",
-            desc: "<p><span style=\"font-size: 14px;\">기획자가 한 번 추천한 음식은 ‘당분간’ 추천하지 말라고 했다.</span><br></p>",
-            comment: "<p>기획자가 한 번 추천한 음식은 ‘당분간’ 추천하지 말라고 했다.<br></p>",
-            difficulty: "B",
-            duration: "L",
-            language: "K",
-            category: "데이터 과학 (Data Science)",
-            introduction: "",
-            video_url: null,
-            slide_url: null,
-            video_open_at: "10/02 10:00",
-            user_name: "김다현"
-        },
+    try {
+        const res = await axios.get(`${url}/program`);
+        const paths = res.data.map((session: Session) => {
+            return {
+                params: { id: session.id.toString() }
+            };
+        });
+        return {
+            paths,
+            fallback: false
+        };
+    } catch (error) {
+        console.log(error);
+        return {
+            paths: [],
+            fallback: false
+        };
     }
-}
+};
 
-export default SessionDetail
+export const getStaticProps: GetStaticProps<{ id: number | string }> = async (
+    context: GetStaticPropsContext
+) => {
+    const id = context.params?.id;
+
+    let url =
+        process.env.ENV == 'DEV'
+            ? 'https://dev.2021.api.pycon.kr/api/v1'
+            : 'https://2021.api.pycon.kr/api/v1';
+    if (process.env.ENV == 'LOCAL') {
+        url = 'http://127.0.0.1:8000/api/v1';
+    }
+
+    try {
+        const res = await axios.get(`${url}/program/${id}`);
+        return {
+            props: res.data
+        };
+    } catch (error) {
+        console.log(error);
+        return {
+            notFound: true
+        };
+    }
+};
+
+export default SessionDetailIndex;
