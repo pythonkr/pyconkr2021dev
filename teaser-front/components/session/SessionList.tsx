@@ -1,6 +1,5 @@
 import React from 'react';
 import { Session } from '../../types/session';
-import styled from '@emotion/styled';
 import CategoryList from './CategoryList';
 
 interface SessionListProps {

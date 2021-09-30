@@ -17,12 +17,12 @@ const SessionTitle = styled.h2`
     }
 `;
 const SessionListContainer = styled.div`
-    margin: 6rem 8rem;
+    padding: 0 6rem 7rem;
     font-size: 1.75rem;
     line-height: 1.5;
     @media (max-width: 768px) {
         margin: 0;
-        padding: 2rem;
+        padding: 3rem;
     }
     ul,
     li {
