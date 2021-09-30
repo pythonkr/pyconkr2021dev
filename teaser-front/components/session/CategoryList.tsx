@@ -29,6 +29,7 @@ const SessionItem = styled.div`
 `;
 const PersonBlock = styled.div`
     margin-left: 2rem;
+    flex: 1;
 `;
 const Speaker = styled.div`
     font-weight: bold;

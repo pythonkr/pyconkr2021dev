@@ -13,7 +13,7 @@ const SessionListContainer = styled.div`
     line-height: 1;
     @media (max-width: 768px) {
         margin: 0;
-        padding: 0 2rem;
+        padding: 2rem;
     }
     ul,
     li {
