@@ -63,7 +63,7 @@ const SupportToggle = styled.div`
     z-index: 995;
     color: white;
     position: absolute;
-    top: 120px;
+    top: 75%;
     left: 0;
     right: 0;
     padding: 0 0.8rem;
@@ -111,7 +111,7 @@ const Category = styled.div<{ active?: boolean }>`
 
 const SupportCategory = styled(Category)`
     margin: 0;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-size: 1.1rem;
     line-height: 1.5;
 
