@@ -9,6 +9,7 @@ const SessionDetailContainer = styled.div`
     line-height: 1;
     @media (max-width: 768px) {
         margin: 0;
+        padding: 0 2rem;
     }
 `;
 
@@ -47,28 +48,14 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session }) => {
         <SessionDetailContainer>
             <SessionTitle>{session.title}</SessionTitle>
             <SessionBasicInfo>
+                <SessionBasicItem>카테고리: {session.category_data.name}</SessionBasicItem>
                 <SessionBasicItem>
-                    카테고리: {session.category}
-                </SessionBasicItem>
-                <SessionBasicItem>
-                    난이도:{' '}
-                    {
-                        DifficultyLabel[
-                            session.difficulty as keyof typeof DifficultyLabel
-                        ]
-                    }
+                    난이도: {DifficultyLabel[session.difficulty as keyof typeof DifficultyLabel]}
                 </SessionBasicItem>
                 <SessionBasicItem>
                     날짜: 2021년 {month}월 {parseInt(day, 10)}일 {time}
                 </SessionBasicItem>
-                <SessionBasicItem>
-                    언어:{' '}
-                    {
-                        LanguageType[
-                            session.language as keyof typeof LanguageType
-                        ]
-                    }
-                </SessionBasicItem>
+                <SessionBasicItem>언어: {LanguageType[session.language as keyof typeof LanguageType]}</SessionBasicItem>
             </SessionBasicInfo>
         </SessionDetailContainer>
     );
