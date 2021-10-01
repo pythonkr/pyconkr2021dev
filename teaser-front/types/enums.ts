@@ -46,6 +46,10 @@ export const ROUTES = [
             {
                 name: '발표 목록',
                 path: '/session/list'
+            },
+            {
+                name: '문자통역 안내',
+                path: '/session/speech-to-text'
             }
         ]
     },
