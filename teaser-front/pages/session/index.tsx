@@ -12,8 +12,8 @@ interface SessionProps {
     day2: Session[];
 }
 
-const SessionInfo = styled.div`
-    padding: 0 6rem 7rem;
+export const SessionInfo = styled.div`
+    padding: 0 6rem 4rem;
     font-size: 1.4rem;
     line-height: 1.5;
     @media (max-width: 768px) {
@@ -22,7 +22,7 @@ const SessionInfo = styled.div`
     }
 `;
 
-const SessionTitle = styled.h2`
+export const SessionTitle = styled.h2`
     font-size: 3rem;
     color: #f5df4d;
     @media (max-width: 768px) {
@@ -30,7 +30,7 @@ const SessionTitle = styled.h2`
     }
 `;
 
-const SessionInfoItem = styled.div`
+export const SessionInfoItem = styled.div`
     margin-bottom: 1rem;
 `;
 
@@ -50,12 +50,8 @@ export default function Index(data: SessionProps) {
                     통해 시청하실 수 있습니다.
                 </SessionInfoItem>
                 <SessionInfoItem>
-                    파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다.
-                    <br />
-                    해당시점에 문자 통역 플랫폼인 쉐어타이핑에 비밀번호를 통해 접속하는 방식으로 실시간 통역을
-                    제공합니다.
-                    <br />
-                    문자 통역 URL은 당일 유튜브 공개시 공지 드릴 예정입니다.
+                    파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다. 문자 통역 접속 정보는{' '}
+                    <StyledLink url="/session/speech-to-text">문자 통역 안내 페이지</StyledLink>를 참고해주세요.
                 </SessionInfoItem>
             </SessionInfo>
             <SessionToggleButton handleClick={updateSelectedDay} />

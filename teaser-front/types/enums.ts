@@ -85,3 +85,62 @@ export const ROUTES = [
         routeType: 'single'
     }
 ];
+
+export const SpeechToTextUrl = [
+    {
+        date: '10월 2일 토요일',
+        track: 101,
+        urlInfo: [
+            {
+                time: '10:00~12:00',
+                videoUrl: 'https://bit.ly/3mdLvJ8'
+            },
+            {
+                time: '12:00~',
+                videoUrl: 'https://bit.ly/3mgGVtr'
+            }
+        ]
+    },
+    {
+        date: '10월 2일 토요일',
+        track: 102,
+        urlInfo: [
+            {
+                time: '10:00~12:00',
+                videoUrl: 'https://bit.ly/3F8UgN9'
+            },
+            {
+                time: '12:00~',
+                videoUrl: 'https://bit.ly/3uH0XS1'
+            }
+        ]
+    },
+    {
+        date: '10월 3일 일요일',
+        track: 103,
+        urlInfo: [
+            {
+                time: '10:00~12:00',
+                videoUrl: 'https://bit.ly/3F6RyYC'
+            },
+            {
+                time: '12:00~',
+                videoUrl: 'https://bit.ly/3B4vBa8'
+            }
+        ]
+    },
+    {
+        date: '10월 3일 일요일',
+        track: 104,
+        urlInfo: [
+            {
+                time: '10:00~12:00',
+                videoUrl: 'https://bit.ly/3uvvSjK'
+            },
+            {
+                time: '12:00~',
+                videoUrl: 'https://bit.ly/3Fai0As'
+            }
+        ]
+    }
+];
