@@ -175,6 +175,11 @@ function Header() {
                                             <a>발표 목록</a>
                                         </Link>
                                     </SupportCategory>
+                                    <SupportCategory active={router.pathname === '/session/list'}>
+                                        <Link href="/session/speech-to-text">
+                                            <a>문자통역 안내</a>
+                                        </Link>
+                                    </SupportCategory>
                                 </SupportToggle>
                             )}
                         </Category>
