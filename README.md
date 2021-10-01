@@ -1,4 +1,8 @@
-pyconkr2021dev
---------------
+# 파이콘 한국 2021 홈페이지
 
-PyconKR 2021 teaser page.
+## 실행
+
+```
+yarn install
+yarn dev
+```
