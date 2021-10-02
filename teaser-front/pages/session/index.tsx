@@ -56,9 +56,9 @@ export default function Index(data: SessionProps) {
             </SessionInfo>
             <SessionToggleButton handleClick={updateSelectedDay} />
             {selectedDay === 'day1' ? (
-                <SessionTable day="day1" headers={['101', '102']} sessionList={data.day1} />
+                <SessionTable day="day1" headers={['트랙1(101)', '트랙2(102)']} sessionList={data.day1} />
             ) : (
-                <SessionTable day="day2" headers={['103', '104']} sessionList={data.day2} />
+                <SessionTable day="day2" headers={['트랙1(103)', '트랙2(104)']} sessionList={data.day2} />
             )}
         </Layout>
     );

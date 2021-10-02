@@ -93,7 +93,7 @@ export const ROUTES = [
 export const SpeechToTextUrl = [
     {
         date: '10월 2일 토요일',
-        track: 101,
+        track: '트랙1(101)',
         urlInfo: [
             {
                 time: '12:00~14:00',
@@ -107,7 +107,7 @@ export const SpeechToTextUrl = [
     },
     {
         date: '10월 2일 토요일',
-        track: 102,
+        track: '트랙2(102)',
         urlInfo: [
             {
                 time: '12:00~14:00',
@@ -121,7 +121,7 @@ export const SpeechToTextUrl = [
     },
     {
         date: '10월 3일 일요일',
-        track: 103,
+        track: '트랙1(103)',
         urlInfo: [
             {
                 time: '10:00~12:00',
@@ -135,7 +135,7 @@ export const SpeechToTextUrl = [
     },
     {
         date: '10월 3일 일요일',
-        track: 104,
+        track: '트랙2(104)',
         urlInfo: [
             {
                 time: '10:00~12:00',
