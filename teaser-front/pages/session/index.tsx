@@ -46,8 +46,17 @@ export default function Index(data: SessionProps) {
             <SessionInfo>
                 <SessionTitle>발표 시간표</SessionTitle>
                 <SessionInfoItem>
-                    세션은 <StyledLink url="https://www.youtube.com/c/PyConKRtube">파이콘 한국 유튜브</StyledLink>를
-                    통해 시청하실 수 있습니다.
+                    세션은 아래 파이콘 한국 유튜브 링크를 통해 시청하실 수 있습니다.
+                    <ul>
+                        <li>
+                            10/2 트랙1(101):{' '}
+                            <StyledLink url="https://youtu.be/xDRU0hMUNHc">https://youtu.be/xDRU0hMUNHc</StyledLink>
+                        </li>
+                        <li>
+                            10/2 트랙2(102):{' '}
+                            <StyledLink url="https://youtu.be/lHzaABlzosw">https://youtu.be/lHzaABlzosw</StyledLink>
+                        </li>
+                    </ul>
                 </SessionInfoItem>
                 <SessionInfoItem>
                     파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다. 문자 통역 접속 정보는{' '}
