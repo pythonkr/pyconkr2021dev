@@ -96,11 +96,11 @@ export const SpeechToTextUrl = [
         track: 101,
         urlInfo: [
             {
-                time: '10:00~12:00',
+                time: '12:00~14:00',
                 videoUrl: 'https://bit.ly/3mdLvJ8'
             },
             {
-                time: '12:00~',
+                time: '14:00~',
                 videoUrl: 'https://bit.ly/3mgGVtr'
             }
         ]
@@ -110,11 +110,11 @@ export const SpeechToTextUrl = [
         track: 102,
         urlInfo: [
             {
-                time: '10:00~12:00',
+                time: '12:00~14:00',
                 videoUrl: 'https://bit.ly/3F8UgN9'
             },
             {
-                time: '12:00~',
+                time: '14:00~',
                 videoUrl: 'https://bit.ly/3uH0XS1'
             }
         ]
