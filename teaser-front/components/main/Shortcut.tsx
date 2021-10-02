@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Shortcut } from '../../types/shortcut'
-import { SHORTCUT_LINK, YOUTUBE_TRACK_LINK } from '../../types/enums'
+import { SHORTCUT_LINK } from '../../types/enums'
 
 const ShortcutContainer = styled.div`
     display: flex;
@@ -32,28 +32,14 @@ const ShortcutLink = styled.a`
 
 const ShortcutComponent: React.FC = () => {
     const shortcutList = SHORTCUT_LINK;
-    const youtubeTackLinst = YOUTUBE_TRACK_LINK;
-
     return (
-        <>
-            <ShortcutContainer>
-                {shortcutList.map((item: Shortcut, index) => {
-                    return (
-                        <ShortcutLink href={item.url} key={index}>{item.name}</ShortcutLink>
-                    )
-                })}
-            </ShortcutContainer>
-
-            <p></p>
-
-            <ShortcutContainer>
-                {youtubeTackLinst.map((item: Shortcut, index) => {
-                    return (
-                        <ShortcutLink href={item.url} key={index}>{item.name}</ShortcutLink>
-                    )
-                })}
-            </ShortcutContainer>
-        </>
+        <ShortcutContainer>
+            {shortcutList.map((item: Shortcut, index) => {
+                return (
+                    <ShortcutLink href={item.url} key={index}>{item.name}</ShortcutLink>
+                )
+            })}
+        </ShortcutContainer>
     )
 }
 

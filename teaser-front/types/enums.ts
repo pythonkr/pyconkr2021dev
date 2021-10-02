@@ -19,19 +19,8 @@ export const SHORTCUT_LINK = [
         url: 'https://www.youtube.com/c/PyConKRtube'
     },
     {
-        name: 'Festa',
+        name: '티켓 구입',
         url: 'https://festa.io/events/1788'
-    }
-];
-
-export const YOUTUBE_TRACK_LINK = [
-    {
-        name: '트랙 1 (Track 1)',
-        url: '/session'
-    },
-    {
-        name: '트랙 2 (Track 2)',
-        url: 'https://www.youtube.com/watch?v=lHzaABlzosw'
     }
 ];
 
