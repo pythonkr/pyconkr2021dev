@@ -46,7 +46,7 @@ export default function Index(data: SessionProps) {
             <SessionInfo>
                 <SessionTitle>발표 시간표</SessionTitle>
                 <SessionInfoItem>
-                    세션은 아래 파이콘 한국 유튜브 링크를 통해 시청하실 수 있습니다.
+                    세션은 파이콘 한국 유튜브를 통해 시청하실 수 있습니다.
                     <ul>
                         <li>
                             10/2 트랙1(101):{' '}
@@ -55,6 +55,14 @@ export default function Index(data: SessionProps) {
                         <li>
                             10/2 트랙2(102):{' '}
                             <StyledLink url="https://youtu.be/lHzaABlzosw">https://youtu.be/lHzaABlzosw</StyledLink>
+                        </li>
+                        <li>
+                            10/3 트랙1(103):{' '}
+                            <StyledLink url="https://youtu.be/2sd1GNg0U-I">https://youtu.be/2sd1GNg0U-I</StyledLink>
+                        </li>
+                        <li>
+                            10/3 트랙2(104):{' '}
+                            <StyledLink url="https://youtu.be/ty38LCJgD3I">https://youtu.be/ty38LCJgD3I</StyledLink>
                         </li>
                     </ul>
                 </SessionInfoItem>
