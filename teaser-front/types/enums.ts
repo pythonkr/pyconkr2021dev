@@ -15,12 +15,16 @@ export const SHORTCUT_LINK = [
         url: '/session'
     },
     {
-        name: '파이콘 한국 유튜브',
+        name: '유튜브 (Youtube)',
         url: 'https://www.youtube.com/c/PyConKRtube'
     },
     {
-        name: '티켓 구입',
+        name: '페스타 (Festa)',
         url: 'https://festa.io/events/1788'
+    },
+    {
+        name: '게더타운 (Gather)',
+        url: 'https://gather.town/app/Lce5afEvxzCF1jYz/PyCon%20KR%202021'
     }
 ];
 
