@@ -46,29 +46,8 @@ export default function Index(data: SessionProps) {
             <SessionInfo>
                 <SessionTitle>발표 시간표</SessionTitle>
                 <SessionInfoItem>
-                    세션은 파이콘 한국 유튜브를 통해 시청하실 수 있습니다.
-                    <ul>
-                        <li>
-                            10/2 트랙1(101):{' '}
-                            <StyledLink url="https://youtu.be/xDRU0hMUNHc">https://youtu.be/xDRU0hMUNHc</StyledLink>
-                        </li>
-                        <li>
-                            10/2 트랙2(102):{' '}
-                            <StyledLink url="https://youtu.be/lHzaABlzosw">https://youtu.be/lHzaABlzosw</StyledLink>
-                        </li>
-                        <li>
-                            10/3 트랙1(103):{' '}
-                            <StyledLink url="https://youtu.be/2sd1GNg0U-I">https://youtu.be/2sd1GNg0U-I</StyledLink>
-                        </li>
-                        <li>
-                            10/3 트랙2(104):{' '}
-                            <StyledLink url="https://youtu.be/ty38LCJgD3I">https://youtu.be/ty38LCJgD3I</StyledLink>
-                        </li>
-                    </ul>
-                </SessionInfoItem>
-                <SessionInfoItem>
-                    파이콘 한국은 올해도 접근성 향상과 다양성을 위하여 문자 통역을 지원합니다. 문자 통역 접속 정보는{' '}
-                    <StyledLink url="/session/speech-to-text">문자 통역 안내 페이지</StyledLink>를 참고해주세요.
+                    파이콘 한국 2021의 라이브 영상은 행사 직후 삭제되며, 발표 영상은 행사 종료 후 편집을 거쳐 파이콘
+                    한국 유튜브에 업로드될 예정입니다.{' '}
                 </SessionInfoItem>
             </SessionInfo>
             <SessionToggleButton handleClick={updateSelectedDay} />
