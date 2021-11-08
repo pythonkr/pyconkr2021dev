@@ -30,6 +30,7 @@ export default function Home({ notice_data, data_sponsor } : any) {
 export async function getStaticProps() {
   let url = process.env.ENV == 'DEV' ? 'https://dev.2021.api.pycon.kr/api/v1' : 'https://2021.api.pycon.kr/api/v1'
 
+  
   if (process.env.ENV == 'LOCAL') {
     url = 'http://127.0.0.1:8000/api/v1'
   }
