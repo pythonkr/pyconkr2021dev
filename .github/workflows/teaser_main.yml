@@ -4,41 +4,41 @@ name: CD-teaser-main
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ teaser-main ]
+    # Triggers the workflow on push or pull request events but only for the main branch
+    push:
+        branches: [teaser-main]
 
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./teaser-front
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./teaser-front
 
-    env:
-      ENV: PROD
+        env:
+            ENV: PROD
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - run: npm install -g yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_IAM_MANAGER_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_IAM_MANAGER_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2
-      - run: aws s3 sync ./out s3://pyconkr-2021 --acl public-read
-      - run: aws cloudfront create-invalidation --distribution-id ${{  secrets.AWS_CLOUDFRONT_TEASER_MAIN_ID  }} --paths "/*"
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - run: npm install -g yarn
+            - run: yarn install --frozen-lockfile
+            - run: sh script/generate-sitemap.sh
+            - run: yarn build
+            - uses: aws-actions/configure-aws-credentials@v1
+              with:
+                  aws-access-key-id: ${{ secrets.AWS_IAM_MANAGER_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_IAM_MANAGER_SECRET_ACCESS_KEY }}
+                  aws-region: ap-northeast-2
+            - run: aws s3 sync ./out s3://pyconkr-2021 --acl public-read
+            - run: aws cloudfront create-invalidation --distribution-id ${{  secrets.AWS_CLOUDFRONT_TEASER_MAIN_ID  }} --paths "/*"
