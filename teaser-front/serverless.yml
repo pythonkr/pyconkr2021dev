@@ -1,7 +1,7 @@
 2021pycon-teaser:
   component: '@sls-next/serverless-component'
   inputs:
-    bucketName: pyconkr-2021-devdev
+    bucketName: pyconkr-2021
     bucketRegion: ap-northeast-2
     cloudfront:
-      distributionId: E2ENGY1BIJ5F53
+      distributionId: E20NHKND76S8J1

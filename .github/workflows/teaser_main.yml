@@ -23,6 +23,8 @@ jobs:
 
         env:
             ENV: PROD
+            NEXT_PUBLIC_DOMAIN_NAME: ${{ secrets.NEXT_PUBLIC_PROD_DOMAIN_NAME }}
+            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_PROD_API_URL }}
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
@@ -34,11 +36,9 @@ jobs:
             - run: npm install -g yarn
             - run: yarn install --frozen-lockfile
             - run: sh script/generate-sitemap.sh
-            - run: yarn build
             - uses: aws-actions/configure-aws-credentials@v1
               with:
                   aws-access-key-id: ${{ secrets.AWS_IAM_MANAGER_KEY_ID }}
                   aws-secret-access-key: ${{ secrets.AWS_IAM_MANAGER_SECRET_ACCESS_KEY }}
                   aws-region: ap-northeast-2
-            - run: aws s3 sync ./out s3://pyconkr-2021 --acl public-read
-            - run: aws cloudfront create-invalidation --distribution-id ${{  secrets.AWS_CLOUDFRONT_TEASER_MAIN_ID  }} --paths "/*"
+            - run: npx serverless
