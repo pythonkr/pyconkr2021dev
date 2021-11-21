@@ -1,4 +1,7 @@
 2021pycon-teaser:
-    component: serverless-next.js
-    input:
-        domain: "2021.dev.pycon.kr"
+  component: '@sls-next/serverless-component'
+  inputs:
+    bucketName: pyconkr-2021-devdev
+    bucketRegion: ap-northeast-2
+    cloudfront:
+      distributionId: E2ENGY1BIJ5F53
