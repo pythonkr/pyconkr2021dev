@@ -14,25 +14,6 @@ export default function Home({ notice_data, data_sponsor }: any) {
         <MainNotice noticeData={notice_data} />
       </ContentBackgroundBlock>
       <AboutContext />
-      <ContentBackgroundBlock>
-        <Image
-          src="https://2021.pycon.kr/img/dot1.png"
-          width={700}
-          height={100}
-          alt="dot1"
-          layout="responsive"
-        />
-      </ContentBackgroundBlock>
-      <PyconLogo />
-      <ContentBackgroundBlock>
-        <Image
-          src="https://2021.pycon.kr/img/dot2.png"
-          width={700}
-          height={100}
-          alt="dot2"
-          layout="responsive"
-        />
-      </ContentBackgroundBlock>
     </>
   );
 }
