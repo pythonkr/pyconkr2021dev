@@ -9,7 +9,6 @@ import MainNotice from '../components/main/MainNotice';
 export default function Home({ notice_data, data_sponsor }: any) {
   return (
     <>
-      <Header />
       <MainView />
       <ContentBackgroundBlock>
         <MainNotice noticeData={notice_data} />
