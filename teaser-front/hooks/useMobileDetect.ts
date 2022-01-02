@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const useMobileDetect = (): boolean => {
-    const [width, setWidth] = useState<number>(768);
+    const [width, setWidth] = useState<number>(NaN);
 
-    function handleWindowSizeChange() {
+    const handleWindowSizeChange = React.useCallback(() => {
         setWidth(window.innerWidth);
-    }
+    },[]);
 
     useEffect(() => {
         if (process.browser) {
@@ -15,9 +15,18 @@ const useMobileDetect = (): boolean => {
                 window.removeEventListener('resize', handleWindowSizeChange);
             };
         }
-    }, []);
+    }, [handleWindowSizeChange]);
 
-    return width <= 768;
+    const isMobile = React.useMemo(() => {
+        if(!width || isNaN(width)) {
+            return false;
+        }
+
+        return width <= 768;
+
+    },[width]);
+
+    return isMobile
 };
 
 export default useMobileDetect;
